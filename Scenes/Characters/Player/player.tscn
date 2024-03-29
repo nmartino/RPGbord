@@ -1,0 +1,129 @@
+[gd_scene load_steps=30 format=3 uid="uid://c138i0pw7g0nx"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/Player/Player.cs" id="1_32gnk"]
+[ext_resource type="Texture2D" uid="uid://csk74qq3xec7m" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo6.png" id="2_aqxwh"]
+[ext_resource type="Texture2D" uid="uid://l5p3b3vyrg3y" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle3.png" id="2_yl5it"]
+[ext_resource type="Texture2D" uid="uid://caxp4hi2opc4n" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo1.png" id="3_qob3n"]
+[ext_resource type="Texture2D" uid="uid://w4g0gkdf2opb" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo2.png" id="4_bhl26"]
+[ext_resource type="Texture2D" uid="uid://c3kjcicv54t3a" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo3.png" id="5_x5jpc"]
+[ext_resource type="Texture2D" uid="uid://be4fnxttdh1ko" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo4.png" id="6_rsub6"]
+[ext_resource type="Texture2D" uid="uid://bylyd787ts08" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo5.png" id="7_hnc6d"]
+[ext_resource type="Texture2D" uid="uid://ccdtprfoc5uoh" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle1.png" id="9_d4bp3"]
+[ext_resource type="Texture2D" uid="uid://csg6txcksjh6c" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre1.png" id="9_m26ud"]
+[ext_resource type="Texture2D" uid="uid://mdqd7htfj4qa" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre2.png" id="10_6ojln"]
+[ext_resource type="Texture2D" uid="uid://dspyoryr5ssgh" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle2.png" id="10_t3h7d"]
+[ext_resource type="Texture2D" uid="uid://b7yj2wib03py3" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre3.png" id="11_5lp2l"]
+[ext_resource type="Texture2D" uid="uid://cgr7tlu0s3og8" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle4.png" id="11_mg81l"]
+[ext_resource type="Texture2D" uid="uid://dvowadg8rj103" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle5.png" id="12_7ornu"]
+[ext_resource type="Texture2D" uid="uid://dpv2152n4maa5" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre4.png" id="12_ytraa"]
+[ext_resource type="Texture2D" uid="uid://naakug4yllue" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre5.png" id="13_kuiwb"]
+[ext_resource type="Texture2D" uid="uid://bd11sa0pn4kf1" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre6.png" id="14_jm6sp"]
+[ext_resource type="Texture2D" uid="uid://ciwj200u6n6so" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre7.png" id="15_3i1kw"]
+[ext_resource type="Texture2D" uid="uid://snasd4ek6uwa" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre8.png" id="16_2bqsw"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerIdleState.cs" id="32_fbg4p"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerMoveState.cs" id="33_2s5pm"]
+[ext_resource type="PackedScene" uid="uid://b73b2lo4q8pg5" path="res://Scenes/Characters/state_machine.tscn" id="38_oxu1k"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerDashState.cs" id="40_3jx88"]
+
+[sub_resource type="Animation" id="Animation_j8dx5"]
+resource_name = "Dash"
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_qob3n"), ExtResource("4_bhl26"), ExtResource("5_x5jpc"), ExtResource("6_rsub6"), ExtResource("7_hnc6d"), ExtResource("2_aqxwh")]
+}
+
+[sub_resource type="Animation" id="Animation_ufi8t"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_d4bp3"), ExtResource("10_t3h7d"), ExtResource("2_yl5it"), ExtResource("11_mg81l"), ExtResource("12_7ornu")]
+}
+
+[sub_resource type="Animation" id="Animation_7gnyb"]
+resource_name = "Move"
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_m26ud"), ExtResource("10_6ojln"), ExtResource("11_5lp2l"), ExtResource("12_ytraa"), ExtResource("13_kuiwb"), ExtResource("14_jm6sp"), ExtResource("15_3i1kw"), ExtResource("16_2bqsw")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_alvtf"]
+_data = {
+"Dash": SubResource("Animation_j8dx5"),
+"Idle": SubResource("Animation_ufi8t"),
+"Move": SubResource("Animation_7gnyb")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kywg0"]
+radius = 0.484997
+height = 1.50779
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode")]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_32gnk")
+AnimPlayerNode = NodePath("AnimationPlayer")
+SpriteNode = NodePath("Sprite3D")
+StateMachineNode = NodePath("StateMachine")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09808e-05, 0.101595, -0.00692081)
+pixel_size = 0.002
+texture_filter = 0
+texture = ExtResource("2_aqxwh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_alvtf")
+}
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("currenState", "states") instance=ExtResource("38_oxu1k")]
+currenState = NodePath("IdleState")
+states = [NodePath("MoveState"), NodePath("IdleState"), NodePath("DashState")]
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("33_2s5pm")
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("32_fbg4p")
+
+[node name="DashState" type="Node" parent="StateMachine" node_paths=PackedStringArray("dashTimerNode")]
+script = ExtResource("40_3jx88")
+dashTimerNode = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/DashState"]
+wait_time = 0.6
+one_shot = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0428156, 0.150446, 0)
+shape = SubResource("CapsuleShape3D_kywg0")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://be2qn7gpk7bd8"]
+
+[ext_resource type="MeshLibrary" uid="uid://k5ljgbj5dopf" path="res://CheeseMineAssets/Tilemaps/sm_tilemap.meshlib" id="1_cn8d2"]
+
+[node name="dirt_gridmap" type="GridMap"]
+mesh_library = ExtResource("1_cn8d2")
+cell_size = Vector3(2, 1, 2)
+cell_center_y = false
