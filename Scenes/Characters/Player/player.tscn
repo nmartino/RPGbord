@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://c138i0pw7g0nx"]
+[gd_scene load_steps=43 format=3 uid="uid://c138i0pw7g0nx"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/Player.cs" id="1_32gnk"]
 [ext_resource type="Texture2D" uid="uid://csk74qq3xec7m" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo6.png" id="2_aqxwh"]
+[ext_resource type="Texture2D" uid="uid://djoo2mpor0if6" path="res://Assets/Sprites/Characters/Player/ruffito_kick/rufitopatadaataca1.png" id="2_van85"]
 [ext_resource type="Texture2D" uid="uid://l5p3b3vyrg3y" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle3.png" id="2_yl5it"]
 [ext_resource type="Texture2D" uid="uid://caxp4hi2opc4n" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo1.png" id="3_qob3n"]
 [ext_resource type="Texture2D" uid="uid://w4g0gkdf2opb" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo2.png" id="4_bhl26"]
@@ -20,8 +21,17 @@
 [ext_resource type="Texture2D" uid="uid://bd11sa0pn4kf1" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre6.png" id="14_jm6sp"]
 [ext_resource type="Texture2D" uid="uid://ciwj200u6n6so" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre7.png" id="15_3i1kw"]
 [ext_resource type="Texture2D" uid="uid://snasd4ek6uwa" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre8.png" id="16_2bqsw"]
+[ext_resource type="Texture2D" uid="uid://dt544k3gl5oyy" path="res://Assets/Sprites/Characters/Player/ruffito_kick/rufitopatadaataca2.png" id="22_dujdw"]
+[ext_resource type="Texture2D" uid="uid://s22yusrx5m02" path="res://Assets/Sprites/Characters/Player/ruffito_kick/rufitopatadaataca3.png" id="23_h1uim"]
+[ext_resource type="Texture2D" uid="uid://7y6bt77yx0pq" path="res://Assets/Sprites/Characters/Player/ruffito_kick/rufitopatadaataca4.png" id="24_pysbq"]
+[ext_resource type="Texture2D" uid="uid://cjdh6pnxggdxd" path="res://Assets/Sprites/Characters/Player/ruffito_kick/rufitopatadaataca5.png" id="25_hqjk5"]
+[ext_resource type="Texture2D" uid="uid://8watmolqc583" path="res://Assets/Sprites/Characters/Player/ruffito_attack/rufitoataca1.png" id="26_gm7io"]
+[ext_resource type="Texture2D" uid="uid://cy6jwucij685q" path="res://Assets/Sprites/Characters/Player/ruffito_attack/rufitoataca2.png" id="27_gbgo8"]
+[ext_resource type="Texture2D" uid="uid://cknwkbq85rhe8" path="res://Assets/Sprites/Characters/Player/ruffito_attack/rufitoataca3.png" id="28_ctnkj"]
+[ext_resource type="Texture2D" uid="uid://bvn8ahey1ewve" path="res://Assets/Sprites/Characters/Player/ruffito_attack/rufitoataca4.png" id="29_pesnf"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerIdleState.cs" id="32_fbg4p"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerMoveState.cs" id="33_2s5pm"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerAttackState.cs" id="34_68wdr"]
 [ext_resource type="PackedScene" uid="uid://b73b2lo4q8pg5" path="res://Scenes/Characters/state_machine.tscn" id="38_oxu1k"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerDashState.cs" id="40_3jx88"]
 
@@ -75,8 +85,42 @@ tracks/0/keys = {
 "values": [ExtResource("9_m26ud"), ExtResource("10_6ojln"), ExtResource("11_5lp2l"), ExtResource("12_ytraa"), ExtResource("13_kuiwb"), ExtResource("14_jm6sp"), ExtResource("15_3i1kw"), ExtResource("16_2bqsw")]
 }
 
+[sub_resource type="Animation" id="Animation_xcf2r"]
+resource_name = "Attack1"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_van85"), ExtResource("22_dujdw"), ExtResource("23_h1uim"), ExtResource("24_pysbq"), ExtResource("25_hqjk5")]
+}
+
+[sub_resource type="Animation" id="Animation_d2e4f"]
+resource_name = "Attack2"
+step = 0.333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("26_gm7io"), ExtResource("27_gbgo8"), ExtResource("28_ctnkj"), ExtResource("29_pesnf")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_alvtf"]
 _data = {
+"Attack1": SubResource("Animation_xcf2r"),
+"Attack2": SubResource("Animation_d2e4f"),
 "Dash": SubResource("Animation_j8dx5"),
 "Idle": SubResource("Animation_ufi8t"),
 "Move": SubResource("Animation_7gnyb")
@@ -86,8 +130,12 @@ _data = {
 radius = 0.484997
 height = 1.50779
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_26cy0"]
+size = Vector3(0.5, 0.5, 0.5)
+
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode")]
 collision_layer = 2
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_32gnk")
 AnimPlayerNode = NodePath("AnimationPlayer")
@@ -98,7 +146,7 @@ StateMachineNode = NodePath("StateMachine")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09808e-05, 0.101595, -0.00692081)
 pixel_size = 0.002
 texture_filter = 0
-texture = ExtResource("2_aqxwh")
+texture = ExtResource("28_ctnkj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
@@ -108,7 +156,7 @@ libraries = {
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("currenState", "states") instance=ExtResource("38_oxu1k")]
 currenState = NodePath("IdleState")
-states = [NodePath("MoveState"), NodePath("IdleState"), NodePath("DashState")]
+states = [NodePath("MoveState"), NodePath("IdleState"), NodePath("DashState"), NodePath("AttackState")]
 
 [node name="MoveState" type="Node" parent="StateMachine"]
 script = ExtResource("33_2s5pm")
@@ -124,6 +172,22 @@ dashTimerNode = NodePath("Timer")
 wait_time = 0.6
 one_shot = true
 
+[node name="AttackState" type="Node" parent="StateMachine" node_paths=PackedStringArray("comboTimerNode")]
+script = ExtResource("34_68wdr")
+comboTimerNode = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/AttackState"]
+wait_time = 2.0
+one_shot = true
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0428156, 0.150446, 0)
 shape = SubResource("CapsuleShape3D_kywg0")
+
+[node name="HitBox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.934229, 0, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource("BoxShape3D_26cy0")
