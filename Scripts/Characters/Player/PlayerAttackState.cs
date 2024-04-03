@@ -35,7 +35,19 @@ public partial class PlayerAttackState : PlayerState
         }else{
             comboCounter++;
         }
+        characterNode.ToggleHitBox(true);
         characterNode.StateMachineNode.SwitchState<PlayerIdleState>();
+    }
+    
+    private void PerformHit()
+    {
+        Vector3 newPosition = characterNode.SpriteNode.FlipH ? 
+        Vector3.Left :
+        Vector3.Right;
+        float distanceMultiplier = 0.85f;
+        newPosition *= distanceMultiplier;
+        characterNode.HitBoxNode.Position = newPosition;
+        characterNode.ToggleHitBox(false);
     }
 }
 

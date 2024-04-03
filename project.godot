@@ -65,3 +65,7 @@ Attack={
 3d_physics/layer_1="Environment"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Enemy"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
