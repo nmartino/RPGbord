@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dw33mfi0uljdr"]
+[gd_scene load_steps=35 format=3 uid="uid://dw33mfi0uljdr"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UIContainer.cs" id="1_0lbyp"]
 [ext_resource type="Script" path="res://Scripts/UI/UIController.cs" id="1_c3703"]
@@ -13,6 +13,19 @@
 [ext_resource type="Texture2D" uid="uid://cbecqobl00jkq" path="res://Assets/Sprites/UI/Individual icons (32x32)/46.png" id="10_ilmkc"]
 [ext_resource type="Resource" uid="uid://d0copp6n65px" path="res://Resources/player_health_stat.tres" id="10_rf163"]
 [ext_resource type="Resource" uid="uid://s6anh44hdutp" path="res://Resources/player_strenght_stat.tres" id="12_xbygd"]
+[ext_resource type="Script" path="res://Scripts/UI/EnemyCountLabel.cs" id="14_5fe3x"]
+[ext_resource type="Texture2D" uid="uid://df2pn5v6eeej5" path="res://Assets/Sprites/UI/skull/calavera ruffo1.png" id="15_ifdt2"]
+[ext_resource type="Texture2D" uid="uid://bcfq375p7iih2" path="res://Assets/Sprites/UI/skull/calavera ruffo2.png" id="16_ja23n"]
+[ext_resource type="Texture2D" uid="uid://ddfu5t4lpxod8" path="res://Assets/Sprites/UI/skull/calavera ruffo3.png" id="17_4rvof"]
+[ext_resource type="Texture2D" uid="uid://cuq7qjumgyu4q" path="res://Assets/Sprites/UI/trofeo/trofeo rebord2.png" id="17_ntw8j"]
+[ext_resource type="Texture2D" uid="uid://bufb4af2n546o" path="res://Assets/Sprites/UI/trofeo/trofeo rebord1.png" id="18_pan27"]
+[ext_resource type="Texture2D" uid="uid://2k7a4u61llkp" path="res://Assets/Sprites/UI/skull/calavera ruffo4.png" id="18_vbk2w"]
+[ext_resource type="Texture2D" uid="uid://bvag267b60lwe" path="res://Assets/Sprites/UI/trofeo/trofeo rebord3.png" id="19_0837l"]
+[ext_resource type="Texture2D" uid="uid://bxa2uhcka53kd" path="res://Assets/Sprites/UI/trofeo/trofeo rebord4.png" id="20_84ltg"]
+[ext_resource type="Texture2D" uid="uid://cjmdpno37dnuf" path="res://Assets/Sprites/UI/trofeo/trofeo rebord5.png" id="21_6p8sc"]
+[ext_resource type="Texture2D" uid="uid://cafxvysrnxu1n" path="res://Assets/Sprites/UI/trofeo/trofeo rebord6.png" id="22_d6ur5"]
+[ext_resource type="Texture2D" uid="uid://w5he204o3qfq" path="res://Assets/Sprites/UI/trofeo/trofeo rebord7.png" id="23_t8scp"]
+[ext_resource type="Texture2D" uid="uid://3ny42fsuh0pk" path="res://Assets/Sprites/UI/trofeo/trofeo rebord8.png" id="24_a3ugc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwnrv"]
 content_margin_left = 48.0
@@ -27,6 +40,53 @@ texture = ExtResource("6_rpoqr")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_me4at"]
 texture = ExtResource("7_0tyeh")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nocaa"]
+texture = ExtResource("6_rpoqr")
+
+[sub_resource type="Animation" id="Animation_fmei7"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_ifdt2"), ExtResource("16_ja23n"), ExtResource("17_4rvof"), ExtResource("18_vbk2w")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6hsa7"]
+_data = {
+"idle": SubResource("Animation_fmei7")
+}
+
+[sub_resource type="Animation" id="Animation_ylp41"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_pan27"), ExtResource("17_ntw8j"), ExtResource("19_0837l"), ExtResource("20_84ltg"), ExtResource("21_6p8sc"), ExtResource("22_d6ur5"), ExtResource("23_t8scp"), ExtResource("24_a3ugc")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jt5xy"]
+_data = {
+"Idle": SubResource("Animation_ylp41")
+}
+
 [node name="UI" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -38,6 +98,7 @@ grow_vertical = 2
 script = ExtResource("1_c3703")
 
 [node name="Start" type="VBoxContainer" parent="." node_paths=PackedStringArray("ButtonNode")]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -123,6 +184,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_me4at")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Stats/MarginContainer/VBoxContainer/Strengh"]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 2.0
 offset_right = 119.0
@@ -150,6 +212,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_me4at")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Stats/MarginContainer/VBoxContainer/EnemyCount"]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 2.0
 offset_right = 119.0
@@ -168,3 +231,100 @@ theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_avb1s")
 theme_override_font_sizes/font_size = 25
 text = "---"
+script = ExtResource("14_5fe3x")
+
+[node name="Defeat" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nocaa")
+script = ExtResource("1_0lbyp")
+container = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Defeat"]
+layout_mode = 2
+theme_override_constants/margin_top = 45
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Defeat/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Defeat/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 48
+text = "NO HAY 
+ALGO AHI!!"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Defeat/MarginContainer/VBoxContainer"]
+position = Vector2(252, 273)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("17_4rvof")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Defeat/MarginContainer/VBoxContainer"]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_6hsa7")
+}
+autoplay = "idle"
+
+[node name="Victory" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nocaa")
+script = ExtResource("1_0lbyp")
+container = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Victory"]
+layout_mode = 2
+theme_override_constants/margin_top = 45
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Victory/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Victory/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 48
+text = "HAY 
+ALGO AHI!!"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Victory/MarginContainer/VBoxContainer"]
+position = Vector2(252, 273)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("18_pan27")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Victory/MarginContainer/VBoxContainer"]
+libraries = {
+"": SubResource("AnimationLibrary_jt5xy")
+}
+autoplay = "Idle"
+speed_scale = 0.5
