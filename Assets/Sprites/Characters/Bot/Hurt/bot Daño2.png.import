@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b11f1p2ge87el"
-path="res://.godot/imported/2.png-45d3647933d599a0f5b2e413cee20964.ctex"
+uid="uid://c8b202qy33sav"
+path="res://.godot/imported/bot Daño2.png-30cb24c21bb3e88dba60c33a702d8fc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Effects/Explosion/2.png"
-dest_files=["res://.godot/imported/2.png-45d3647933d599a0f5b2e413cee20964.ctex"]
+source_file="res://Assets/Sprites/Characters/Bot/Hurt/bot Daño2.png"
+dest_files=["res://.godot/imported/bot Daño2.png-30cb24c21bb3e88dba60c33a702d8fc7.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

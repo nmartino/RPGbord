@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck147ryd5mxmg"
-path="res://.godot/imported/Icon.png-569cfaebd6e6bf2142a0c8021c6090ac.ctex"
+uid="uid://b7duyersfo5qa"
+path="res://.godot/imported/bot Daño3.png-2c5e046f0ddc1fe51dadf736a3496697.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Icon.png"
-dest_files=["res://.godot/imported/Icon.png-569cfaebd6e6bf2142a0c8021c6090ac.ctex"]
+source_file="res://Assets/Sprites/Characters/Bot/Hurt/bot Daño3.png"
+dest_files=["res://.godot/imported/bot Daño3.png-2c5e046f0ddc1fe51dadf736a3496697.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

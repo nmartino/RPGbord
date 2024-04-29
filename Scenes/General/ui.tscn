@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dw33mfi0uljdr"]
+[gd_scene load_steps=44 format=3 uid="uid://dw33mfi0uljdr"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UIContainer.cs" id="1_0lbyp"]
 [ext_resource type="Script" path="res://Scripts/UI/UIController.cs" id="1_c3703"]
@@ -17,15 +17,21 @@
 [ext_resource type="Texture2D" uid="uid://df2pn5v6eeej5" path="res://Assets/Sprites/UI/skull/calavera ruffo1.png" id="15_ifdt2"]
 [ext_resource type="Texture2D" uid="uid://bcfq375p7iih2" path="res://Assets/Sprites/UI/skull/calavera ruffo2.png" id="16_ja23n"]
 [ext_resource type="Texture2D" uid="uid://ddfu5t4lpxod8" path="res://Assets/Sprites/UI/skull/calavera ruffo3.png" id="17_4rvof"]
-[ext_resource type="Texture2D" uid="uid://cuq7qjumgyu4q" path="res://Assets/Sprites/UI/trofeo/trofeo rebord2.png" id="17_ntw8j"]
 [ext_resource type="Texture2D" uid="uid://bufb4af2n546o" path="res://Assets/Sprites/UI/trofeo/trofeo rebord1.png" id="18_pan27"]
 [ext_resource type="Texture2D" uid="uid://2k7a4u61llkp" path="res://Assets/Sprites/UI/skull/calavera ruffo4.png" id="18_vbk2w"]
-[ext_resource type="Texture2D" uid="uid://bvag267b60lwe" path="res://Assets/Sprites/UI/trofeo/trofeo rebord3.png" id="19_0837l"]
-[ext_resource type="Texture2D" uid="uid://bxa2uhcka53kd" path="res://Assets/Sprites/UI/trofeo/trofeo rebord4.png" id="20_84ltg"]
-[ext_resource type="Texture2D" uid="uid://cjmdpno37dnuf" path="res://Assets/Sprites/UI/trofeo/trofeo rebord5.png" id="21_6p8sc"]
-[ext_resource type="Texture2D" uid="uid://cafxvysrnxu1n" path="res://Assets/Sprites/UI/trofeo/trofeo rebord6.png" id="22_d6ur5"]
-[ext_resource type="Texture2D" uid="uid://w5he204o3qfq" path="res://Assets/Sprites/UI/trofeo/trofeo rebord7.png" id="23_t8scp"]
-[ext_resource type="Texture2D" uid="uid://3ny42fsuh0pk" path="res://Assets/Sprites/UI/trofeo/trofeo rebord8.png" id="24_a3ugc"]
+[ext_resource type="Texture2D" uid="uid://w5he204o3qfq" path="res://Assets/Sprites/UI/trofeo/trofeo rebord7.png" id="19_j15di"]
+[ext_resource type="Texture2D" uid="uid://ccdtprfoc5uoh" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle1.png" id="20_tkht7"]
+[ext_resource type="Texture2D" uid="uid://dspyoryr5ssgh" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle2.png" id="21_4koe8"]
+[ext_resource type="Texture2D" uid="uid://cuq7qjumgyu4q" path="res://Assets/Sprites/UI/trofeo/trofeo rebord2.png" id="21_f4s4f"]
+[ext_resource type="Texture2D" uid="uid://bvag267b60lwe" path="res://Assets/Sprites/UI/trofeo/trofeo rebord3.png" id="22_c0c7t"]
+[ext_resource type="Texture2D" uid="uid://l5p3b3vyrg3y" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle3.png" id="22_cyam7"]
+[ext_resource type="Texture2D" uid="uid://cgr7tlu0s3og8" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle4.png" id="23_30f4i"]
+[ext_resource type="Texture2D" uid="uid://bxa2uhcka53kd" path="res://Assets/Sprites/UI/trofeo/trofeo rebord4.png" id="23_l8dew"]
+[ext_resource type="Texture2D" uid="uid://dvowadg8rj103" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle5.png" id="24_5wloq"]
+[ext_resource type="Texture2D" uid="uid://cjmdpno37dnuf" path="res://Assets/Sprites/UI/trofeo/trofeo rebord5.png" id="24_pmmn8"]
+[ext_resource type="Texture2D" uid="uid://cafxvysrnxu1n" path="res://Assets/Sprites/UI/trofeo/trofeo rebord6.png" id="25_imuuw"]
+[ext_resource type="Texture2D" uid="uid://3ny42fsuh0pk" path="res://Assets/Sprites/UI/trofeo/trofeo rebord8.png" id="26_6t35a"]
+[ext_resource type="Texture2D" uid="uid://cr5b6qhflk31m" path="res://Assets/Sprites/UI/Individual icons (32x32)/8.png" id="28_lgua3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwnrv"]
 content_margin_left = 48.0
@@ -46,7 +52,7 @@ texture = ExtResource("6_rpoqr")
 [sub_resource type="Animation" id="Animation_fmei7"]
 resource_name = "idle"
 loop_mode = 1
-step = 0.25
+step = 0.333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,7 +60,7 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("15_ifdt2"), ExtResource("16_ja23n"), ExtResource("17_4rvof"), ExtResource("18_vbk2w")]
@@ -65,10 +71,32 @@ _data = {
 "idle": SubResource("Animation_fmei7")
 }
 
+[sub_resource type="Animation" id="Animation_o5t0m"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.142857
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571, 0.571429, 0.714286, 0.857143, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_pan27"), ExtResource("21_f4s4f"), ExtResource("22_c0c7t"), ExtResource("23_l8dew"), ExtResource("24_pmmn8"), ExtResource("25_imuuw"), ExtResource("19_j15di"), ExtResource("26_6t35a")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ii8hg"]
+_data = {
+"Idle": SubResource("Animation_o5t0m")
+}
+
 [sub_resource type="Animation" id="Animation_ylp41"]
 resource_name = "Idle"
 loop_mode = 1
-step = 0.125
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -76,16 +104,23 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("18_pan27"), ExtResource("17_ntw8j"), ExtResource("19_0837l"), ExtResource("20_84ltg"), ExtResource("21_6p8sc"), ExtResource("22_d6ur5"), ExtResource("23_t8scp"), ExtResource("24_a3ugc")]
+"values": [ExtResource("20_tkht7"), ExtResource("21_4koe8"), ExtResource("22_cyam7"), ExtResource("23_30f4i"), ExtResource("24_5wloq")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jt5xy"]
 _data = {
 "Idle": SubResource("Animation_ylp41")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dy6y1"]
+texture = ExtResource("3_ggfm8")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -122,6 +157,8 @@ texture = ExtResource("3_xjrye")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_avb1s")
 theme_override_font_sizes/font_size = 28
 theme_override_styles/normal = SubResource("StyleBoxTexture_jwnrv")
@@ -272,7 +309,7 @@ horizontal_alignment = 1
 [node name="Sprite2D" type="Sprite2D" parent="Defeat/MarginContainer/VBoxContainer"]
 position = Vector2(252, 273)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("17_4rvof")
+texture = ExtResource("15_ifdt2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Defeat/MarginContainer/VBoxContainer"]
 root_node = NodePath("../Sprite2D")
@@ -318,13 +355,148 @@ ALGO AHI!!"
 horizontal_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Victory/MarginContainer/VBoxContainer"]
-position = Vector2(252, 273)
+position = Vector2(261, 262)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("18_pan27")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Victory/MarginContainer/VBoxContainer"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_ii8hg")
+}
+autoplay = "Idle"
+speed_scale = 0.5
+
+[node name="Pause" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nocaa")
+script = ExtResource("1_0lbyp")
+container = 1
+ButtonNode = NodePath("MarginContainer/VBoxContainer/Button")
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause"]
+layout_mode = 2
+theme_override_constants/margin_top = 45
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 310
+
+[node name="Label" type="Label" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 48
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Pause/MarginContainer/VBoxContainer"]
+position = Vector2(252, 197)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("24_5wloq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pause/MarginContainer/VBoxContainer"]
 libraries = {
 "": SubResource("AnimationLibrary_jt5xy")
 }
 autoplay = "Idle"
-speed_scale = 0.5
+speed_scale = 0.7
+
+[node name="Button" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_dy6y1")
+text = "CONTINUE"
+
+[node name="Reward" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode", "TextureNode", "LabelNode")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nocaa")
+script = ExtResource("1_0lbyp")
+container = 5
+ButtonNode = NodePath("MarginContainer/VBoxContainer/VBoxContainer/Button")
+TextureNode = NodePath("MarginContainer/VBoxContainer/VBoxContainer/TextureRect")
+LabelNode = NodePath("MarginContainer/VBoxContainer/VBoxContainer/RewardText")
+
+[node name="MarginContainer" type="MarginContainer" parent="Reward"]
+layout_mode = 2
+theme_override_constants/margin_top = 45
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Reward/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Reward/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 48
+text = "Power Up"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Reward/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="TextureRect" type="TextureRect" parent="Reward/MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("28_lgua3")
+
+[node name="RewardText" type="Label" parent="Reward/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 22
+text = "Power Up"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Reward/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_dy6y1")
+text = "CONTINUE"
