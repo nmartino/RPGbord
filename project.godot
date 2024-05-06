@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Dungeon RPGbord"
+config/name="Hay Algo Ahi: Dungeon Hunter"
 run/main_scene="res://Scenes/Levels/main.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
-config/icon="res://Assets/icon2.png"
+config/icon="res://Assets/icon3.png"
 
 [dotnet]
 

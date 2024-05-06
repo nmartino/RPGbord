@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://c138i0pw7g0nx"]
+[gd_scene load_steps=60 format=3 uid="uid://c138i0pw7g0nx"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/Player.cs" id="1_32gnk"]
 [ext_resource type="Resource" uid="uid://d0copp6n65px" path="res://Resources/player_health_stat.tres" id="2_5f5yu"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://s6anh44hdutp" path="res://Resources/player_strenght_stat.tres" id="3_ffh28"]
 [ext_resource type="Texture2D" uid="uid://caxp4hi2opc4n" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo1.png" id="3_qob3n"]
 [ext_resource type="Texture2D" uid="uid://w4g0gkdf2opb" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo2.png" id="4_bhl26"]
+[ext_resource type="Shader" path="res://Shaders/character_hurt.gdshader" id="4_pe064"]
 [ext_resource type="Texture2D" uid="uid://c3kjcicv54t3a" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo3.png" id="5_x5jpc"]
 [ext_resource type="Texture2D" uid="uid://be4fnxttdh1ko" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo4.png" id="6_rsub6"]
 [ext_resource type="Texture2D" uid="uid://bylyd787ts08" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo5.png" id="7_hnc6d"]
@@ -44,7 +45,17 @@
 [ext_resource type="Texture2D" uid="uid://nr1r1akk0onf" path="res://Assets/Sprites/Characters/Player/rufito_die/rufito se muere unu7.png" id="38_giih1"]
 [ext_resource type="PackedScene" uid="uid://b73b2lo4q8pg5" path="res://Scenes/Characters/state_machine.tscn" id="38_oxu1k"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerDashState.cs" id="40_3jx88"]
+[ext_resource type="PackedScene" uid="uid://dxxy3t5pf8osm" path="res://Scenes/Abilities/bomb.tscn" id="44_bs2uk"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerDeathState.cs" id="44_kq8ji"]
+[ext_resource type="PackedScene" uid="uid://20futf1ie8o0" path="res://Scenes/Abilities/lighting.tscn" id="46_ksalo"]
+[ext_resource type="Script" path="res://Scripts/Characters/AttackHitbox.cs" id="47_o54lt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ttlk"]
+render_priority = 1
+shader = ExtResource("4_pe064")
+shader_parameter/active = false
+shader_parameter/flash_color = Color(0.647059, 0, 0, 1)
+shader_parameter/tex = ExtResource("23_h1uim")
 
 [sub_resource type="Animation" id="Animation_xcf2r"]
 resource_name = "Attack1"
@@ -189,7 +200,7 @@ height = 1.50779
 [sub_resource type="BoxShape3D" id="BoxShape3D_26cy0"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode", "HurtBoxNode", "HitBoxNode", "HitBoxShapeNode")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode", "HurtBoxNode", "HitBoxNode", "HitBoxShapeNode", "ShaderTimerNode")]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
@@ -201,12 +212,14 @@ StateMachineNode = NodePath("StateMachine")
 HurtBoxNode = NodePath("HurtBox")
 HitBoxNode = NodePath("HitBox")
 HitBoxShapeNode = NodePath("HitBox/CollisionShape3D")
+ShaderTimerNode = NodePath("ShaderTimer")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09808e-05, 0.101595, -0.00692081)
+material_overlay = SubResource("ShaderMaterial_1ttlk")
 pixel_size = 0.002
 texture_filter = 0
-texture = ExtResource("15_3i1kw")
+texture = ExtResource("23_h1uim")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
@@ -227,6 +240,7 @@ script = ExtResource("32_fbg4p")
 [node name="DashState" type="Node" parent="StateMachine" node_paths=PackedStringArray("dashTimerNode")]
 script = ExtResource("40_3jx88")
 dashTimerNode = NodePath("Timer")
+bombScene = ExtResource("44_bs2uk")
 
 [node name="Timer" type="Timer" parent="StateMachine/DashState"]
 wait_time = 0.6
@@ -235,6 +249,7 @@ one_shot = true
 [node name="AttackState" type="Node" parent="StateMachine" node_paths=PackedStringArray("comboTimerNode")]
 script = ExtResource("34_68wdr")
 comboTimerNode = NodePath("Timer")
+lightingScene = ExtResource("46_ksalo")
 
 [node name="Timer" type="Timer" parent="StateMachine/AttackState"]
 wait_time = 2.0
@@ -249,7 +264,8 @@ shape = SubResource("CapsuleShape3D_kywg0")
 
 [node name="HitBox" type="Area3D" parent="."]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 4
+script = ExtResource("47_o54lt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
 shape = SubResource("BoxShape3D_26cy0")
@@ -262,3 +278,7 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047689, 0.132819, 0)
 shape = SubResource("CapsuleShape3D_kywg0")
+
+[node name="ShaderTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
