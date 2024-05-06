@@ -21,7 +21,7 @@ project/assembly_name="Dungeon RPG"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/level_block/plugin.cfg")
+enabled=PackedStringArray()
 
 [filesystem]
 
