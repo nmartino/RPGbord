@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwld1ngrv1cp7"]
+[gd_scene load_steps=10 format=3 uid="uid://dwld1ngrv1cp7"]
 
 [ext_resource type="Texture2D" uid="uid://bduq3kmfn4k10" path="res://Assets/Sprites/General/16x16.png" id="1_2vwdu"]
 [ext_resource type="Script" path="res://Scripts/Reward/TreasureChest.cs" id="1_h0y8m"]
 [ext_resource type="Texture2D" uid="uid://dw07t3kp4sf4e" path="res://Assets/Sprites/UI/Keyboard Letters and Symbols.png" id="2_wbpik"]
+[ext_resource type="AudioStream" uid="uid://b4gx207xjh2jt" path="res://Assets/Audio/Chest/Open.wav" id="4_igydx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pibk4"]
 size = Vector3(0.703369, 1.08105, 1)
@@ -38,6 +39,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [Rect2(31.353, 7, 16.853, 23)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_igydx")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kdwmf"]
 _data = {
@@ -86,3 +102,5 @@ collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_oi3h6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

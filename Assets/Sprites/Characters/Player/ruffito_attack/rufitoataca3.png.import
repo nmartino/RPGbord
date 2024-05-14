@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cknwkbq85rhe8"
-path="res://.godot/imported/rufitoataca3.png-91e497bdd0187ad0a7e6ff2a2bdfa4be.ctex"
+path.s3tc="res://.godot/imported/rufitoataca3.png-91e497bdd0187ad0a7e6ff2a2bdfa4be.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Sprites/Characters/Player/ruffito_attack/rufitoataca3.png"
-dest_files=["res://.godot/imported/rufitoataca3.png-91e497bdd0187ad0a7e6ff2a2bdfa4be.ctex"]
+dest_files=["res://.godot/imported/rufitoataca3.png-91e497bdd0187ad0a7e6ff2a2bdfa4be.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cjmdpno37dnuf" path="res://Assets/Sprites/UI/trofeo/trofeo rebord5.png" id="24_pmmn8"]
 [ext_resource type="Texture2D" uid="uid://cafxvysrnxu1n" path="res://Assets/Sprites/UI/trofeo/trofeo rebord6.png" id="25_imuuw"]
 [ext_resource type="Texture2D" uid="uid://3ny42fsuh0pk" path="res://Assets/Sprites/UI/trofeo/trofeo rebord8.png" id="26_6t35a"]
-[ext_resource type="Texture2D" uid="uid://cr5b6qhflk31m" path="res://Assets/Sprites/UI/Individual icons (32x32)/8.png" id="28_lgua3"]
+[ext_resource type="Texture2D" uid="uid://6t03es2l278q" path="res://Assets/Sprites/UI/easterEggs/cartas/items ruffo6.png" id="32_enqql"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwnrv"]
 content_margin_left = 48.0
@@ -469,21 +469,22 @@ horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Reward/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 35
 
 [node name="TextureRect" type="TextureRect" parent="Reward/MarginContainer/VBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(160, 160)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("28_lgua3")
+texture = ExtResource("32_enqql")
+expand_mode = 1
 
 [node name="RewardText" type="Label" parent="Reward/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_avb1s")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 25
 text = "Power Up"
 horizontal_alignment = 1
 

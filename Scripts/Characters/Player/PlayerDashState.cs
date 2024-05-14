@@ -7,7 +7,7 @@ public partial class PlayerDashState : PlayerState
     [Export] private Timer dashTimerNode;
     [Export] private PackedScene bombScene;
 
-    [Export(PropertyHint.Range, "0,20,0.1")] private float speed = 8;
+    [Export(PropertyHint.Range, "0,20,0.1")] private float speed = 4;
 
     public override void _Ready()
     {

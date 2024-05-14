@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://20futf1ie8o0"]
+[gd_scene load_steps=16 format=3 uid="uid://20futf1ie8o0"]
 
 [ext_resource type="Script" path="res://Scripts/Abilities/Lighting.cs" id="1_42til"]
 [ext_resource type="Texture2D" uid="uid://gonfcn8e8e8d" path="res://Assets/Sprites/Effects/Lightning/2/Comp 18.png" id="2_0lhip"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://88ba585asvki" path="res://Assets/Sprites/Effects/Lightning/2/Comp 14.png" id="7_8gvnf"]
 [ext_resource type="Texture2D" uid="uid://c4vl8qcnxfdss" path="res://Assets/Sprites/Effects/Lightning/2/Comp 15.png" id="8_l1kot"]
 [ext_resource type="Texture2D" uid="uid://dwo3vhdo1534b" path="res://Assets/Sprites/Effects/Lightning/2/Comp 17.png" id="10_e28kw"]
+[ext_resource type="AudioStream" uid="uid://cmkgytmjbsyer" path="res://Assets/Audio/Player/Lighting.wav" id="11_5g1m0"]
 [ext_resource type="Script" path="res://Scripts/Abilities/AbilitybHitBox.cs" id="14_ighss"]
 
 [sub_resource type="Animation" id="Animation_xeyip"]
@@ -39,6 +40,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitBox/AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_5g1m0")
+}],
+"times": PackedFloat32Array(0.333333)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_406gf"]
 _data = {
@@ -57,7 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.548952, 0)
 pixel_size = 0.006
 texture_filter = 0
 render_priority = 1
-texture = ExtResource("3_uf68b")
+texture = ExtResource("2_0lhip")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -73,3 +89,5 @@ script = ExtResource("14_ighss")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
 shape = SubResource("CylinderShape3D_r4ht4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="HitBox"]
