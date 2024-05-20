@@ -6,7 +6,7 @@ public partial class Player : Character
 	public override void _Ready()
 	{
 		base._Ready();
-        GameEvents.OnReward += HandleReward;
+		GameEvents.OnReward += HandleReward;
 	}
 
 
@@ -19,13 +19,20 @@ public partial class Player : Character
 			);
 		}
 
-    private void HandleReward(RewardResource resource)
+	private void HandleReward(RewardResource resource)
 	{
 		StatResource targetStat = GetStatResource(resource.TargetStat);
 
 		targetStat.StatValue += resource.Amount;
 	}
 
-	
-}
+	public void ClampToCube(Vector3 cubePosition, Vector3 cubeSize)
+	{
+		Vector3 newPosition = GlobalPosition;
+		newPosition.X = Mathf.Clamp(GlobalPosition.X, cubePosition.X - cubeSize.X / 2, cubePosition.X + cubeSize.X / 2);
+		newPosition.Y = Mathf.Clamp(GlobalPosition.Y, cubePosition.Y - cubeSize.Y / 2, cubePosition.Y + cubeSize.Y / 2);
+		newPosition.Z = Mathf.Clamp(GlobalPosition.Z, cubePosition.Z - cubeSize.Z / 2, cubePosition.Z + cubeSize.Z / 2);
+		GlobalPosition = newPosition;
+	}
 
+}
