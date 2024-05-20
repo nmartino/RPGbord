@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 	if player_clamped:
 		# NOTE: Quizas deberia estar en el Player Controller.
 		player.ClampToCube(global_position, size)
+    # DELETE: Sólo para debug. Esto se va.
 	if Input.is_action_just_pressed("Attack"):
 		_on_room_finished()
 
@@ -51,3 +52,5 @@ func _on_room_finished() -> void:
 	await tween.finished
 	camera.ReparentAndPosition(player)
 	player_clamped = false
+    # NOTE: Para reducir checks en cada frame, y porque una vez superado la entidad pierde sentido.
+    # queue_free()  # NOTE: Cuando se termine de debuggear, descomentar esto.
