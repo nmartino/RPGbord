@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dw33mfi0uljdr"]
+[gd_scene load_steps=45 format=3 uid="uid://dw33mfi0uljdr"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UIContainer.cs" id="1_0lbyp"]
 [ext_resource type="Script" path="res://Scripts/UI/UIController.cs" id="1_c3703"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://cafxvysrnxu1n" path="res://Assets/Sprites/UI/trofeo/trofeo rebord6.png" id="25_imuuw"]
 [ext_resource type="Texture2D" uid="uid://3ny42fsuh0pk" path="res://Assets/Sprites/UI/trofeo/trofeo rebord8.png" id="26_6t35a"]
 [ext_resource type="Texture2D" uid="uid://6t03es2l278q" path="res://Assets/Sprites/UI/easterEggs/cartas/items ruffo6.png" id="32_enqql"]
+[ext_resource type="AudioStream" uid="uid://cyqgrxamn1yud" path="res://Assets/Audio/UI/button_press_04.wav" id="33_q4nlj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwnrv"]
 content_margin_left = 48.0
@@ -132,7 +133,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c3703")
 
-[node name="Start" type="VBoxContainer" parent="." node_paths=PackedStringArray("ButtonNode")]
+[node name="Start" type="VBoxContainer" parent="." node_paths=PackedStringArray("ButtonNode", "AudioNode")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -148,6 +149,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0lbyp")
 ButtonNode = NodePath("Button")
+AudioNode = NodePath("../Audio")
 
 [node name="TextureRect" type="TextureRect" parent="Start"]
 layout_mode = 2
@@ -367,7 +369,7 @@ libraries = {
 autoplay = "Idle"
 speed_scale = 0.5
 
-[node name="Pause" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode")]
+[node name="Pause" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode", "ButtonExit", "AudioNode")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -384,7 +386,9 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nocaa")
 script = ExtResource("1_0lbyp")
 container = 1
-ButtonNode = NodePath("MarginContainer/VBoxContainer/Button")
+ButtonNode = NodePath("MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Continue")
+ButtonExit = NodePath("MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Quit")
+AudioNode = NodePath("../Audio")
 
 [node name="MarginContainer" type="MarginContainer" parent="Pause"]
 layout_mode = 2
@@ -392,7 +396,7 @@ theme_override_constants/margin_top = 45
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 310
+theme_override_constants/separation = 100
 
 [node name="Label" type="Label" parent="Pause/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -404,7 +408,7 @@ text = "PAUSE"
 horizontal_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Pause/MarginContainer/VBoxContainer"]
-position = Vector2(252, 197)
+position = Vector2(154, 199)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("24_5wloq")
 
@@ -415,21 +419,49 @@ libraries = {
 autoplay = "Idle"
 speed_scale = 0.7
 
-[node name="Button" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 200
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 75
+
+[node name="Continue" type="Button" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_avb1s")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxTexture_dy6y1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dy6y1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dy6y1")
 theme_override_styles/focus = SubResource("StyleBoxTexture_dy6y1")
-text = "CONTINUE"
+text = "CONTINUAR"
 
-[node name="Reward" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode", "TextureNode", "LabelNode")]
+[node name="Quit" type="Button" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_dy6y1")
+text = "SALIR"
+
+[node name="Reward" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode", "TextureNode", "LabelNode", "AudioNode")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -449,6 +481,7 @@ container = 5
 ButtonNode = NodePath("MarginContainer/VBoxContainer/VBoxContainer/Button")
 TextureNode = NodePath("MarginContainer/VBoxContainer/VBoxContainer/TextureRect")
 LabelNode = NodePath("MarginContainer/VBoxContainer/VBoxContainer/RewardText")
+AudioNode = NodePath("../Audio")
 
 [node name="MarginContainer" type="MarginContainer" parent="Reward"]
 layout_mode = 2
@@ -501,3 +534,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_dy6y1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dy6y1")
 theme_override_styles/focus = SubResource("StyleBoxTexture_dy6y1")
 text = "CONTINUE"
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_q4nlj")

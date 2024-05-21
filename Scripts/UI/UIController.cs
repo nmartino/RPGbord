@@ -21,6 +21,7 @@ public partial class UIController : Control
         
         containers[ContainerType.Start].ButtonNode.Pressed += HandleStartPressed;
         containers[ContainerType.Pause].ButtonNode.Pressed += HandlePausePressed;
+        containers[ContainerType.Pause].ButtonExit.Pressed += HandeExitPressed;
         GameEvents.OnEndGame += HandleEndGame;
         GameEvents.OnVictory += HandleVictory;
 
@@ -29,7 +30,11 @@ public partial class UIController : Control
 
     }
 
-
+    private void HandeExitPressed()
+    {
+        canPause = false;
+        GetTree().Quit();
+    }
 
 
     public override void _Input(InputEvent @event)
@@ -39,7 +44,7 @@ public partial class UIController : Control
         {
             return;
         }
-
+        containers[ContainerType.Pause].AudioNode.Play();
         containers[ContainerType.Stats].Visible = GetTree().Paused;
         GetTree().Paused = !GetTree().Paused;
         containers[ContainerType.Pause].Visible = GetTree().Paused;
@@ -53,7 +58,6 @@ public partial class UIController : Control
         GetTree().Paused = true;
     }
 
-
     private void HandleEndGame()
     {
         canPause = false;
@@ -61,9 +65,20 @@ public partial class UIController : Control
         containers[ContainerType.Defeat].Visible = true;
     }
 
+        private void HandleReward(RewardResource resource)
+    {
+        canPause = false;
+        GetTree().Paused = true;
+        containers[ContainerType.Stats].Visible = false;
+        containers[ContainerType.Reward].Visible = true;
+        containers[ContainerType.Reward].TextureNode.Texture = resource.SpriteTexture;
+        containers[ContainerType.Reward].LabelNode.Text = resource.Description;
+
+    }
 
     private void HandleStartPressed()
     {
+        containers[ContainerType.Start].AudioNode.Play();
         canPause = true;
         GetTree().Paused = false;
         
@@ -75,25 +90,15 @@ public partial class UIController : Control
 
         private void HandlePausePressed()
     {
-        
+        containers[ContainerType.Pause].AudioNode.Play();
         GetTree().Paused = false;
         containers[ContainerType.Pause].Visible = false;
         containers[ContainerType.Stats].Visible = true;
     }
 
-    private void HandleReward(RewardResource resource)
-    {
-        canPause = false;
-        GetTree().Paused = true;
-        containers[ContainerType.Stats].Visible = false;
-        containers[ContainerType.Reward].Visible = true;
-        containers[ContainerType.Reward].TextureNode.Texture = resource.SpriteTexture;
-        containers[ContainerType.Reward].LabelNode.Text = resource.Description;
-
-    }
-
     private void HandleRewardPressed()
     {
+        containers[ContainerType.Reward].AudioNode.Play();
         canPause = true;
         GetTree().Paused = false;
         containers[ContainerType.Stats].Visible = true;
