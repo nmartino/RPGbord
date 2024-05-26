@@ -13,12 +13,12 @@ public partial class UIController : Control
         containers = GetChildren().Where(
             (element) => element is UIContainer
             ).Cast<UIContainer>().ToDictionary(
-                (element) => element.container 
-                 );
+                (element) => element.container
+        );
 
         containers[ContainerType.Start].Visible = true;
 
-        
+
         containers[ContainerType.Start].ButtonNode.Pressed += HandleStartPressed;
         containers[ContainerType.Pause].ButtonNode.Pressed += HandlePausePressed;
         GameEvents.OnEndGame += HandleEndGame;
@@ -34,8 +34,8 @@ public partial class UIController : Control
 
     public override void _Input(InputEvent @event)
     {
-        if(!canPause){return;}
-        if(!Input.IsActionJustPressed(GameConstants.INPUT_PAUSE))
+        if (!canPause) { return; }
+        if (!Input.IsActionJustPressed(GameConstants.INPUT_PAUSE))
         {
             return;
         }
@@ -66,16 +66,15 @@ public partial class UIController : Control
     {
         canPause = true;
         GetTree().Paused = false;
-        
+
         containers[ContainerType.Start].Visible = false;
         containers[ContainerType.Stats].Visible = true;
 
         GameEvents.RaiseStartGame();
     }
 
-        private void HandlePausePressed()
+    private void HandlePausePressed()
     {
-        
         GetTree().Paused = false;
         containers[ContainerType.Pause].Visible = false;
         containers[ContainerType.Stats].Visible = true;
