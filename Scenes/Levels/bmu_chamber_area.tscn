@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3kmu2l51j8hx"]
+[gd_scene load_steps=4 format=3 uid="uid://b3kmu2l51j8hx"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/bmu_chamber_area.gd" id="1_g05oy"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemiesContainer.cs" id="2_rw4mm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8rw0w"]
 size = Vector3(20, 10, 20)
@@ -14,5 +15,10 @@ script = ExtResource("1_g05oy")
 shape = SubResource("BoxShape3D_8rw0w")
 
 [node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5, 10)
+
+[node name="Enemies" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_rw4mm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

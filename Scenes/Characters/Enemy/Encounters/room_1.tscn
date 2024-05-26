@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://c01kc0mv7rqve"]
+
+[ext_resource type="PackedScene" uid="uid://cxghxsgoyv2am" path="res://Scenes/Characters/Enemy/enemy.tscn" id="1_a3rer"]
+[ext_resource type="Script" path="res://Scripts/Resources/StatResource.cs" id="2_wqrqg"]
+
+[sub_resource type="Curve3D" id="Curve3D_vfphw"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.27009, 0, 1.21194, 0, 0, 0, 0, 0, 0, 1.24015, 0.0237436, 0.259386, 0, 0, 0, 0, 0, 0, 2.59254, 0.231757, 2.66823, 0, 0, 0, 0, 0, 0, 2.51578, 0.0357561, 7.57082, 0, 0, 0, 0, 0, 0, -0.731764, -0.0147092, 7.3113, 0, 0, 0, 0, 0, 0, -4.87692, 0.0691185, 5.16238, 0, 0, 0, 0, 0, 0, -7.27009, 0, 1.2671),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Resource" id="Resource_f53e4"]
+script = ExtResource("2_wqrqg")
+StatType = 0
+StatValue = 40.0
+
+[sub_resource type="Resource" id="Resource_xkbbt"]
+script = ExtResource("2_wqrqg")
+StatType = 1
+StatValue = 4.0
+
+[node name="Enemies" type="Node3D"]
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.08165e-12, 2.08165e-12)
+curve = SubResource("Curve3D_vfphw")
+
+[node name="Enemy" parent="Path3D" instance=ExtResource("1_a3rer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99463, 0.668225, 2.53836)
+stats = Array[Object]([SubResource("Resource_f53e4"), SubResource("Resource_xkbbt")])
+
+[node name="Path3D2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.12922, 2.08165e-12, 2.08165e-12)
+curve = SubResource("Curve3D_vfphw")
+
+[node name="Enemy" parent="Path3D2" instance=ExtResource("1_a3rer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99463, 0.668225, 2.53836)
+stats = Array[Object]([SubResource("Resource_f53e4"), SubResource("Resource_xkbbt")])
+
+[node name="Path3D3" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.85876, 2.08165e-12, -4.43138)
+curve = SubResource("Curve3D_vfphw")
+
+[node name="Enemy" parent="Path3D3" instance=ExtResource("1_a3rer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99463, 0.668225, 2.53836)
+stats = Array[Object]([SubResource("Resource_f53e4"), SubResource("Resource_xkbbt")])
