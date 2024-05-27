@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3kmu2l51j8hx"]
+
+[ext_resource type="Script" path="res://Scripts/Levels/bmu_chamber_area.gd" id="1_g05oy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8rw0w"]
+size = Vector3(20, 10, 20)
+
+[node name="BmuChamberArea" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_g05oy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8rw0w")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5, 10)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

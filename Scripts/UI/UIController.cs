@@ -13,15 +13,15 @@ public partial class UIController : Control
         containers = GetChildren().Where(
             (element) => element is UIContainer
             ).Cast<UIContainer>().ToDictionary(
-                (element) => element.container 
-                 );
+                (element) => element.container
+        );
 
         containers[ContainerType.Start].Visible = true;
 
-        
+
         containers[ContainerType.Start].ButtonNode.Pressed += HandleStartPressed;
         containers[ContainerType.Pause].ButtonNode.Pressed += HandlePausePressed;
-        containers[ContainerType.Pause].ButtonExit.Pressed += HandeExitPressed;
+        containers[ContainerType.Pause].ButtonExit.Pressed += HandleExitPressed;
         GameEvents.OnEndGame += HandleEndGame;
         GameEvents.OnVictory += HandleVictory;
 
@@ -30,7 +30,7 @@ public partial class UIController : Control
 
     }
 
-    private void HandeExitPressed()
+    private void HandleExitPressed()
     {
         canPause = false;
         GetTree().Quit();
@@ -39,8 +39,8 @@ public partial class UIController : Control
 
     public override void _Input(InputEvent @event)
     {
-        if(!canPause){return;}
-        if(!Input.IsActionJustPressed(GameConstants.INPUT_PAUSE))
+        if (!canPause) { return; }
+        if (!Input.IsActionJustPressed(GameConstants.INPUT_PAUSE))
         {
             return;
         }
@@ -65,7 +65,7 @@ public partial class UIController : Control
         containers[ContainerType.Defeat].Visible = true;
     }
 
-        private void HandleReward(RewardResource resource)
+    private void HandleReward(RewardResource resource)
     {
         canPause = false;
         GetTree().Paused = true;
@@ -81,14 +81,14 @@ public partial class UIController : Control
         containers[ContainerType.Start].AudioNode.Play();
         canPause = true;
         GetTree().Paused = false;
-        
+
         containers[ContainerType.Start].Visible = false;
         containers[ContainerType.Stats].Visible = true;
 
         GameEvents.RaiseStartGame();
     }
 
-        private void HandlePausePressed()
+    private void HandlePausePressed()
     {
         containers[ContainerType.Pause].AudioNode.Play();
         GetTree().Paused = false;

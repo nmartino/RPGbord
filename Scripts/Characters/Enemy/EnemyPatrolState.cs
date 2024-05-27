@@ -11,7 +11,7 @@ public partial class EnemyPatrolState : EnemyState
     {
         characterNode.AnimPlayerNode.Play(GameConstants.ANIM_MOVE);
         pointIndex = 1;
-        destination = GetPoinGlobalPosition(pointIndex);
+        destination = GetPointGlobalPosition(pointIndex);
         characterNode.AgentNode.TargetPosition = destination;
         characterNode.AgentNode.NavigationFinished += HandleNavigationFinished;
         idleTimerNode.Timeout += HandleTimeOut;
@@ -53,7 +53,7 @@ public partial class EnemyPatrolState : EnemyState
             pointIndex + 1, 0, characterNode.PathNode.Curve.PointCount 
         );
 
-        destination = GetPoinGlobalPosition(pointIndex);
+        destination = GetPointGlobalPosition(pointIndex);
         characterNode.AgentNode.TargetPosition =  destination;
     }
 }
