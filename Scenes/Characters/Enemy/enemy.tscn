@@ -2,34 +2,34 @@
 
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/Enemy.cs" id="1_mg2bf"]
 [ext_resource type="Script" path="res://Scripts/Resources/StatResource.cs" id="2_o6ybb"]
-[ext_resource type="Texture2D" uid="uid://de2e5u4n5g7nb" path="res://Assets/Sprites/Characters/Bot/Move/bot1 - copia.png" id="3_k2t57"]
-[ext_resource type="Texture2D" uid="uid://cjuax27wyl6bt" path="res://Assets/Sprites/Characters/Bot/Death/bot muere7 - copia.png" id="3_mkwof"]
 [ext_resource type="Shader" path="res://Shaders/character_hurt.gdshader" id="3_rkxao"]
-[ext_resource type="Texture2D" uid="uid://r27oavllhjn1" path="res://Assets/Sprites/Characters/Bot/Attack/bot ataca1 - copia.png" id="4_6m45w"]
-[ext_resource type="Texture2D" uid="uid://cr2ym6cdvegvj" path="res://Assets/Sprites/Characters/Bot/Attack/bot ataca2 - copia.png" id="5_jp5qo"]
-[ext_resource type="Texture2D" uid="uid://b7duyersfo5qa" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Daño3.png" id="5_qkioh"]
-[ext_resource type="Texture2D" uid="uid://dsj3comldot4v" path="res://Assets/Sprites/Characters/Bot/Attack/bot ataca3 - copia.png" id="6_mhjb6"]
-[ext_resource type="Texture2D" uid="uid://cou522m344hwj" path="res://Assets/Sprites/Characters/Bot/Attack/bot ataca4 - copia.png" id="7_rsxgh"]
-[ext_resource type="Texture2D" uid="uid://d2j1ydy30veck" path="res://Assets/Sprites/Characters/Bot/Attack/bot ataca5 - copia.png" id="8_k5f1k"]
-[ext_resource type="Texture2D" uid="uid://cm23xklrjrapd" path="res://Assets/Sprites/Characters/Bot/Death/bot muere1 - copia.png" id="9_vwh4c"]
-[ext_resource type="Texture2D" uid="uid://duhugvd50nk1x" path="res://Assets/Sprites/Characters/Bot/Death/bot muere2 - copia.png" id="10_0w43w"]
-[ext_resource type="AudioStream" uid="uid://cuf4d1ijp7nol" path="res://Assets/Audio/Enemy/Attack.wav" id="11_gwj3j"]
-[ext_resource type="Texture2D" uid="uid://c6wuckci4sjrh" path="res://Assets/Sprites/Characters/Bot/Death/bot muere3 - copia.png" id="11_tdrcx"]
-[ext_resource type="Texture2D" uid="uid://3jq2ojidu0o1" path="res://Assets/Sprites/Characters/Bot/Death/bot muere4 - copia.png" id="12_pow4p"]
-[ext_resource type="Texture2D" uid="uid://dv01g5jxja62e" path="res://Assets/Sprites/Characters/Bot/Death/bot muere5 - copia.png" id="13_gstq0"]
-[ext_resource type="Texture2D" uid="uid://dtwueq23lxldt" path="res://Assets/Sprites/Characters/Bot/Death/bot muere6 - copia.png" id="14_f7mqf"]
-[ext_resource type="Texture2D" uid="uid://bdp0lvwr6735" path="res://Assets/Sprites/Characters/Bot/Idle/bot idle1 - copia.png" id="16_3neue"]
+[ext_resource type="Texture2D" uid="uid://41668ecksgnv" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Dañover2.png" id="5_t726f"]
+[ext_resource type="Texture2D" uid="uid://2vugwaod86rh" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver2.png" id="6_7b24y"]
+[ext_resource type="Texture2D" uid="uid://c77pqe4x1bh3x" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver3.png" id="7_y6wym"]
+[ext_resource type="Texture2D" uid="uid://dugxi5nrdncy4" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver4.png" id="8_44dhy"]
+[ext_resource type="Texture2D" uid="uid://d0aawsq4gxb0t" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver5.png" id="9_aj6l4"]
+[ext_resource type="AudioStream" uid="uid://cmeutvwbhl64q" path="res://Assets/Audio/Enemy/Attack2.wav" id="9_iad4h"]
+[ext_resource type="Texture2D" uid="uid://ce0k332eybmjk" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver6.png" id="10_5tb13"]
+[ext_resource type="Texture2D" uid="uid://dktepimsuwd51" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever2.png" id="12_o3yql"]
+[ext_resource type="Texture2D" uid="uid://byuceags0b75j" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever3.png" id="13_pmhme"]
+[ext_resource type="Texture2D" uid="uid://pm206uyxa4a1" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever4.png" id="14_i5jvn"]
+[ext_resource type="Texture2D" uid="uid://02t5gdmofm1p" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever5.png" id="15_bs2gm"]
+[ext_resource type="Texture2D" uid="uid://c71syoj4kmimu" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever6.png" id="16_2jbay"]
 [ext_resource type="AudioStream" uid="uid://cx0pl60t2lexe" path="res://Assets/Audio/Enemy/Die.wav" id="17_8lm7x"]
-[ext_resource type="Texture2D" uid="uid://c3ira0uaau1al" path="res://Assets/Sprites/Characters/Bot/Idle/bot idle2 - copia.png" id="17_qecgv"]
-[ext_resource type="Texture2D" uid="uid://ceff8a7kuujn3" path="res://Assets/Sprites/Characters/Bot/Idle/bot idle3 - copia.png" id="18_pcyuq"]
-[ext_resource type="Texture2D" uid="uid://vy84osgokwnt" path="res://Assets/Sprites/Characters/Bot/Idle/bot idle4 - copia.png" id="19_7crep"]
-[ext_resource type="Texture2D" uid="uid://7h28tru2i0xb" path="res://Assets/Sprites/Characters/Bot/Idle/bot idle5 - copia.png" id="20_ra38w"]
-[ext_resource type="Texture2D" uid="uid://cqfifcgud71pq" path="res://Assets/Sprites/Characters/Bot/Move/bot2 - copia.png" id="21_b03ld"]
-[ext_resource type="Texture2D" uid="uid://w8cv0lfms168" path="res://Assets/Sprites/Characters/Bot/Move/bot3 - copia.png" id="22_lcr1m"]
-[ext_resource type="Texture2D" uid="uid://b5rift4b0qcw8" path="res://Assets/Sprites/Characters/Bot/Move/bot4 - copia.png" id="23_1w8ra"]
-[ext_resource type="Texture2D" uid="uid://dh23j2b27k6vv" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Daño1.png" id="26_11h4m"]
-[ext_resource type="Texture2D" uid="uid://c8b202qy33sav" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Daño2.png" id="27_psu32"]
+[ext_resource type="Texture2D" uid="uid://6mbpjt80uxc5" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever7.png" id="17_hr4kl"]
+[ext_resource type="Texture2D" uid="uid://dhxlu8dmldb0b" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever8.png" id="18_vyjkr"]
+[ext_resource type="Texture2D" uid="uid://43oru2surfsv" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever2.png" id="20_oxu28"]
+[ext_resource type="Texture2D" uid="uid://btkmc0drk7mh6" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever3.png" id="21_w4e8s"]
+[ext_resource type="Texture2D" uid="uid://sf24dh6apkss" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever4.png" id="22_j0gb1"]
+[ext_resource type="Texture2D" uid="uid://bvhtcj1ed7bbb" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever5.png" id="23_dovkn"]
+[ext_resource type="Texture2D" uid="uid://wu0q3dioullc" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever6.png" id="24_pcve2"]
+[ext_resource type="Texture2D" uid="uid://eddv6h01boc1" path="res://Assets/Sprites/Characters/Bot/Move/botver2.png" id="25_4g58c"]
+[ext_resource type="Texture2D" uid="uid://bgaxrgv6g7m3v" path="res://Assets/Sprites/Characters/Bot/Move/botver3.png" id="26_fb1ed"]
+[ext_resource type="Texture2D" uid="uid://diroytn24k56v" path="res://Assets/Sprites/Characters/Bot/Move/botver4.png" id="27_rw43l"]
+[ext_resource type="Texture2D" uid="uid://cw6xp7ne6bgnv" path="res://Assets/Sprites/Characters/Bot/Move/botver5.png" id="28_8fptf"]
+[ext_resource type="Texture2D" uid="uid://dopdmt40s153p" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Dañover3.png" id="29_3nqv1"]
 [ext_resource type="AudioStream" uid="uid://dmhxgl1xmi7o4" path="res://Assets/Audio/Enemy/TakeHit.wav" id="30_mmyvg"]
+[ext_resource type="Texture2D" uid="uid://dg5yqgcsibg8b" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Dañover4.png" id="30_o0oo1"]
 [ext_resource type="Script" path="res://Scripts/Characters/AttackHitbox.cs" id="43_766tu"]
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyStunState.cs" id="44_rcgvw"]
 [ext_resource type="PackedScene" uid="uid://b73b2lo4q8pg5" path="res://Scenes/Characters/state_machine.tscn" id="99_bulcw"]
@@ -56,7 +56,7 @@ render_priority = 1
 shader = ExtResource("3_rkxao")
 shader_parameter/active = false
 shader_parameter/flash_color = Color(1, 1, 1, 1)
-shader_parameter/tex = ExtResource("9_vwh4c")
+shader_parameter/tex = ExtResource("20_oxu28")
 
 [sub_resource type="Animation" id="Animation_t310h"]
 resource_name = "Attac"
@@ -71,7 +71,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("4_6m45w"), ExtResource("5_jp5qo"), ExtResource("6_mhjb6"), ExtResource("7_rsxgh"), ExtResource("8_k5f1k")]
+"values": [ExtResource("6_7b24y"), ExtResource("7_y6wym"), ExtResource("8_44dhy"), ExtResource("9_aj6l4"), ExtResource("10_5tb13")]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -80,7 +80,7 @@ tracks/1/path = NodePath("../StateMachine/AttackState")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.6),
+"times": PackedFloat32Array(0.75),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -97,9 +97,9 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("11_gwj3j")
+"stream": ExtResource("9_iad4h")
 }],
-"times": PackedFloat32Array(0.25)
+"times": PackedFloat32Array(0.5)
 }
 tracks/2/use_blend = true
 
@@ -116,7 +116,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("9_vwh4c"), ExtResource("10_0w43w"), ExtResource("11_tdrcx"), ExtResource("12_pow4p"), ExtResource("13_gstq0"), ExtResource("14_f7mqf"), ExtResource("3_mkwof")]
+"values": [ExtResource("12_o3yql"), ExtResource("13_pmhme"), ExtResource("14_i5jvn"), ExtResource("15_bs2gm"), ExtResource("16_2jbay"), ExtResource("17_hr4kl"), ExtResource("18_vyjkr")]
 }
 tracks/1/type = "audio"
 tracks/1/imported = false
@@ -148,7 +148,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("16_3neue"), ExtResource("17_qecgv"), ExtResource("18_pcyuq"), ExtResource("19_7crep"), ExtResource("20_ra38w")]
+"values": [ExtResource("20_oxu28"), ExtResource("21_w4e8s"), ExtResource("22_j0gb1"), ExtResource("23_dovkn"), ExtResource("24_pcve2")]
 }
 
 [sub_resource type="Animation" id="Animation_t8lbd"]
@@ -161,10 +161,10 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 0.9999),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_k2t57"), ExtResource("21_b03ld"), ExtResource("22_lcr1m"), ExtResource("23_1w8ra")]
+"values": [ExtResource("25_4g58c"), ExtResource("26_fb1ed"), ExtResource("27_rw43l"), ExtResource("28_8fptf")]
 }
 
 [sub_resource type="Animation" id="Animation_jemxy"]
@@ -180,7 +180,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.333333, 0.666667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("26_11h4m"), ExtResource("27_psu32"), ExtResource("5_qkioh")]
+"values": [ExtResource("5_t726f"), ExtResource("29_3nqv1"), ExtResource("30_o0oo1")]
 }
 tracks/1/type = "audio"
 tracks/1/imported = false
@@ -240,7 +240,7 @@ AttackAreaNode = NodePath("AtackingArea")
 material_overlay = SubResource("ShaderMaterial_xbl3o")
 pixel_size = 0.0015
 texture_filter = 0
-texture = ExtResource("3_mkwof")
+texture = ExtResource("10_5tb13")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite3D")
