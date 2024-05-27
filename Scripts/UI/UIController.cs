@@ -21,7 +21,7 @@ public partial class UIController : Control
 
         containers[ContainerType.Start].ButtonNode.Pressed += HandleStartPressed;
         containers[ContainerType.Pause].ButtonNode.Pressed += HandlePausePressed;
-        containers[ContainerType.Pause].ButtonExit.Pressed += HandeExitPressed;
+        containers[ContainerType.Pause].ButtonExit.Pressed += HandleExitPressed;
         GameEvents.OnEndGame += HandleEndGame;
         GameEvents.OnVictory += HandleVictory;
 
@@ -30,7 +30,7 @@ public partial class UIController : Control
 
     }
 
-    private void HandeExitPressed()
+    private void HandleExitPressed()
     {
         canPause = false;
         GetTree().Quit();
