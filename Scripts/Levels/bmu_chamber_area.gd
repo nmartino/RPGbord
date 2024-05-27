@@ -59,7 +59,6 @@ func _on_room_finished() -> void:
 		player.global_position + camera.positionFromTarget / CAMERA_DISTANCE_SMOOTHING,
 		camera_animation_duration,
 	)
-	print(camera.position)
 	await tween.finished
 	await camera.ReparentAndPosition(player)
 	player_clamped = false
