@@ -47,7 +47,7 @@ public partial class EnemyAttackState : EnemyState
 
         Vector3 direction = characterNode.GlobalPosition
             .DirectionTo(targetPosition);
-        characterNode.SpriteNode.FlipH =  direction.X < 0;
+            characterNode.Flip();
     }
 
     private void PerformHit()

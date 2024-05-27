@@ -240,7 +240,7 @@ AttackAreaNode = NodePath("AtackingArea")
 material_overlay = SubResource("ShaderMaterial_xbl3o")
 pixel_size = 0.0015
 texture_filter = 0
-texture = ExtResource("10_5tb13")
+texture = ExtResource("6_7b24y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite3D")
