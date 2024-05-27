@@ -4,17 +4,18 @@ extends Area3D
 @export_category("Required Nodes")
 @export var camera: Camera3D
 @export var player: CharacterBody3D
-@export var room_encounter: PackedScene
+@export var enemies: Array[Path3D]
 
 @export_category("Behavior Variables")
 @export var size: Vector3
 @export var camera_animation_duration: float = 0.8
+## Poner enemigos del cuarto en cuestion solamente.
 
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
 @onready var camera_marker: Marker3D = $Marker3D
-@onready var enemies: Node3D = %Enemies
 
 var player_clamped: bool = false
+var adjusting: bool = false
 
 const CAMERA_DISTANCE_SMOOTHING = 1.35 # NOTE: No tengo idea por que, pero se ve mejor.
 
@@ -22,23 +23,21 @@ func _ready() -> void:
 	collision_shape.shape.size = size
 	camera_marker.position.y = size.y / 2
 	camera_marker.position.z = size.z / 2
-	for enemy in enemies.get_children():
-		enemy.queue_free()
-	var enemies_encounter = room_encounter.instantiate()
-	for enemy: Path3D in enemies_encounter.get_children():
-		var new_enemy_child: Path3D = enemy.duplicate()
-		enemies.add_child(new_enemy_child)
-		fix_position(new_enemy_child.position)
-		enemy.queue_free()
-	enemies.RaiseEnemyCount()
+	# NOTE: No quiero cuartos sin enemies.
+	if enemies.size() == 0:
+		queue_free()
 
 func _physics_process(_delta: float) -> void:
 	if player_clamped:
-		# NOTE: Quizas deberia estar en el Player Controller.
+		# NOTE: Se puede resolver con una StaticBody invisible, quizas.
 		player.ClampToCube(global_position, size)
-	# DELETE: Sólo para debug. Esto se va.
-	if Input.is_action_just_pressed("Attack"):
-		_on_room_finished()
+
+func _process(delta: float) -> void:
+	if enemies.size() == 0 and not adjusting:
+		adjusting = true
+		await _on_room_finished()
+		adjusting = false
+	cleanup_enemies_array()
 
 func _on_body_entered(body: Node3D) -> void:
 	if body == player: # NOTE: no puedo acceder a la class Player desde aca. Deberia ser eso.
@@ -57,14 +56,15 @@ func _on_room_finished() -> void:
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.tween_property(
 		camera, "global_position",
-		player.position + camera.positionFromTarget / CAMERA_DISTANCE_SMOOTHING,
+		player.global_position + camera.positionFromTarget / CAMERA_DISTANCE_SMOOTHING,
 		camera_animation_duration,
 	)
+	print(camera.position)
 	await tween.finished
-	camera.ReparentAndPosition(player)
+	await camera.ReparentAndPosition(player)
 	player_clamped = false
 	# NOTE: Para reducir checks en cada frame, y porque una vez superado la entidad pierde sentido.
-	# queue_free()  # NOTE: Cuando se termine de debuggear, descomentar esto.
+	queue_free()
 
 func fix_position(pos: Vector3):
 	if abs(pos.x) > size.x / 2:
@@ -72,3 +72,10 @@ func fix_position(pos: Vector3):
 	if abs(pos.z) > size.z / 2:
 		pos.z = randf_range( - size.z / 2, size.z / 2)
 	pos.y = 0
+
+func cleanup_enemies_array() -> void:
+	var cleanup_array: Array[Path3D] = []
+	for enemy: Path3D in enemies:
+		if is_instance_valid(enemy):
+			cleanup_array.push_back(enemy)
+	enemies = cleanup_array

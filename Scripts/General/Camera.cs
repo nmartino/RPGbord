@@ -3,26 +3,26 @@ using System;
 
 public partial class Camera : Camera3D
 {
-	[Export] private Node target;
-	[Export] public Vector3 positionFromTarget;
-	public override void _Ready()
-	{
-		GameEvents.OnStartGame += HandleStartGame;
+    [Export] private Node target;
+    [Export] public Vector3 positionFromTarget;
+    public override void _Ready()
+    {
+        GameEvents.OnStartGame += HandleStartGame;
         GameEvents.OnEndGame += HandleEndGame;
-	}
+    }
 
     private void HandleEndGame()
-	{
-		Reparent(GetTree().CurrentScene);
-	}
+    {
+        Reparent(GetTree().CurrentScene);
+    }
 
 
-	private void HandleStartGame()
-	{
-		ReparentAndPosition(target);
-	}
+    private void HandleStartGame()
+    {
+        ReparentAndPosition(target);
+    }
 
-    private void ReparentAndPosition(Node Node) 
+    private void ReparentAndPosition(Node Node)
     {
         Reparent(Node);
         Position = positionFromTarget;
