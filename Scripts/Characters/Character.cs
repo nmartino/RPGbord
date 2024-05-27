@@ -25,6 +25,7 @@ public abstract partial class Character : CharacterBody3D
 
     public Vector2 direction = new();
     private ShaderMaterial shader;
+    public bool isFlip = false;
 
     public override void _Ready()
     {
@@ -47,7 +48,23 @@ public abstract partial class Character : CharacterBody3D
         if (isNotMovingHorizontally) { return; }
 
         bool isMovingLeft = Velocity.X < 0;
-        SpriteNode.FlipH = isMovingLeft;
+
+    if(isMovingLeft){
+        SpriteNode.RotationDegrees = new Vector3(
+            SpriteNode.RotationDegrees.X,
+            Mathf.MoveToward(SpriteNode.RotationDegrees.Y, 180, 50),
+            SpriteNode.RotationDegrees.Z
+        );
+        isFlip = isMovingLeft;
+        }else{
+            SpriteNode.RotationDegrees = new Vector3(
+            SpriteNode.RotationDegrees.X,
+            Mathf.MoveToward(SpriteNode.RotationDegrees.Y, 0, 50),
+            SpriteNode.RotationDegrees.Z);
+        isFlip = isMovingLeft;
+        }
+
+        //SpriteNode.FlipH = isMovingLeft;
     }
 
     private void HandleHurtboxEntered(Area3D area)

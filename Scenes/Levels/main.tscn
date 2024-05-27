@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cgr4d6ywc7jla"]
+[gd_scene load_steps=31 format=3 uid="uid://cgr4d6ywc7jla"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/Main.cs" id="1_xoiea"]
 [ext_resource type="PackedScene" uid="uid://c138i0pw7g0nx" path="res://Scenes/Characters/Player/player.tscn" id="2_xg04o"]
@@ -17,9 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://d2flg6xv5bp81" path="res://Assets/Sprites/UI/easterEggs/corcho/items ruffo7.png" id="15_y8q57"]
 [ext_resource type="AudioStream" uid="uid://c5unq85raqbar" path="res://Assets/Audio/music/backgroundMusic.mp3" id="16_uvuxt"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ifgw2"]
+radius = 2.50668
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_x05cx"]
-vertices = PackedVector3Array(6.5, 2.5, 2.875, 6.5, 2.5, 9.625, 57.5, 2.5, 9.625, 57.5, 2.5, 2.875)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+vertices = PackedVector3Array(20.125, 3, 9.625, 24.625, 4.5, 9.625, 24.625, 4.5, 8.375, 20.125, 3, 8.375, 22.375, 4.25, 9.625, 22.375, 4.25, 8.375, 20.125, 3, 8.375, 20.125, 2.5, 7.375, 6.875, 2.5, 2.875, 6.875, 2.5, 13.375, 18.8, 2.5, 8.875, 24.125, 2.5, 13.375, 23.875, 2.5, 10.625, 20.125, 2.5, 10.625, 6.875, 2.5, 13.375, 20.125, 2.5, 7.375, 23.375, 2.5, 7.375, 23.375, 2.5, 2.875, 6.875, 2.5, 2.875, 6.875, 2.5, 13.375, 20.125, 3, 9.625, 20.125, 3, 8.375, 18.8, 2.5, 8.875, 18.8, 2.5, 10, 6.875, 2.5, 13.375, 20.125, 2.5, 10.625, 20.125, 3, 9.625, 18.8, 2.5, 10, 25.625, 2.5, 10.375, 23.875, 2.5, 10.625, 24.125, 2.5, 13.375, 57.375, 2.5, 13.375, 23.375, 2.5, 2.875, 23.375, 2.5, 7.375, 25.625, 2.5, 7.625, 57.375, 2.5, 2.875, 25.625, 2.5, 7.625, 25.625, 2.5, 10.375, 57.375, 2.5, 13.375, 57.375, 2.5, 2.875, 23.625, 2.5, 8.625, 23.625, 2.5, 9.375, 24.375, 2.5, 9.375, 24.375, 2.5, 8.625, 6.875, 2.5, 14.625, 6.875, 2.5, 17.625, 17.625, 2.5, 17.625, 17.625, 2.5, 14.625)
+polygons = [PackedInt32Array(3, 5, 0), PackedInt32Array(0, 5, 4), PackedInt32Array(4, 5, 2), PackedInt32Array(4, 2, 1), PackedInt32Array(6, 10, 7), PackedInt32Array(7, 10, 9), PackedInt32Array(7, 9, 8), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 11, 14), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(22, 23, 19), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 24), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 31), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(37, 36, 38), PackedInt32Array(38, 36, 39), PackedInt32Array(43, 42, 40), PackedInt32Array(40, 42, 41), PackedInt32Array(47, 46, 44), PackedInt32Array(44, 46, 45)]
 agent_max_climb = 0.5
 
 [sub_resource type="Curve3D" id="Curve3D_64ti0"]
@@ -103,6 +106,12 @@ motion_mode = 0
 floor_max_angle = 1.55334
 floor_snap_length = 0.2
 
+[node name="Area3D" type="Area3D" parent="Player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0518208, 0, 0)
+shape = SubResource("SphereShape3D_ifgw2")
+
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Environment"]
@@ -137,7 +146,7 @@ cell_center_x = false
 cell_center_y = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(131079, 15, 1048577, 131079, 17, 1048577, 327687, 15, 1048577, 327687, 17, 1048577, 7, 15, 21, 9, 15, 21, 7, 17, 21, 9, 17, 21, 11, 17, 21, 11, 15, 21, 13, 15, 21, 13, 17, 21, 15, 17, 21, 15, 15, 21, 17, 15, 21, 17, 17, 21, 458759, 2, 262170, 458761, 5, 917530, 458761, 8, 917530, 458761, 11, 917530, 458761, 14, 917530, 458761, 17, 917530, 458765, 5, 917530, 458765, 8, 917530, 458765, 11, 917530, 458765, 14, 917530, 458765, 17, 917530, 458763, 14, 262170, 458763, 11, 262170, 458763, 8, 262170, 458763, 5, 262170, 458763, 2, 262170, 458759, 3, 262170, 458759, 6, 262170, 458759, 9, 262170, 458759, 12, 262170, 458759, 14, 262170)
+"cells": PackedInt32Array(131079, 15, 1048577, 131079, 17, 1048577, 327687, 15, 1048577, 327687, 17, 1048577, 7, 15, 21, 9, 15, 21, 7, 17, 21, 9, 17, 21, 11, 17, 21, 11, 15, 21, 13, 15, 21, 13, 17, 21, 15, 17, 21, 15, 15, 21, 17, 15, 21, 17, 17, 21, 458759, 2, 262170, 458761, 5, 917530, 458761, 8, 917530, 458761, 11, 917530, 458761, 14, 917530, 458761, 17, 917530, 458765, 5, 917530, 458765, 8, 917530, 458765, 11, 917530, 458765, 14, 917530, 458765, 17, 917530, 458763, 14, 262170, 458763, 11, 262170, 458763, 8, 262170, 458763, 5, 262170, 458763, 2, 262170, 458759, 3, 262170, 458759, 6, 262170, 458759, 9, 262170, 458759, 12, 262170, 458759, 14, 262170, 131092, 9, 1441810, 196630, 9, 1441810, 131096, 9, 1441813)
 }
 metadata/_editor_floor_ = Vector3(0, 2, 0)
 
@@ -223,12 +232,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.346218, 0.311102, 0.304245)
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.58018, 0.311102, 0.304245)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("16_uvuxt")
 volume_db = -10.0
 autoplay = true
-mix_target = 2
 
 [node name="invisibleWall" type="StaticBody3D" parent="."]
 

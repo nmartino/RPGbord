@@ -46,7 +46,7 @@ public partial class PlayerAttackState : PlayerState
     
     private void PerformHit()
     {
-        Vector3 newPosition = characterNode.SpriteNode.FlipH ? 
+        Vector3 newPosition = characterNode.isFlip? 
         Vector3.Left :
         Vector3.Right;
         float distanceMultiplier = 0.85f;
