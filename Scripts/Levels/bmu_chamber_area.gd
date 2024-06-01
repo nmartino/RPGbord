@@ -17,8 +17,6 @@ extends Area3D
 var player_clamped: bool = false
 var adjusting: bool = false
 
-const CAMERA_DISTANCE_SMOOTHING = 1.35 # NOTE: No tengo idea por que, pero se ve mejor.
-
 func _ready() -> void:
 	collision_shape.shape.size = size
 	camera_marker.position.y = size.y / 2
@@ -32,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 		# NOTE: Se puede resolver con una StaticBody invisible, quizas.
 		player.ClampToCube(global_position, size)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if enemies.size() == 0 and not adjusting:
 		adjusting = true
 		await _on_room_finished()
@@ -54,13 +52,14 @@ func _on_body_entered(body: Node3D) -> void:
 func _on_room_finished() -> void:
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
+	camera.reparent(player, true)
 	tween.tween_property(
-		camera, "global_position",
-		player.global_position + camera.positionFromTarget / CAMERA_DISTANCE_SMOOTHING,
+		camera, "position",
+		camera.positionFromTarget,
 		camera_animation_duration,
 	)
 	await tween.finished
-	await camera.ReparentAndPosition(player)
+	camera.ReparentAndPosition(player)
 	player_clamped = false
 	# NOTE: Para reducir checks en cada frame, y porque una vez superado la entidad pierde sentido.
 	queue_free()
