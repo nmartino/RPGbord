@@ -60,7 +60,7 @@ shader_parameter/tex = ExtResource("20_oxu28")
 
 [sub_resource type="Animation" id="Animation_t310h"]
 resource_name = "Attac"
-step = 0.25
+step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -68,10 +68,10 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("6_7b24y"), ExtResource("7_y6wym"), ExtResource("8_44dhy"), ExtResource("9_aj6l4"), ExtResource("10_5tb13")]
+"values": [ExtResource("6_7b24y"), ExtResource("7_y6wym"), ExtResource("8_44dhy"), ExtResource("9_aj6l4"), ExtResource("9_aj6l4"), ExtResource("10_5tb13")]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -80,7 +80,7 @@ tracks/1/path = NodePath("../StateMachine/AttackState")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.75),
+"times": PackedFloat32Array(0.8),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -99,9 +99,21 @@ tracks/2/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("9_iad4h")
 }],
-"times": PackedFloat32Array(0.5)
+"times": PackedFloat32Array(0.4)
 }
 tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AnimationPlayer:speed_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.5]
+}
 
 [sub_resource type="Animation" id="Animation_503eh"]
 resource_name = "Death"
@@ -133,6 +145,18 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.166667)
 }
 tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimationPlayer:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_bpton"]
 resource_name = "Idle"
@@ -150,6 +174,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("20_oxu28"), ExtResource("21_w4e8s"), ExtResource("22_j0gb1"), ExtResource("23_dovkn"), ExtResource("24_pcve2")]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_t8lbd"]
 resource_name = "Move"
@@ -165,6 +201,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("25_4g58c"), ExtResource("26_fb1ed"), ExtResource("27_rw43l"), ExtResource("28_8fptf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_jemxy"]
@@ -197,6 +245,18 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.333333)
 }
 tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimationPlayer:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g15or"]
 _data = {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cgr4d6ywc7jla"]
+[gd_scene load_steps=32 format=3 uid="uid://cgr4d6ywc7jla"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/Main.cs" id="1_xoiea"]
 [ext_resource type="PackedScene" uid="uid://c138i0pw7g0nx" path="res://Scenes/Characters/Player/player.tscn" id="2_xg04o"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cmd5npbaywmvm" path="res://Assets/Sprites/UI/easterEggs/whisky/items ruffo8.png" id="14_04v4m"]
 [ext_resource type="Texture2D" uid="uid://d2flg6xv5bp81" path="res://Assets/Sprites/UI/easterEggs/corcho/items ruffo7.png" id="15_y8q57"]
 [ext_resource type="AudioStream" uid="uid://c5unq85raqbar" path="res://Assets/Audio/music/backgroundMusic.mp3" id="16_uvuxt"]
+[ext_resource type="PackedScene" uid="uid://b3kmu2l51j8hx" path="res://Scenes/Levels/bmu_chamber_area.tscn" id="17_rx6aj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ifgw2"]
 radius = 2.50668
@@ -157,7 +158,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.898048, 2.20349)
 script = ExtResource("4_hq5gf")
 
 [node name="Path3D" type="Path3D" parent="Enemies"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1306, 1.1362, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.862, 1.1362, 0)
 curve = SubResource("Curve3D_64ti0")
 
 [node name="Enemy" parent="Enemies/Path3D" node_paths=PackedStringArray("PathNode") instance=ExtResource("4_iwv7f")]
@@ -166,7 +167,7 @@ stats = Array[Object]([SubResource("Resource_f53e4"), SubResource("Resource_xkbb
 PathNode = NodePath("..")
 
 [node name="Path3D2" type="Path3D" parent="Enemies"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8968, 2.2744, 1.49848)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.9407, 2.2744, 1.49848)
 curve = SubResource("Curve3D_dp38e")
 
 [node name="Enemy" parent="Enemies/Path3D2" node_paths=PackedStringArray("PathNode") instance=ExtResource("4_iwv7f")]
@@ -182,6 +183,18 @@ curve = SubResource("Curve3D_k6fdi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8085, -0.385757, 0)
 stats = Array[Object]([SubResource("Resource_vkfli"), SubResource("Resource_xkbbt")])
 PathNode = NodePath("..")
+
+[node name="Path3D4" type="Path3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.251, 2.2724, 0)
+curve = SubResource("Curve3D_64ti0")
+
+[node name="Enemy" parent="Enemies/Path3D4" node_paths=PackedStringArray("PathNode", "AgentNode", "ChaseAreaNode", "AttackAreaNode") instance=ExtResource("4_iwv7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99463, -0.452406, 2.53836)
+stats = Array[Object]([SubResource("Resource_f53e4"), SubResource("Resource_xkbbt")])
+PathNode = NodePath("../../Path3D")
+AgentNode = NodePath("../../Path3D/Enemy/NavigationAgent3D")
+ChaseAreaNode = NodePath("../../Path3D/Enemy/ChaseArea")
+AttackAreaNode = NodePath("../../Path3D/Enemy/AtackingArea")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 38.5636, 4.75313, 5.48001)
@@ -243,3 +256,10 @@ autoplay = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="invisibleWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0278, 2.85587, 13.2989)
 shape = SubResource("BoxShape3D_hq8aw")
+
+[node name="BmuChamberArea" parent="." node_paths=PackedStringArray("camera", "player", "enemies") instance=ExtResource("17_rx6aj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.0305, 2.38164, 3.84364)
+camera = NodePath("../Camera3D")
+player = NodePath("../Player")
+enemies = [NodePath("../Enemies/Path3D"), NodePath("../Enemies/Path3D2"), NodePath("../Enemies/Path3D3")]
+size = Vector3(20, 10, 20)
