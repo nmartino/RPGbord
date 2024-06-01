@@ -17,8 +17,6 @@ extends Area3D
 var player_clamped: bool = false
 var adjusting: bool = false
 
-const CAMERA_DISTANCE_SMOOTHING = 1.35 # NOTE: No tengo idea por que, pero se ve mejor.
-
 func _ready() -> void:
 	collision_shape.shape.size = size
 	camera_marker.position.y = size.y / 2
