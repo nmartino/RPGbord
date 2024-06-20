@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c138i0pw7g0nx"]
+[gd_scene load_steps=68 format=3 uid="uid://c138i0pw7g0nx"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/Player.cs" id="1_32gnk"]
 [ext_resource type="Resource" uid="uid://d0copp6n65px" path="res://Resources/player_health_stat.tres" id="2_5f5yu"]
@@ -56,9 +56,6 @@
 [ext_resource type="PackedScene" uid="uid://20futf1ie8o0" path="res://Scenes/Abilities/lighting.tscn" id="46_ksalo"]
 [ext_resource type="Script" path="res://Scripts/Characters/AttackHitbox.cs" id="47_o54lt"]
 [ext_resource type="AudioStream" uid="uid://dvreudpolqxcp" path="res://Assets/Audio/Player/footstep01.wav" id="47_ofdt7"]
-[ext_resource type="AudioStream" uid="uid://dv2b8t54mdrsj" path="res://Assets/Audio/Player/footstep02.wav" id="48_dqyjg"]
-[ext_resource type="AudioStream" uid="uid://d28jwnst50bmj" path="res://Assets/Audio/Player/footstep03.wav" id="49_20sx3"]
-[ext_resource type="AudioStream" uid="uid://c2f46e5g6oqkl" path="res://Assets/Audio/Player/footstep04.wav" id="50_fexi7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ttlk"]
 render_priority = 1
@@ -106,9 +103,9 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("11_rvb5r")
+"stream": ExtResource("12_hy4we")
 }],
-"times": PackedFloat32Array(0.75)
+"times": PackedFloat32Array(0.25)
 }
 tracks/2/use_blend = true
 tracks/3/type = "audio"
@@ -121,9 +118,9 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("12_hy4we")
+"stream": ExtResource("11_rvb5r")
 }],
-"times": PackedFloat32Array(0.25)
+"times": PackedFloat32Array(0.75)
 }
 tracks/3/use_blend = true
 
@@ -166,9 +163,9 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("15_14ik4")
+"stream": ExtResource("16_ptr1v")
 }],
-"times": PackedFloat32Array(0.666667)
+"times": PackedFloat32Array(0.333333)
 }
 tracks/2/use_blend = true
 tracks/3/type = "audio"
@@ -181,9 +178,9 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("16_ptr1v")
+"stream": ExtResource("15_14ik4")
 }],
-"times": PackedFloat32Array(0.333333)
+"times": PackedFloat32Array(0.666667)
 }
 tracks/3/use_blend = true
 
@@ -269,15 +266,9 @@ tracks/0/keys = {
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18r7f"]
 playback_mode = 1
 random_pitch = 1.2
-streams_count = 4
+streams_count = 1
 stream_0/stream = ExtResource("47_ofdt7")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("48_dqyjg")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("49_20sx3")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("50_fexi7")
-stream_3/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_7gnyb"]
 resource_name = "Move"
@@ -295,13 +286,25 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("9_m26ud"), ExtResource("10_6ojln"), ExtResource("11_5lp2l"), ExtResource("12_ytraa"), ExtResource("13_kuiwb"), ExtResource("14_jm6sp"), ExtResource("15_3i1kw"), ExtResource("16_2bqsw")]
 }
-tracks/1/type = "audio"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -314,26 +317,10 @@ tracks/1/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": SubResource("AudioStreamRandomizer_18r7f")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": SubResource("AudioStreamRandomizer_18r7f")
 }],
-"times": PackedFloat32Array(0.125, 0.375, 0.625, 0.875)
+"times": PackedFloat32Array(0.125, 0.5, 0.875)
 }
-tracks/1/use_blend = true
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-10.0]
-}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_alvtf"]
 _data = {
@@ -370,8 +357,9 @@ ShaderTimerNode = NodePath("ShaderTimer")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09808e-05, 0.101595, -0.00692081)
 material_overlay = SubResource("ShaderMaterial_1ttlk")
 pixel_size = 0.002
+alpha_cut = 2
 texture_filter = 0
-texture = ExtResource("2_van85")
+texture = ExtResource("16_2bqsw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
@@ -389,13 +377,19 @@ script = ExtResource("33_2s5pm")
 [node name="IdleState" type="Node" parent="StateMachine"]
 script = ExtResource("32_fbg4p")
 
-[node name="DashState" type="Node" parent="StateMachine" node_paths=PackedStringArray("dashTimerNode")]
+[node name="DashState" type="Node" parent="StateMachine" node_paths=PackedStringArray("dashTimerNode", "cooldownTimerNode")]
 script = ExtResource("40_3jx88")
-dashTimerNode = NodePath("Timer")
+dashTimerNode = NodePath("Duration")
 bombScene = ExtResource("44_bs2uk")
+cooldownTimerNode = NodePath("Cooldown")
 
-[node name="Timer" type="Timer" parent="StateMachine/DashState"]
+[node name="Duration" type="Timer" parent="StateMachine/DashState"]
 wait_time = 0.6
+one_shot = true
+
+[node name="Cooldown" type="Timer" parent="StateMachine/DashState"]
+process_mode = 3
+wait_time = 3.0
 one_shot = true
 
 [node name="AttackState" type="Node" parent="StateMachine" node_paths=PackedStringArray("comboTimerNode")]

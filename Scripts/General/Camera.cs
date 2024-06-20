@@ -1,6 +1,7 @@
 using Godot;
 using System;
 
+
 public partial class Camera : Camera3D
 {
     [Export] private Node target;
@@ -18,7 +19,7 @@ public partial class Camera : Camera3D
 
 
     private void HandleStartGame()
-    {
+    { 
         ReparentAndPosition(target);
     }
 
