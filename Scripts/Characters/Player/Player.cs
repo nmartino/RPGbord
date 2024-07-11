@@ -3,6 +3,7 @@ using System;
 
 public partial class Player : Character
 {
+    public bool inputEnabled = true;
     public override void _Ready()
     {
         base._Ready();
@@ -14,6 +15,10 @@ public partial class Player : Character
 
     public override void _Input(InputEvent @event)
     {
+        if(!inputEnabled){
+            direction = Vector2.Zero;
+            return;
+            }
         direction = Input.GetVector(
             GameConstants.INPUT_MOVE_LEFT, GameConstants.INPUT_MOVE_RIGHT, GameConstants.INPUT_MOVE_FOWARD, GameConstants.INPUT_MOVE_BACKWARD
         );

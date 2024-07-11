@@ -49,22 +49,12 @@ public abstract partial class Character : CharacterBody3D
 
         bool isMovingLeft = Velocity.X < 0;
 
-    if(isMovingLeft){
-        SpriteNode.RotationDegrees = new Vector3(
-            SpriteNode.RotationDegrees.X,
-            Mathf.MoveToward(SpriteNode.RotationDegrees.Y, 180, 50),
-            SpriteNode.RotationDegrees.Z
-        );
         isFlip = isMovingLeft;
-        }else{
-            SpriteNode.RotationDegrees = new Vector3(
-            SpriteNode.RotationDegrees.X,
-            Mathf.MoveToward(SpriteNode.RotationDegrees.Y, 0, 50),
-            SpriteNode.RotationDegrees.Z);
-        isFlip = isMovingLeft;
-        }
+        var targetYRotation = isFlip ? 180 : 0;
+        SpriteNode.RotationDegrees = new Vector3(SpriteNode.RotationDegrees.X,
+         Mathf.MoveToward(SpriteNode.RotationDegrees.Y, targetYRotation, 50),
+         SpriteNode.RotationDegrees.Z);
 
-        //SpriteNode.FlipH = isMovingLeft;
     }
 
     private void HandleHurtboxEntered(Area3D area)

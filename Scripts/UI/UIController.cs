@@ -5,7 +5,7 @@ using System.Linq;
 
 public partial class UIController : Control
 {
-    private bool canPause = false;
+    public bool canPause = false;
     private Dictionary<ContainerType, UIContainer> containers;
 
     public override void _Ready()

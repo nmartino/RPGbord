@@ -15,10 +15,20 @@ run/main_scene="res://Scenes/Levels/main.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://Assets/icon3.png"
 
+[autoload]
+
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"Character_Africano": "res://Resources/Dialogic/Character_Africano.dch",
+"Character_Ruffo": "res://Resources/Dialogic/Character_Ruffo.dch"
+}
+directories/dtl_directory={
+"Africano_Inicio": "res://Resources/Africano_Inicio.dtl",
+"Ruffito_inicio": "res://Resources/Ruffito_inicio.dtl"
+}
 layout/style_list=[]
 layout/default_style=""
 glossary/default_case_sensitive=true
@@ -39,10 +49,13 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+extensions_folder="res://addons/dialogic_additions"
+animations/cross_fade_default_length=0.5
+animations/cross_fade_default_wait=true
 
 [dialogue_manager]
 
-general/balloon_path="res://Scripts/Dialog/Balloon.tscn"
+general/balloon_path="res://DialogueManager/Balloon.tscn"
 general/uses_dotnet=true
 
 [display]
@@ -53,6 +66,10 @@ window/size/viewport_height=1080
 [dotnet]
 
 project/assembly_name="Dungeon RPG"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [filesystem]
 
@@ -103,17 +120,16 @@ Interact={
 }
 dialogic_default_action={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
-, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
-, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
 ]
 }
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Scripts/Dialog/Dialogo_Ruffito.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogos/Dialogo_Inicio.dialogue")
 
 [layer_names]
 

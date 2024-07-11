@@ -5,6 +5,7 @@ extends Area3D
 @export var camera: Camera3D
 @export var player: CharacterBody3D
 @export var enemies: Array[Path3D]
+@export var stone: Node3D
 
 @export_category("Behavior Variables")
 @export var size: Vector3
@@ -52,6 +53,7 @@ func _on_body_entered(body: Node3D) -> void:
 func _on_room_finished() -> void:
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE)
+	stone.PlayBrokenStone()
 	camera.reparent(player, true)
 	tween.tween_property(
 		camera, "position",
