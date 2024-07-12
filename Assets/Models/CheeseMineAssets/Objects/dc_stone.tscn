@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4r3tpj3ff61q"]
+[gd_scene load_steps=10 format=3 uid="uid://c4r3tpj3ff61q"]
 
 [ext_resource type="Material" uid="uid://cwc08eghmg2b" path="res://Assets/Models/CheeseMineAssets/Materials/dc_stone.material" id="1_1wmef"]
 [ext_resource type="Script" path="res://Scripts/General/stone.gd" id="1_ly0n6"]
+[ext_resource type="AudioStream" uid="uid://be7expaqqca0h" path="res://Assets/Audio/Stone/block_smash_rnd_02.wav" id="3_dtw6x"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_w26vu"]
 resource_name = "stone-f5760ecb8c34e3ecd87712c4ca9b50cd_stone_mesh"
@@ -172,6 +173,21 @@ tracks/16/path = NodePath("stone_bones/Skeleton3D:smallstones")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+tracks/17/type = "audio"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("AudioStreamPlayer3D")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_dtw6x")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/17/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ukrmg"]
 resource_name = "StoneIdle"
@@ -324,42 +340,42 @@ bones/1/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 1, 0)
 bones/1/rotation = Quaternion(0, 0, 0, 1)
-bones/1/scale = Vector3(1, 1, 1)
+bones/1/scale = Vector3(0, 0, 0)
 bones/2/name = "stone003"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 0, 0, 0, 1.78814e-07, 1, 0, -1, 1.78814e-07, -0.000864029, 0.476754, 0.0333333)
 bones/2/enabled = true
-bones/2/position = Vector3(-0.000864029, 0.476754, 0.0333333)
-bones/2/rotation = Quaternion(-0.870284, -0.0582439, 0.0607764, 0.485303)
-bones/2/scale = Vector3(1, 1, 1)
+bones/2/position = Vector3(0, 1.19209e-07, 0.0333332)
+bones/2/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+bones/2/scale = Vector3(0, 0, 0)
 bones/3/name = "stone002"
 bones/3/parent = 1
 bones/3/rest = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.36348, -0.0515932, 0.366667)
 bones/3/enabled = true
-bones/3/position = Vector3(0.36348, -0.0515932, 0.366667)
-bones/3/rotation = Quaternion(-0.750351, -0.303545, -0.504375, 0.300732)
-bones/3/scale = Vector3(1, 1, 1)
+bones/3/position = Vector3(0, 1.19209e-07, 0.366667)
+bones/3/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+bones/3/scale = Vector3(0, 0, 0)
 bones/4/name = "stone004"
 bones/4/parent = 1
 bones/4/rest = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -0.265475, -0.126895, -0.0667252)
 bones/4/enabled = true
-bones/4/position = Vector3(-0.265475, -0.126895, -0.0667252)
-bones/4/rotation = Quaternion(-0.996852, -0.0323649, -0.0323649, 0.0647434)
-bones/4/scale = Vector3(1, 1, 1)
+bones/4/position = Vector3(0, 0, -0.0667252)
+bones/4/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+bones/4/scale = Vector3(0, 0, 0)
 bones/5/name = "stone001"
 bones/5/parent = 1
 bones/5/rest = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.185417, -0.71875, 0.0333332)
 bones/5/enabled = true
-bones/5/position = Vector3(0.185417, -0.71875, 0.0333332)
-bones/5/rotation = Quaternion(-0.543366, -0.0237919, -0.837955, -0.0449315)
-bones/5/scale = Vector3(1, 1, 1)
+bones/5/position = Vector3(0, 0, 0.0333333)
+bones/5/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+bones/5/scale = Vector3(0, 0, 0)
 bones/6/name = "stone005"
 bones/6/parent = 1
 bones/6/rest = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -0.147916, -0.65625, 0.366667)
 bones/6/enabled = true
-bones/6/position = Vector3(-0.147916, -0.65625, 0.366667)
-bones/6/rotation = Quaternion(-0.348269, 0.69042, -0.562946, -0.291754)
-bones/6/scale = Vector3(1, 1, 1)
+bones/6/position = Vector3(0, 0, 0.366667)
+bones/6/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+bones/6/scale = Vector3(0, 0, 0)
 bones/7/name = "bigstone"
 bones/7/parent = 0
 bones/7/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 1, 0)
@@ -383,3 +399,5 @@ autoplay = "StoneIdle"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0341797, 0.902588, 0.157593)
 shape = SubResource("BoxShape3D_e343t")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
