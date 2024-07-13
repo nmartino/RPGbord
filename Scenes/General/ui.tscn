@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dw33mfi0uljdr"]
+[gd_scene load_steps=43 format=3 uid="uid://dw33mfi0uljdr"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UIContainer.cs" id="1_0lbyp"]
 [ext_resource type="Script" path="res://Scripts/UI/UIController.cs" id="1_c3703"]
@@ -11,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bidcolodturkb" path="res://Assets/Sprites/UI/Individual icons (32x32)/5.png" id="9_1e2hv"]
 [ext_resource type="Script" path="res://Scripts/UI/StatLabel.cs" id="9_mce24"]
 [ext_resource type="Texture2D" uid="uid://cbecqobl00jkq" path="res://Assets/Sprites/UI/Individual icons (32x32)/46.png" id="10_ilmkc"]
-[ext_resource type="Resource" uid="uid://d0copp6n65px" path="res://Resources/player_health_stat.tres" id="10_rf163"]
-[ext_resource type="Resource" uid="uid://s6anh44hdutp" path="res://Resources/player_strenght_stat.tres" id="12_xbygd"]
 [ext_resource type="Script" path="res://Scripts/UI/EnemyCountLabel.cs" id="14_5fe3x"]
 [ext_resource type="Texture2D" uid="uid://df2pn5v6eeej5" path="res://Assets/Sprites/UI/skull/calavera ruffo1.png" id="15_ifdt2"]
 [ext_resource type="Texture2D" uid="uid://bcfq375p7iih2" path="res://Assets/Sprites/UI/skull/calavera ruffo2.png" id="16_ja23n"]
@@ -215,7 +213,6 @@ theme_override_fonts/font = ExtResource("2_avb1s")
 theme_override_font_sizes/font_size = 25
 text = "---"
 script = ExtResource("9_mce24")
-statResource = ExtResource("10_rf163")
 
 [node name="Strengh" type="Panel" parent="Stats/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 44)
@@ -243,7 +240,7 @@ theme_override_fonts/font = ExtResource("2_avb1s")
 theme_override_font_sizes/font_size = 25
 text = "---"
 script = ExtResource("9_mce24")
-statResource = ExtResource("12_xbygd")
+statType = 1
 
 [node name="EnemyCount" type="Panel" parent="Stats/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 44)

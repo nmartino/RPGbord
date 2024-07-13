@@ -27,6 +27,14 @@ public abstract partial class Character : CharacterBody3D
     private ShaderMaterial shader;
     public bool isFlip = false;
 
+    public override void _EnterTree()
+    {
+        base._EnterTree();
+        for (int i = 0; i < stats.Length; i++)
+        {
+            stats[i] = (StatResource) stats[i].Duplicate();
+        }
+    }
     public override void _Ready()
     {
         shader = (ShaderMaterial)SpriteNode.MaterialOverlay;
