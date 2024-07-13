@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dw33mfi0uljdr"]
+[gd_scene load_steps=49 format=3 uid="uid://dw33mfi0uljdr"]
 
 [ext_resource type="Script" path="res://Scripts/UI/UIContainer.cs" id="1_0lbyp"]
 [ext_resource type="Script" path="res://Scripts/UI/UIController.cs" id="1_c3703"]
@@ -33,6 +33,10 @@
 [ext_resource type="Texture2D" uid="uid://3ny42fsuh0pk" path="res://Assets/Sprites/UI/trofeo/trofeo rebord8.png" id="26_6t35a"]
 [ext_resource type="Texture2D" uid="uid://6t03es2l278q" path="res://Assets/Sprites/UI/easterEggs/cartas/items ruffo6.png" id="32_enqql"]
 [ext_resource type="AudioStream" uid="uid://cyqgrxamn1yud" path="res://Assets/Audio/UI/button_press_04.wav" id="33_q4nlj"]
+[ext_resource type="Texture2D" uid="uid://dslvq8h2hyva4" path="res://Assets/Sprites/UI/teclas/space.png" id="33_y2wif"]
+[ext_resource type="Texture2D" uid="uid://7g4qv1nmojbm" path="res://Assets/Sprites/UI/teclas/wasd.png" id="34_rc50v"]
+[ext_resource type="Texture2D" uid="uid://br0pw4yxoxhy2" path="res://Assets/Sprites/UI/teclas/shift.png" id="35_ibn1q"]
+[ext_resource type="Texture2D" uid="uid://y5v25he4t28l" path="res://Assets/Sprites/UI/teclas/escape.png" id="36_e8kno"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwnrv"]
 content_margin_left = 48.0
@@ -49,6 +53,10 @@ texture = ExtResource("7_0tyeh")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nocaa"]
 texture = ExtResource("6_rpoqr")
+expand_margin_left = 30.0
+expand_margin_top = 30.0
+expand_margin_right = 30.0
+expand_margin_bottom = 70.0
 
 [sub_resource type="Animation" id="Animation_fmei7"]
 resource_name = "idle"
@@ -133,7 +141,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c3703")
 
-[node name="Start" type="VBoxContainer" parent="." node_paths=PackedStringArray("ButtonNode", "AudioNode")]
+[node name="Start" type="VBoxContainer" parent="." node_paths=PackedStringArray("ButtonNode", "ButtonTeclas", "AudioNode")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -148,14 +156,21 @@ offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0lbyp")
-ButtonNode = NodePath("Button")
+ButtonNode = NodePath("HBoxContainer/Start")
+ButtonTeclas = NodePath("HBoxContainer/Teclas")
 AudioNode = NodePath("../Audio")
 
 [node name="TextureRect" type="TextureRect" parent="Start"]
 layout_mode = 2
 texture = ExtResource("3_xjrye")
 
-[node name="Button" type="Button" parent="Start"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Start"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Start" type="Button" parent="Start/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -167,6 +182,19 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_jwnrv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jwnrv")
 theme_override_styles/focus = SubResource("StyleBoxTexture_jwnrv")
 text = "Start"
+
+[node name="Teclas" type="Button" parent="Start/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_jwnrv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jwnrv")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jwnrv")
+text = "Teclas"
 
 [node name="Stats" type="PanelContainer" parent="."]
 visible = false
@@ -272,7 +300,7 @@ theme_override_font_sizes/font_size = 25
 text = "---"
 script = ExtResource("14_5fe3x")
 
-[node name="Defeat" type="PanelContainer" parent="."]
+[node name="Defeat" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode", "ButtonExit")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -289,6 +317,8 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nocaa")
 script = ExtResource("1_0lbyp")
 container = 3
+ButtonNode = NodePath("")
+ButtonExit = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Quit")
 
 [node name="MarginContainer" type="MarginContainer" parent="Defeat"]
 layout_mode = 2
@@ -296,7 +326,7 @@ theme_override_constants/margin_top = 45
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Defeat/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 300
 
 [node name="Label" type="Label" parent="Defeat/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -320,7 +350,26 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="Victory" type="PanelContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="Defeat/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Quit" type="Button" parent="Defeat/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_jwnrv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jwnrv")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jwnrv")
+text = "Quit"
+
+[node name="Victory" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode", "ButtonExit", "AudioNode")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -337,6 +386,9 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nocaa")
 script = ExtResource("1_0lbyp")
 container = 2
+ButtonNode = NodePath("")
+ButtonExit = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Quit")
+AudioNode = NodePath("../Audio")
 
 [node name="MarginContainer" type="MarginContainer" parent="Victory"]
 layout_mode = 2
@@ -344,7 +396,7 @@ theme_override_constants/margin_top = 45
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Victory/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 310
 
 [node name="Label" type="Label" parent="Victory/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -368,6 +420,25 @@ libraries = {
 }
 autoplay = "Idle"
 speed_scale = 0.5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Victory/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Quit" type="Button" parent="Victory/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_jwnrv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jwnrv")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jwnrv")
+text = "Quit"
 
 [node name="Pause" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode", "ButtonExit", "AudioNode")]
 visible = false
@@ -534,6 +605,140 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_dy6y1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dy6y1")
 theme_override_styles/focus = SubResource("StyleBoxTexture_dy6y1")
 text = "CONTINUE"
+
+[node name="Teclas" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode", "TextureNode", "LabelNode", "AudioNode")]
+visible = false
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nocaa")
+script = ExtResource("1_0lbyp")
+container = 6
+ButtonNode = NodePath("MarginContainer/VBoxContainer/Button")
+TextureNode = NodePath("../Reward/MarginContainer/VBoxContainer/VBoxContainer/TextureRect")
+LabelNode = NodePath("../Reward/MarginContainer/VBoxContainer/VBoxContainer/RewardText")
+AudioNode = NodePath("../Audio")
+
+[node name="MarginContainer" type="MarginContainer" parent="Teclas"]
+layout_mode = 2
+theme_override_constants/margin_top = 45
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Teclas/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Teclas/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 48
+text = "Teclas"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Teclas/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Teclas/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Teclas/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("33_y2wif")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Teclas/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("34_rc50v")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Teclas/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("35_ibn1q")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Teclas/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 110)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("36_e8kno")
+expand_mode = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Teclas/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="Teclas/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 48
+text = "Ataque"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Teclas/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 48
+text = "Movimiento"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Teclas/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 48
+text = "Dash"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Teclas/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 48
+text = "Pausa"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Teclas/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_avb1s")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dy6y1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_dy6y1")
+text = "Back"
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("33_q4nlj")

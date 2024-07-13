@@ -28,7 +28,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if player_clamped:
-		# NOTE: Se puede resolver con una StaticBody invisible, quizas.
+			# NOTE: Se puede resolver con una StaticBody invisible, quizas.
 		player.ClampToCube(global_position, size)
 
 func _process(_delta: float) -> void:
@@ -48,7 +48,7 @@ func _on_body_entered(body: Node3D) -> void:
 		await tween.finished
 		# NOTE: Para que se deje de mover.
 		camera.reparent(camera_marker, true)
-		player_clamped = true
+		# player_clamped = true
 
 func _on_room_finished() -> void:
 	var tween = create_tween()

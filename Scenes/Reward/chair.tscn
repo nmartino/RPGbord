@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb8v4y8kaax8s"]
+
+[ext_resource type="Texture2D" uid="uid://p1fd00gunvg1" path="res://Assets/Sprites/UI/Chair/chair2.png" id="1_636b2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xqhli"]
+size = Vector3(0.797607, 1, 0.56543)
+
+[node name="Chair" type="StaticBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.0268333, 0, 0)
+texture = ExtResource("1_636b2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0274658, 0, -0.0854492)
+shape = SubResource("BoxShape3D_xqhli")

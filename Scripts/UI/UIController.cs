@@ -20,8 +20,12 @@ public partial class UIController : Control
 
 
         containers[ContainerType.Start].ButtonNode.Pressed += HandleStartPressed;
+        containers[ContainerType.Start].ButtonTeclas.Pressed += HandleTeclasPressed;
         containers[ContainerType.Pause].ButtonNode.Pressed += HandlePausePressed;
         containers[ContainerType.Pause].ButtonExit.Pressed += HandleExitPressed;
+        containers[ContainerType.Teclas].ButtonNode.Pressed += HandleBackPressed;
+        containers[ContainerType.Victory].ButtonExit.Pressed += HandleExitPressed;
+        containers[ContainerType.Defeat].ButtonExit.Pressed += HandleExitPressed;
         GameEvents.OnEndGame += HandleEndGame;
         GameEvents.OnVictory += HandleVictory;
 
@@ -30,10 +34,36 @@ public partial class UIController : Control
 
     }
 
+    private void HandleResetPressed()
+    {
+        GetTree().ReloadCurrentScene();
+        GetTree().Paused = false;
+    }
+
+
+    private void HandleTeclasPressed()
+    {
+        containers[ContainerType.Start].AudioNode.Play();
+        canPause = false;
+        containers[ContainerType.Start].Visible = false;
+        containers[ContainerType.Teclas].Visible = true;
+    }
+
+
+    private void HandleBackPressed()
+    {
+        containers[ContainerType.Teclas].AudioNode.Play();
+        canPause = false;
+        containers[ContainerType.Teclas].Visible = false;
+        containers[ContainerType.Start].Visible = true;
+    }
+
+
     private void HandleExitPressed()
     {
         canPause = false;
         GetTree().Quit();
+        
     }
 
 
