@@ -7,6 +7,7 @@ public partial class Player : Character
     {
         base._Ready();
         GameEvents.OnReward += HandleReward;
+        GameEvents.PlayerInitialized(this);
     }
 
 
