@@ -8,8 +8,19 @@ public class GameEvents
     public static event Action OnVictory;
     public static event Action<RewardResource> OnReward;
     public static void RaiseStartGame() => OnStartGame?.Invoke();
-    public static void RaiseEndGame() => OnEndGame?.Invoke();
+    public static void RaiseEndGame() {
+        OnEndGame?.Invoke();
+        Reset();
+    }
     public static void RaiseNewEnemyCount(int count) => OnNewEnemyCount?.Invoke(count);
     public static void RaiseVictory() => OnVictory?.Invoke();
     public static void RaiseReward(RewardResource reward) => OnReward?.Invoke(reward);
+
+    public static void Reset() {
+        OnStartGame = null;
+        OnEndGame = null;
+        OnNewEnemyCount = null;
+        OnVictory = null;
+        OnReward = null;
+    }
 }
