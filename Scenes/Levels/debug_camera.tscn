@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dw33mfi0uljdr" path="res://Scenes/General/ui.tscn" id="4_5qa8x"]
 [ext_resource type="PackedScene" uid="uid://b3kmu2l51j8hx" path="res://Scenes/Levels/bmu_chamber_area.tscn" id="4_w8hq5"]
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemiesContainer.cs" id="5_07dbc"]
-[ext_resource type="PackedScene" uid="uid://cxghxsgoyv2am" path="res://Scenes/Characters/Enemy/enemy.tscn" id="6_5dwic"]
+[ext_resource type="PackedScene" uid="uid://cxghxsgoyv2am" path="res://Scenes/Characters/Boss/Boss.tscn" id="6_5dwic"]
 [ext_resource type="Script" path="res://Scripts/Resources/StatResource.cs" id="7_yog1j"]
 [ext_resource type="Script" path="res://Scripts/General/Camera.cs" id="8_vp8e1"]
 [ext_resource type="PackedScene" uid="uid://dwld1ngrv1cp7" path="res://Scenes/Reward/treasure_chest.tscn" id="9_sde0y"]

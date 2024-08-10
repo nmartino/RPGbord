@@ -300,7 +300,7 @@ theme_override_font_sizes/font_size = 25
 text = "---"
 script = ExtResource("14_5fe3x")
 
-[node name="Defeat" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode", "ButtonExit")]
+[node name="Defeat" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonExit")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -317,7 +317,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nocaa")
 script = ExtResource("1_0lbyp")
 container = 3
-ButtonNode = NodePath("")
 ButtonExit = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Quit")
 
 [node name="MarginContainer" type="MarginContainer" parent="Defeat"]
@@ -369,7 +368,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_jwnrv")
 theme_override_styles/focus = SubResource("StyleBoxTexture_jwnrv")
 text = "Quit"
 
-[node name="Victory" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonNode", "ButtonExit", "AudioNode")]
+[node name="Victory" type="PanelContainer" parent="." node_paths=PackedStringArray("ButtonExit", "AudioNode")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -386,7 +385,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nocaa")
 script = ExtResource("1_0lbyp")
 container = 2
-ButtonNode = NodePath("")
 ButtonExit = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Quit")
 AudioNode = NodePath("../Audio")
 

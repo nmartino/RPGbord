@@ -1,35 +1,35 @@
-[gd_scene load_steps=53 format=3 uid="uid://cxghxsgoyv2am"]
+[gd_scene load_steps=56 format=3 uid="uid://cxghxsgoyv2am"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/Enemy.cs" id="1_mg2bf"]
 [ext_resource type="Script" path="res://Scripts/Resources/StatResource.cs" id="2_o6ybb"]
 [ext_resource type="Shader" path="res://Shaders/character_hurt.gdshader" id="3_rkxao"]
-[ext_resource type="Texture2D" uid="uid://41668ecksgnv" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Dañover2.png" id="5_t726f"]
-[ext_resource type="Texture2D" uid="uid://2vugwaod86rh" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver2.png" id="6_7b24y"]
-[ext_resource type="Texture2D" uid="uid://c77pqe4x1bh3x" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver3.png" id="7_y6wym"]
-[ext_resource type="Texture2D" uid="uid://dugxi5nrdncy4" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver4.png" id="8_44dhy"]
-[ext_resource type="Texture2D" uid="uid://d0aawsq4gxb0t" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver5.png" id="9_aj6l4"]
+[ext_resource type="Texture2D" uid="uid://2vugwaod86rh" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver2.png" id="5_jjfs3"]
+[ext_resource type="Texture2D" uid="uid://41668ecksgnv" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Dañover2.png" id="5_phyuw"]
+[ext_resource type="Texture2D" uid="uid://dhxlu8dmldb0b" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever8.png" id="5_tpt3q"]
+[ext_resource type="Texture2D" uid="uid://btkmc0drk7mh6" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever3.png" id="5_yicw7"]
+[ext_resource type="Texture2D" uid="uid://c77pqe4x1bh3x" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver3.png" id="6_va5hm"]
+[ext_resource type="Texture2D" uid="uid://dugxi5nrdncy4" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver4.png" id="7_0ysw7"]
+[ext_resource type="Texture2D" uid="uid://dktepimsuwd51" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever2.png" id="7_jfom8"]
+[ext_resource type="Texture2D" uid="uid://sf24dh6apkss" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever4.png" id="8_3wias"]
+[ext_resource type="Texture2D" uid="uid://d0aawsq4gxb0t" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver5.png" id="8_8fpxl"]
+[ext_resource type="Texture2D" uid="uid://byuceags0b75j" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever3.png" id="8_vqmbc"]
+[ext_resource type="Texture2D" uid="uid://ce0k332eybmjk" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver6.png" id="9_24jf7"]
 [ext_resource type="AudioStream" uid="uid://cmeutvwbhl64q" path="res://Assets/Audio/Enemy/Attack2.wav" id="9_iad4h"]
-[ext_resource type="Texture2D" uid="uid://ce0k332eybmjk" path="res://Assets/Sprites/Characters/Bot/Attack/bot atacaver6.png" id="10_5tb13"]
-[ext_resource type="Texture2D" uid="uid://dktepimsuwd51" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever2.png" id="12_o3yql"]
-[ext_resource type="Texture2D" uid="uid://byuceags0b75j" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever3.png" id="13_pmhme"]
-[ext_resource type="Texture2D" uid="uid://pm206uyxa4a1" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever4.png" id="14_i5jvn"]
-[ext_resource type="Texture2D" uid="uid://02t5gdmofm1p" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever5.png" id="15_bs2gm"]
-[ext_resource type="Texture2D" uid="uid://c71syoj4kmimu" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever6.png" id="16_2jbay"]
+[ext_resource type="Texture2D" uid="uid://pm206uyxa4a1" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever4.png" id="9_qqn4l"]
+[ext_resource type="Texture2D" uid="uid://bvhtcj1ed7bbb" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever5.png" id="9_r1g7f"]
+[ext_resource type="Texture2D" uid="uid://02t5gdmofm1p" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever5.png" id="10_ui3cs"]
+[ext_resource type="Texture2D" uid="uid://wu0q3dioullc" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever6.png" id="10_v2kev"]
+[ext_resource type="Texture2D" uid="uid://c71syoj4kmimu" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever6.png" id="11_bl3l7"]
+[ext_resource type="Texture2D" uid="uid://6mbpjt80uxc5" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever7.png" id="12_3gkwl"]
 [ext_resource type="AudioStream" uid="uid://cx0pl60t2lexe" path="res://Assets/Audio/Enemy/Die.wav" id="17_8lm7x"]
-[ext_resource type="Texture2D" uid="uid://6mbpjt80uxc5" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever7.png" id="17_hr4kl"]
-[ext_resource type="Texture2D" uid="uid://dhxlu8dmldb0b" path="res://Assets/Sprites/Characters/Bot/Death/bot muerever8.png" id="18_vyjkr"]
 [ext_resource type="Texture2D" uid="uid://43oru2surfsv" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever2.png" id="20_oxu28"]
-[ext_resource type="Texture2D" uid="uid://btkmc0drk7mh6" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever3.png" id="21_w4e8s"]
-[ext_resource type="Texture2D" uid="uid://sf24dh6apkss" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever4.png" id="22_j0gb1"]
-[ext_resource type="Texture2D" uid="uid://bvhtcj1ed7bbb" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever5.png" id="23_dovkn"]
-[ext_resource type="Texture2D" uid="uid://wu0q3dioullc" path="res://Assets/Sprites/Characters/Bot/Idle/bot idlever6.png" id="24_pcve2"]
-[ext_resource type="Texture2D" uid="uid://eddv6h01boc1" path="res://Assets/Sprites/Characters/Bot/Move/botver2.png" id="25_4g58c"]
-[ext_resource type="Texture2D" uid="uid://bgaxrgv6g7m3v" path="res://Assets/Sprites/Characters/Bot/Move/botver3.png" id="26_fb1ed"]
-[ext_resource type="Texture2D" uid="uid://diroytn24k56v" path="res://Assets/Sprites/Characters/Bot/Move/botver4.png" id="27_rw43l"]
-[ext_resource type="Texture2D" uid="uid://cw6xp7ne6bgnv" path="res://Assets/Sprites/Characters/Bot/Move/botver5.png" id="28_8fptf"]
-[ext_resource type="Texture2D" uid="uid://dopdmt40s153p" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Dañover3.png" id="29_3nqv1"]
+[ext_resource type="Texture2D" uid="uid://eddv6h01boc1" path="res://Assets/Sprites/Characters/Bot/Move/botver2.png" id="24_rnqo7"]
+[ext_resource type="Texture2D" uid="uid://bgaxrgv6g7m3v" path="res://Assets/Sprites/Characters/Bot/Move/botver3.png" id="25_q4oe2"]
+[ext_resource type="Texture2D" uid="uid://diroytn24k56v" path="res://Assets/Sprites/Characters/Bot/Move/botver4.png" id="26_rhrvs"]
+[ext_resource type="Texture2D" uid="uid://cw6xp7ne6bgnv" path="res://Assets/Sprites/Characters/Bot/Move/botver5.png" id="27_rxumo"]
+[ext_resource type="Texture2D" uid="uid://dopdmt40s153p" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Dañover3.png" id="28_dkx1x"]
+[ext_resource type="Texture2D" uid="uid://dg5yqgcsibg8b" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Dañover4.png" id="29_v05yx"]
 [ext_resource type="AudioStream" uid="uid://dmhxgl1xmi7o4" path="res://Assets/Audio/Enemy/TakeHit.wav" id="30_mmyvg"]
-[ext_resource type="Texture2D" uid="uid://dg5yqgcsibg8b" path="res://Assets/Sprites/Characters/Bot/Hurt/bot Dañover4.png" id="30_o0oo1"]
 [ext_resource type="Script" path="res://Scripts/Characters/AttackHitbox.cs" id="43_766tu"]
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyStunState.cs" id="44_rcgvw"]
 [ext_resource type="PackedScene" uid="uid://b73b2lo4q8pg5" path="res://Scenes/Characters/state_machine.tscn" id="99_bulcw"]
@@ -50,6 +50,33 @@ script = ExtResource("2_o6ybb")
 StatType = 1
 StatValue = 4.0
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_3eofw"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xm1q1"]
+bg_color = Color(0, 0, 0, 0.501961)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofvti"]
+bg_color = Color(0.741176, 0, 0.0235294, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xbl3o"]
 resource_local_to_scene = true
 render_priority = 1
@@ -68,10 +95,10 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666668, 0.833335, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("6_7b24y"), ExtResource("7_y6wym"), ExtResource("8_44dhy"), ExtResource("9_aj6l4"), ExtResource("9_aj6l4"), ExtResource("10_5tb13"), ExtResource("10_5tb13")]
+"values": [ExtResource("5_jjfs3"), ExtResource("6_va5hm"), ExtResource("7_0ysw7"), ExtResource("7_0ysw7"), ExtResource("8_8fpxl"), ExtResource("9_24jf7"), ExtResource("5_jjfs3")]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -125,10 +152,10 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.500001, 0.666668, 0.833335, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("12_o3yql"), ExtResource("13_pmhme"), ExtResource("14_i5jvn"), ExtResource("15_bs2gm"), ExtResource("16_2jbay"), ExtResource("17_hr4kl"), ExtResource("18_vyjkr")]
+"values": [ExtResource("7_jfom8"), ExtResource("8_vqmbc"), ExtResource("9_qqn4l"), ExtResource("10_ui3cs"), ExtResource("11_bl3l7"), ExtResource("12_3gkwl"), ExtResource("5_tpt3q")]
 }
 tracks/1/type = "audio"
 tracks/1/imported = false
@@ -172,7 +199,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("20_oxu28"), ExtResource("21_w4e8s"), ExtResource("22_j0gb1"), ExtResource("23_dovkn"), ExtResource("24_pcve2")]
+"values": [ExtResource("20_oxu28"), ExtResource("5_yicw7"), ExtResource("8_3wias"), ExtResource("9_r1g7f"), ExtResource("10_v2kev")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -197,10 +224,10 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.666667, 0.9999),
+"times": PackedFloat32Array(0, 0.333333, 0.666666, 0.999999),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("25_4g58c"), ExtResource("26_fb1ed"), ExtResource("27_rw43l"), ExtResource("28_8fptf")]
+"values": [ExtResource("24_rnqo7"), ExtResource("25_q4oe2"), ExtResource("26_rhrvs"), ExtResource("27_rxumo")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -225,10 +252,10 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.666667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333, 0.666666, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("5_t726f"), ExtResource("29_3nqv1"), ExtResource("30_o0oo1")]
+"values": [ExtResource("5_phyuw"), ExtResource("28_dkx1x"), ExtResource("29_v05yx"), ExtResource("29_v05yx")]
 }
 tracks/1/type = "audio"
 tracks/1/imported = false
@@ -280,13 +307,14 @@ radius = 0.583839
 [sub_resource type="BoxShape3D" id="BoxShape3D_bvn4w"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "StateMachineNode", "HurtBoxNode", "HitBoxNode", "HitBoxShapeNode", "ShaderTimerNode", "AgentNode", "ChaseAreaNode", "AttackAreaNode")]
+[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "healthBar", "StateMachineNode", "HurtBoxNode", "HitBoxNode", "HitBoxShapeNode", "ShaderTimerNode", "AgentNode", "ChaseAreaNode", "AttackAreaNode")]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_mg2bf")
 stats = Array[Object]([SubResource("Resource_dmi1t"), SubResource("Resource_xkbbt")])
 AnimPlayerNode = NodePath("AnimationPlayer")
 SpriteNode = NodePath("Sprite3D")
+healthBar = NodePath("SubViewport/ProgressBar")
 StateMachineNode = NodePath("StateMachine")
 HurtBoxNode = NodePath("HurtBox")
 HitBoxNode = NodePath("HitBox")
@@ -296,19 +324,47 @@ AgentNode = NodePath("NavigationAgent3D")
 ChaseAreaNode = NodePath("ChaseArea")
 AttackAreaNode = NodePath("AtackingArea")
 
+[node name="Healthbar" type="Sprite3D" parent="."]
+process_priority = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.838513, 0)
+render_priority = 1
+texture = SubResource("ViewportTexture_3eofw")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -8.0
+offset_right = 64.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_xm1q1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ofvti")
+value = 100.0
+show_percentage = false
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 material_overlay = SubResource("ShaderMaterial_xbl3o")
 pixel_size = 0.0015
 alpha_cut = 2
 texture_filter = 0
-texture = ExtResource("9_aj6l4")
+texture = ExtResource("9_24jf7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite3D")
 libraries = {
 "": SubResource("AnimationLibrary_g15or")
 }
-speed_scale = 1.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00961711, 0.0192509, 0)
@@ -345,8 +401,12 @@ script = ExtResource("105_b7s5b")
 [node name="DeathState" type="Node" parent="StateMachine"]
 script = ExtResource("107_yy0hn")
 
-[node name="StunState" type="Node" parent="StateMachine"]
+[node name="StunState" type="Node" parent="StateMachine" node_paths=PackedStringArray("cooldownTimerNode")]
 script = ExtResource("44_rcgvw")
+cooldownTimerNode = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/StunState"]
+one_shot = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true

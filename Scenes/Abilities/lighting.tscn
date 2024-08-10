@@ -73,7 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.548952, 0)
 pixel_size = 0.006
 texture_filter = 0
 render_priority = 1
-texture = ExtResource("2_0lhip")
+texture = ExtResource("4_sbm42")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

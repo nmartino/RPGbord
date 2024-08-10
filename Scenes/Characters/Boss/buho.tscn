@@ -1,0 +1,430 @@
+[gd_scene load_steps=70 format=3 uid="uid://cqayruchuaokl"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/Enemy.cs" id="1_spowg"]
+[ext_resource type="Script" path="res://Scripts/Resources/StatResource.cs" id="2_fm0ht"]
+[ext_resource type="Shader" path="res://Shaders/character_hurt.gdshader" id="3_5e6fi"]
+[ext_resource type="Texture2D" uid="uid://cntacnxams4e3" path="res://Assets/Sprites/Characters/BuhoAfricano/Ataque/atq5.png" id="3_43i1h"]
+[ext_resource type="Texture2D" uid="uid://dqr04kpdsl8e8" path="res://Assets/Sprites/Characters/BuhoAfricano/Ataque/atq1.png" id="3_akb2e"]
+[ext_resource type="PackedScene" uid="uid://b73b2lo4q8pg5" path="res://Scenes/Characters/state_machine.tscn" id="3_dkohv"]
+[ext_resource type="Texture2D" uid="uid://d2wemv3vb2ui3" path="res://Assets/Sprites/Characters/BuhoAfricano/Idle/buho gira2.png" id="3_jks4u"]
+[ext_resource type="Texture2D" uid="uid://dup76kk56o313" path="res://Assets/Sprites/Characters/BuhoAfricano/buho idle5.png" id="3_kqoxq"]
+[ext_resource type="Texture2D" uid="uid://bhr48b7ht7cp4" path="res://Assets/Sprites/Characters/BuhoAfricano/Move/buho vuela2.png" id="3_ucr12"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyIdleState.cs" id="4_wch7a"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyReturnState.cs" id="5_03hnq"]
+[ext_resource type="Texture2D" uid="uid://er3ij0ryqn70" path="res://Assets/Sprites/Characters/BuhoAfricano/Ataque/atq2.png" id="5_llb1u"]
+[ext_resource type="Texture2D" uid="uid://c28hlpcf6aogn" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0013_Layer-1.png" id="5_u6bt5"]
+[ext_resource type="Texture2D" uid="uid://bgg7pml172ask" path="res://Assets/Sprites/Characters/BuhoAfricano/Ataque/atq3.png" id="6_2cp2i"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyPatrolState.cs" id="6_7j8do"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyChaseState.cs" id="7_h681c"]
+[ext_resource type="Texture2D" uid="uid://uqtbudsy61po" path="res://Assets/Sprites/Characters/BuhoAfricano/Ataque/atq4.png" id="7_xsp2a"]
+[ext_resource type="Texture2D" uid="uid://s3yavq2dfyfq" path="res://Assets/Sprites/Characters/BuhoAfricano/Ataque/atq6.png" id="8_43ows"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyAttackState.cs" id="8_ur12w"]
+[ext_resource type="Texture2D" uid="uid://7klotyd5xum7" path="res://Assets/Sprites/Characters/BuhoAfricano/Ataque/atq7.png" id="9_b1fwh"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyDeathState.cs" id="9_nqgwl"]
+[ext_resource type="AudioStream" uid="uid://ctcamaq5llxlg" path="res://Assets/Audio/Buho/BuhoAttack.wav" id="10_e4y32"]
+[ext_resource type="Script" path="res://Scripts/Characters/Enemy/EnemyStunState.cs" id="10_nywua"]
+[ext_resource type="Script" path="res://Scripts/Characters/AttackHitbox.cs" id="11_f3fpo"]
+[ext_resource type="Texture2D" uid="uid://c07swy3og88wg" path="res://Assets/Sprites/Characters/BuhoAfricano/Idle/buho gira1.png" id="13_58kd4"]
+[ext_resource type="Texture2D" uid="uid://bw37jjtuanjfw" path="res://Assets/Sprites/Characters/BuhoAfricano/Idle/buho gira3.png" id="14_eclbs"]
+[ext_resource type="Texture2D" uid="uid://cnmrqbdomy2s5" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0012_Layer-2.png" id="14_q51b7"]
+[ext_resource type="Texture2D" uid="uid://5h8sr1qbl4mp" path="res://Assets/Sprites/Characters/BuhoAfricano/Idle/buho gira4.png" id="15_hjqfw"]
+[ext_resource type="Texture2D" uid="uid://drw7f5k6fd3ku" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0011_Layer-3.png" id="15_raevd"]
+[ext_resource type="Texture2D" uid="uid://di23ju7oa825d" path="res://Assets/Sprites/Characters/BuhoAfricano/Idle/buho gira5.png" id="16_7ypgx"]
+[ext_resource type="Texture2D" uid="uid://b7jgtertsq6d" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0010_Layer-4.png" id="16_vebf3"]
+[ext_resource type="Texture2D" uid="uid://bv6rhyegijj8o" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0009_Layer-5.png" id="17_7mthb"]
+[ext_resource type="Texture2D" uid="uid://b2dsia0hqu0jv" path="res://Assets/Sprites/Characters/BuhoAfricano/Idle/buho gira6.png" id="17_skd7s"]
+[ext_resource type="Texture2D" uid="uid://6rsgp73fixp" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0008_Layer-6.png" id="18_wk6dp"]
+[ext_resource type="Texture2D" uid="uid://ck5136d1nmx6e" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0007_Layer-7.png" id="19_fpdkt"]
+[ext_resource type="Texture2D" uid="uid://cooeyhykhhbbn" path="res://Assets/Sprites/Characters/BuhoAfricano/Move/buho vuela1.png" id="19_wuw3y"]
+[ext_resource type="Texture2D" uid="uid://dnb7l0ggbm8q2" path="res://Assets/Sprites/Characters/BuhoAfricano/Move/buho vuela3.png" id="20_5ioo5"]
+[ext_resource type="Texture2D" uid="uid://c2jl7t7f13qhl" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0006_Layer-8.png" id="20_xmamf"]
+[ext_resource type="Texture2D" uid="uid://8s3hp2wewtpe" path="res://Assets/Sprites/Characters/BuhoAfricano/Move/buho vuela4.png" id="21_5ws3l"]
+[ext_resource type="Texture2D" uid="uid://lq64vr3jjlo5" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0005_Layer-9.png" id="21_xkmbd"]
+[ext_resource type="Texture2D" uid="uid://b1hsgkrjmrvx7" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0004_Layer-10.png" id="22_ihg1c"]
+[ext_resource type="Texture2D" uid="uid://4o74rnlrr6c1" path="res://Assets/Sprites/Characters/BuhoAfricano/Move/buho vuela5.png" id="22_j6js1"]
+[ext_resource type="Texture2D" uid="uid://212yteo1awt7" path="res://Assets/Sprites/Characters/BuhoAfricano/Move/buho vuela6.png" id="23_es4qq"]
+[ext_resource type="Texture2D" uid="uid://6l5rckk4sevx" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0003_Layer-11.png" id="23_pyvq7"]
+[ext_resource type="Texture2D" uid="uid://fm0qitkh34lg" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0002_Layer-12.png" id="24_ka2x5"]
+[ext_resource type="Texture2D" uid="uid://bderl35473w63" path="res://Assets/Sprites/Characters/BuhoAfricano/Move/buho vuela7.png" id="24_x0tn4"]
+[ext_resource type="Texture2D" uid="uid://dxkda242crhyi" path="res://Assets/Sprites/Characters/BuhoAfricano/Muere/buho-muere1_0001_Layer-13.png" id="25_v7f83"]
+[ext_resource type="Texture2D" uid="uid://daju7cxt86y0j" path="res://Assets/Sprites/Characters/BuhoAfricano/buho idle1.png" id="26_2miit"]
+[ext_resource type="AudioStream" uid="uid://cg0gqris2bcng" path="res://Assets/Audio/Buho/BuhoDie.wav" id="26_c8woq"]
+[ext_resource type="Texture2D" uid="uid://cy22e78s26ceg" path="res://Assets/Sprites/Characters/BuhoAfricano/buho idle2.png" id="27_jp0h1"]
+[ext_resource type="Texture2D" uid="uid://du5i50me1otrn" path="res://Assets/Sprites/Characters/BuhoAfricano/buho idle3.png" id="28_lgf5a"]
+[ext_resource type="Texture2D" uid="uid://bghekjjv0fipd" path="res://Assets/Sprites/Characters/BuhoAfricano/buho idle4.png" id="29_m5etj"]
+[ext_resource type="AudioStream" uid="uid://bmqdccigg57cs" path="res://Assets/Audio/Buho/BuhoTakeHit.wav" id="30_y58bl"]
+
+[sub_resource type="Resource" id="Resource_axtws"]
+script = ExtResource("2_fm0ht")
+StatType = 0
+StatValue = 200.0
+
+[sub_resource type="Resource" id="Resource_tvfoq"]
+script = ExtResource("2_fm0ht")
+StatType = 1
+StatValue = 10.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kn52i"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h44hc"]
+bg_color = Color(0, 0, 0, 0.501961)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qiq24"]
+bg_color = Color(0.741176, 0, 0.0235294, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_20h2a"]
+resource_local_to_scene = true
+render_priority = 1
+shader = ExtResource("3_5e6fi")
+shader_parameter/active = false
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/tex = ExtResource("13_58kd4")
+
+[sub_resource type="Animation" id="Animation_b41d7"]
+resource_name = "Attack"
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_akb2e"), ExtResource("5_llb1u"), ExtResource("6_2cp2i"), ExtResource("7_xsp2a"), ExtResource("3_43i1h"), ExtResource("8_43ows"), ExtResource("8_43ows"), ExtResource("9_b1fwh"), ExtResource("3_43i1h")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StateMachine/AttackState")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.625),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PerformHit"
+}]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_e4y32")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer:speed_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.625, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.5, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_5a5ox"]
+resource_name = "Death"
+step = 0.0769231
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0769231, 0.153846, 0.230769, 0.307692, 0.384615, 0.461538, 0.538462, 0.615385, 0.692308, 0.769231, 0.846154, 0.923077, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_u6bt5"), ExtResource("14_q51b7"), ExtResource("15_raevd"), ExtResource("16_vebf3"), ExtResource("17_7mthb"), ExtResource("18_wk6dp"), ExtResource("19_fpdkt"), ExtResource("20_xmamf"), ExtResource("21_xkmbd"), ExtResource("22_ihg1c"), ExtResource("23_pyvq7"), ExtResource("24_ka2x5"), ExtResource("25_v7f83"), ExtResource("5_u6bt5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.75, 1.0]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 1.8,
+"start_offset": 0.0,
+"stream": ExtResource("26_c8woq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_v0krl"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.142857
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571, 0.571429, 0.714286, 0.857143),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_58kd4"), ExtResource("3_jks4u"), ExtResource("14_eclbs"), ExtResource("15_hjqfw"), ExtResource("16_7ypgx"), ExtResource("17_skd7s"), ExtResource("13_58kd4")]
+}
+
+[sub_resource type="Animation" id="Animation_v3g33"]
+resource_name = "Move"
+loop_mode = 1
+step = 0.142857
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571, 0.571429, 0.714286, 0.857143),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("19_wuw3y"), ExtResource("3_ucr12"), ExtResource("20_5ioo5"), ExtResource("21_5ws3l"), ExtResource("22_j6js1"), ExtResource("23_es4qq"), ExtResource("24_x0tn4")]
+}
+
+[sub_resource type="Animation" id="Animation_6tvyu"]
+resource_name = "Stun"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("26_2miit"), ExtResource("27_jp0h1"), ExtResource("28_lgf5a"), ExtResource("29_m5etj"), ExtResource("3_kqoxq")]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_y58bl")
+}],
+"times": PackedFloat32Array(0.25)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mmfdn"]
+_data = {
+"Attack": SubResource("Animation_b41d7"),
+"Death": SubResource("Animation_5a5ox"),
+"Idle": SubResource("Animation_v0krl"),
+"Move": SubResource("Animation_v3g33"),
+"Stun": SubResource("Animation_6tvyu")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k4xkx"]
+radius = 0.657577
+height = 1.5823
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ywwlq"]
+radius = 4.31125
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hsbs8"]
+radius = 0.785418
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ekk7n"]
+size = Vector3(0.777039, 0.5, 1.44934)
+
+[node name="Buho" type="CharacterBody3D" node_paths=PackedStringArray("AnimPlayerNode", "SpriteNode", "healthBar", "StateMachineNode", "HurtBoxNode", "HitBoxNode", "HitBoxShapeNode", "ShaderTimerNode", "AgentNode", "ChaseAreaNode", "AttackAreaNode")]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_spowg")
+stats = Array[Object]([SubResource("Resource_axtws"), SubResource("Resource_tvfoq")])
+AnimPlayerNode = NodePath("AnimationPlayer")
+SpriteNode = NodePath("Sprite3D")
+healthBar = NodePath("SubViewport/ProgressBar")
+StateMachineNode = NodePath("StateMachine")
+HurtBoxNode = NodePath("HurtBox")
+HitBoxNode = NodePath("HitBox")
+HitBoxShapeNode = NodePath("HitBox/CollisionShape3D")
+ShaderTimerNode = NodePath("ShaderTimer")
+AgentNode = NodePath("NavigationAgent3D")
+ChaseAreaNode = NodePath("ChaseArea")
+AttackAreaNode = NodePath("AtackingArea")
+
+[node name="HealthBar" type="Sprite3D" parent="."]
+process_priority = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06548, 0)
+render_priority = 1
+texture = SubResource("ViewportTexture_kn52i")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(256, 256)
+render_target_update_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -8.0
+offset_right = 64.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_h44hc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qiq24")
+max_value = 200.0
+value = 200.0
+show_percentage = false
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.222477, 0)
+material_overlay = SubResource("ShaderMaterial_20h2a")
+pixel_size = 0.002
+texture = ExtResource("5_u6bt5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mmfdn")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00961711, 0.0192509, 0)
+shape = SubResource("CapsuleShape3D_k4xkx")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("currenState", "states") instance=ExtResource("3_dkohv")]
+currenState = NodePath("IdleState")
+states = [NodePath("IdleState"), NodePath("ReturnState"), NodePath("PatrolState"), NodePath("ChaseState"), NodePath("AttackState"), NodePath("DeathState"), NodePath("StunState")]
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("4_wch7a")
+
+[node name="ReturnState" type="Node" parent="StateMachine"]
+script = ExtResource("5_03hnq")
+
+[node name="PatrolState" type="Node" parent="StateMachine" node_paths=PackedStringArray("idleTimerNode")]
+script = ExtResource("6_7j8do")
+idleTimerNode = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/PatrolState"]
+one_shot = true
+
+[node name="ChaseState" type="Node" parent="StateMachine" node_paths=PackedStringArray("chaseTimerNode")]
+script = ExtResource("7_h681c")
+chaseTimerNode = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/ChaseState"]
+wait_time = 0.5
+autostart = true
+
+[node name="AttackState" type="Node" parent="StateMachine"]
+script = ExtResource("8_ur12w")
+
+[node name="DeathState" type="Node" parent="StateMachine"]
+script = ExtResource("9_nqgwl")
+
+[node name="StunState" type="Node" parent="StateMachine" node_paths=PackedStringArray("cooldownTimerNode")]
+script = ExtResource("10_nywua")
+cooldownTimerNode = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="StateMachine/StunState"]
+one_shot = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="ChaseArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChaseArea"]
+shape = SubResource("SphereShape3D_ywwlq")
+
+[node name="AtackingArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AtackingArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0682074, 0.109807, 0)
+shape = SubResource("SphereShape3D_hsbs8")
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0203071, 0)
+shape = SubResource("CapsuleShape3D_k4xkx")
+
+[node name="HitBox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0403285, 0, 0)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("11_f3fpo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148204, 0, 0.00762939)
+shape = SubResource("BoxShape3D_ekk7n")
+disabled = true
+
+[node name="ShaderTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

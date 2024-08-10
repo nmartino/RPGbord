@@ -9,6 +9,7 @@ public abstract partial class Character : CharacterBody3D
     [ExportGroup("Required Nodes")]
     [Export] public AnimationPlayer AnimPlayerNode{get; private set;}
     [Export] public Sprite3D SpriteNode{get; private set;}
+    [Export] public ProgressBar healthBar{get; private set;}
     [Export] public StateMachine StateMachineNode{get; private set;}
     [Export] public Area3D HurtBoxNode {get; private set;}
     [Export] public Area3D HitBoxNode {get; private set;}
@@ -30,7 +31,7 @@ public abstract partial class Character : CharacterBody3D
     public override void _Ready()
     {
         shader = (ShaderMaterial)SpriteNode.MaterialOverlay;
-
+        healthBar.MaxValue = GetStatResource(Stat.Health).StatValue;
         HurtBoxNode.AreaEntered += HandleHurtboxEntered;
         SpriteNode.TextureChanged += HandleTextureChange;
         ShaderTimerNode.Timeout += HandleShaderTimeOut;
@@ -64,6 +65,7 @@ public abstract partial class Character : CharacterBody3D
         StatResource health = GetStatResource(Stat.Health);
         float damage = hitBox.GetDamage();
         health.StatValue -= damage;
+        healthBar.Value = health.StatValue;
         shader.SetShaderParameter("active", true);
         ShaderTimerNode.Start();
     }
@@ -79,7 +81,6 @@ public abstract partial class Character : CharacterBody3D
     {
        return stats.Where((element) => element.StatType == stat)
             .FirstOrDefault();
-
     }
 
     public void ToggleHitBox(bool flag)

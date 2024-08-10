@@ -9,10 +9,6 @@ public partial class Player : Character
         base._Ready();
         GameEvents.OnReward += HandleReward;
     }
-
-
-
-
     public override void _Input(InputEvent @event)
     {
         if(!inputEnabled){
@@ -27,8 +23,10 @@ public partial class Player : Character
     private void HandleReward(RewardResource resource)
     {
         StatResource targetStat = GetStatResource(resource.TargetStat);
-
         targetStat.StatValue += resource.Amount;
+        if(resource.TargetStat == Stat.Health){
+            healthBar.Value = targetStat.StatValue;
+        }
     }
 
     public void ClampToCube(Vector3 cubePosition, Vector3 cubeSize)
