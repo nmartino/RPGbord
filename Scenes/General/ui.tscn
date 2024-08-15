@@ -20,17 +20,17 @@
 [ext_resource type="Texture2D" uid="uid://bufb4af2n546o" path="res://Assets/Sprites/UI/trofeo/trofeo rebord1.png" id="18_pan27"]
 [ext_resource type="Texture2D" uid="uid://2k7a4u61llkp" path="res://Assets/Sprites/UI/skull/calavera ruffo4.png" id="18_vbk2w"]
 [ext_resource type="Texture2D" uid="uid://w5he204o3qfq" path="res://Assets/Sprites/UI/trofeo/trofeo rebord7.png" id="19_j15di"]
-[ext_resource type="Texture2D" uid="uid://ccdtprfoc5uoh" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle1.png" id="20_tkht7"]
-[ext_resource type="Texture2D" uid="uid://dspyoryr5ssgh" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle2.png" id="21_4koe8"]
 [ext_resource type="Texture2D" uid="uid://cuq7qjumgyu4q" path="res://Assets/Sprites/UI/trofeo/trofeo rebord2.png" id="21_f4s4f"]
 [ext_resource type="Texture2D" uid="uid://bvag267b60lwe" path="res://Assets/Sprites/UI/trofeo/trofeo rebord3.png" id="22_c0c7t"]
-[ext_resource type="Texture2D" uid="uid://l5p3b3vyrg3y" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle3.png" id="22_cyam7"]
-[ext_resource type="Texture2D" uid="uid://cgr7tlu0s3og8" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle4.png" id="23_30f4i"]
 [ext_resource type="Texture2D" uid="uid://bxa2uhcka53kd" path="res://Assets/Sprites/UI/trofeo/trofeo rebord4.png" id="23_l8dew"]
-[ext_resource type="Texture2D" uid="uid://dvowadg8rj103" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle5.png" id="24_5wloq"]
 [ext_resource type="Texture2D" uid="uid://cjmdpno37dnuf" path="res://Assets/Sprites/UI/trofeo/trofeo rebord5.png" id="24_pmmn8"]
 [ext_resource type="Texture2D" uid="uid://cafxvysrnxu1n" path="res://Assets/Sprites/UI/trofeo/trofeo rebord6.png" id="25_imuuw"]
 [ext_resource type="Texture2D" uid="uid://3ny42fsuh0pk" path="res://Assets/Sprites/UI/trofeo/trofeo rebord8.png" id="26_6t35a"]
+[ext_resource type="Texture2D" uid="uid://c5g3ja3nxofpy" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_idle/rufito idlenuevo1.png" id="27_00dj6"]
+[ext_resource type="Texture2D" uid="uid://dkcn7mo1axnvx" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_idle/rufito idlenuevo2.png" id="28_nv4rj"]
+[ext_resource type="Texture2D" uid="uid://d3mm782rvpjhf" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_idle/rufito idlenuevo3.png" id="29_7f70w"]
+[ext_resource type="Texture2D" uid="uid://cehka4sdsx4g3" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_idle/rufito idlenuevo4.png" id="30_jquj7"]
+[ext_resource type="Texture2D" uid="uid://bir46rmsvs0vf" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_idle/rufito idlenuevo5.png" id="31_14ubv"]
 [ext_resource type="Texture2D" uid="uid://6t03es2l278q" path="res://Assets/Sprites/UI/easterEggs/cartas/items ruffo6.png" id="32_enqql"]
 [ext_resource type="AudioStream" uid="uid://cyqgrxamn1yud" path="res://Assets/Audio/UI/button_press_04.wav" id="33_q4nlj"]
 [ext_resource type="Texture2D" uid="uid://dslvq8h2hyva4" path="res://Assets/Sprites/UI/teclas/space.png" id="33_y2wif"]
@@ -116,7 +116,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("20_tkht7"), ExtResource("21_4koe8"), ExtResource("22_cyam7"), ExtResource("23_30f4i"), ExtResource("24_5wloq")]
+"values": [ExtResource("27_00dj6"), ExtResource("28_nv4rj"), ExtResource("29_7f70w"), ExtResource("30_jquj7"), ExtResource("31_14ubv")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jt5xy"]
@@ -479,7 +479,7 @@ horizontal_alignment = 1
 [node name="Sprite2D" type="Sprite2D" parent="Pause/MarginContainer/VBoxContainer"]
 position = Vector2(154, 199)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("24_5wloq")
+texture = ExtResource("27_00dj6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pause/MarginContainer/VBoxContainer"]
 libraries = {

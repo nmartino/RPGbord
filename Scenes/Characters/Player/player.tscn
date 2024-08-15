@@ -2,60 +2,60 @@
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/Player.cs" id="1_32gnk"]
 [ext_resource type="Resource" uid="uid://d0copp6n65px" path="res://Resources/player_health_stat.tres" id="2_5f5yu"]
-[ext_resource type="Texture2D" uid="uid://csk74qq3xec7m" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo6.png" id="2_aqxwh"]
-[ext_resource type="Texture2D" uid="uid://djoo2mpor0if6" path="res://Assets/Sprites/Characters/Player/ruffito_kick/rufitopatadaataca1.png" id="2_van85"]
-[ext_resource type="Texture2D" uid="uid://l5p3b3vyrg3y" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle3.png" id="2_yl5it"]
-[ext_resource type="Texture2D" uid="uid://ce2weyu85ikqe" path="res://Assets/Sprites/Characters/Player/rufito_die/rufito se muere unu8.png" id="3_8esty"]
 [ext_resource type="Resource" uid="uid://s6anh44hdutp" path="res://Resources/player_strenght_stat.tres" id="3_ffh28"]
-[ext_resource type="Texture2D" uid="uid://caxp4hi2opc4n" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo1.png" id="3_qob3n"]
-[ext_resource type="Texture2D" uid="uid://w4g0gkdf2opb" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo2.png" id="4_bhl26"]
 [ext_resource type="Shader" path="res://Shaders/character_hurt.gdshader" id="4_pe064"]
-[ext_resource type="Texture2D" uid="uid://c3kjcicv54t3a" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo3.png" id="5_x5jpc"]
-[ext_resource type="Texture2D" uid="uid://be4fnxttdh1ko" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo4.png" id="6_rsub6"]
-[ext_resource type="Texture2D" uid="uid://bylyd787ts08" path="res://Assets/Sprites/Characters/Player/rufitto_slide/rufito con polvo5.png" id="7_hnc6d"]
-[ext_resource type="Texture2D" uid="uid://ccdtprfoc5uoh" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle1.png" id="9_d4bp3"]
-[ext_resource type="Texture2D" uid="uid://csg6txcksjh6c" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre1.png" id="9_m26ud"]
-[ext_resource type="Texture2D" uid="uid://mdqd7htfj4qa" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre2.png" id="10_6ojln"]
-[ext_resource type="Texture2D" uid="uid://dspyoryr5ssgh" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle2.png" id="10_t3h7d"]
-[ext_resource type="Texture2D" uid="uid://b7yj2wib03py3" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre3.png" id="11_5lp2l"]
-[ext_resource type="Texture2D" uid="uid://cgr7tlu0s3og8" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle4.png" id="11_mg81l"]
+[ext_resource type="Texture2D" uid="uid://boyitfdcbeyvk" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/ruffito_kick/rufitopatadaatacanuevo1.png" id="7_hr1i7"]
+[ext_resource type="Texture2D" uid="uid://dattjdctj2u5p" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/ruffito_kick/rufitopatadaatacanuevo2.png" id="8_vrmqq"]
+[ext_resource type="Texture2D" uid="uid://c384r62inno64" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/ruffito_kick/rufitopatadaatacanuevo3.png" id="9_w36wl"]
+[ext_resource type="Texture2D" uid="uid://21ekoh5dr0bb" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/ruffito_kick/rufitopatadaatacanuevo4.png" id="10_o7j4e"]
+[ext_resource type="Texture2D" uid="uid://c18u0p78rkuk5" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/ruffito_kick/rufitopatadaatacanuevo5.png" id="11_8h7ju"]
 [ext_resource type="AudioStream" uid="uid://dn1tvdyuhkopq" path="res://Assets/Audio/Player/kick.wav" id="11_rvb5r"]
-[ext_resource type="Texture2D" uid="uid://dvowadg8rj103" path="res://Assets/Sprites/Characters/Player/Ruffito_idle/rufito idle5.png" id="12_7ornu"]
 [ext_resource type="AudioStream" uid="uid://c1ckpmvxgkpx6" path="res://Assets/Audio/Player/Atack1.wav" id="12_hy4we"]
-[ext_resource type="Texture2D" uid="uid://dpv2152n4maa5" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre4.png" id="12_ytraa"]
-[ext_resource type="Texture2D" uid="uid://naakug4yllue" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre5.png" id="13_kuiwb"]
-[ext_resource type="Texture2D" uid="uid://bd11sa0pn4kf1" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre6.png" id="14_jm6sp"]
-[ext_resource type="Texture2D" uid="uid://ciwj200u6n6so" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre7.png" id="15_3i1kw"]
+[ext_resource type="Texture2D" uid="uid://cs6xlgmisd220" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_attack/rufitoataca nuevo1.png" id="14_hay7t"]
+[ext_resource type="Texture2D" uid="uid://bfyahoorbhfvb" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_attack/rufitoataca nuevo2.png" id="15_3v1ky"]
 [ext_resource type="AudioStream" uid="uid://b3wo6cwvotfjb" path="res://Assets/Audio/Player/punch.wav" id="15_14ik4"]
-[ext_resource type="Texture2D" uid="uid://snasd4ek6uwa" path="res://Assets/Sprites/Characters/Player/rufito_corre/rufito corre8.png" id="16_2bqsw"]
+[ext_resource type="Texture2D" uid="uid://chig2w1iy5c7q" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_attack/rufitoataca nuevo3.png" id="16_htplb"]
 [ext_resource type="AudioStream" uid="uid://ke8hnfvmr5k3" path="res://Assets/Audio/Player/Atack2.wav" id="16_ptr1v"]
-[ext_resource type="Texture2D" uid="uid://dt544k3gl5oyy" path="res://Assets/Sprites/Characters/Player/ruffito_kick/rufitopatadaataca2.png" id="22_dujdw"]
-[ext_resource type="Texture2D" uid="uid://s22yusrx5m02" path="res://Assets/Sprites/Characters/Player/ruffito_kick/rufitopatadaataca3.png" id="23_h1uim"]
+[ext_resource type="Texture2D" uid="uid://cq5yl48q2p34j" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_attack/rufitoataca nuevo4.png" id="17_p7uri"]
+[ext_resource type="Texture2D" uid="uid://bvlm0xjlqt7d3" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufitto_slide/rufito con polvo nuevo2.png" id="20_217fq"]
+[ext_resource type="Texture2D" uid="uid://byl1dd0osn1vl" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufitto_slide/rufito con polvo nuevo3.png" id="21_2gnob"]
+[ext_resource type="Texture2D" uid="uid://dbvu8y5ypq7rd" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufitto_slide/rufito con polvo nuevo4.png" id="22_kuqpl"]
+[ext_resource type="Texture2D" uid="uid://dphsy6o2nwsvh" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufitto_slide/rufito con polvo nuevo5.png" id="23_p8tom"]
+[ext_resource type="Texture2D" uid="uid://4oqmnyry6611" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufitto_slide/rufito con polvo nuevo6.png" id="24_4ircb"]
 [ext_resource type="AudioStream" uid="uid://2wrymt5xcbyn" path="res://Assets/Audio/Player/Dash.wav" id="24_crhlu"]
-[ext_resource type="Texture2D" uid="uid://7y6bt77yx0pq" path="res://Assets/Sprites/Characters/Player/ruffito_kick/rufitopatadaataca4.png" id="24_pysbq"]
-[ext_resource type="Texture2D" uid="uid://cjdh6pnxggdxd" path="res://Assets/Sprites/Characters/Player/ruffito_kick/rufitopatadaataca5.png" id="25_hqjk5"]
-[ext_resource type="Texture2D" uid="uid://8watmolqc583" path="res://Assets/Sprites/Characters/Player/ruffito_attack/rufitoataca1.png" id="26_gm7io"]
-[ext_resource type="Texture2D" uid="uid://cy6jwucij685q" path="res://Assets/Sprites/Characters/Player/ruffito_attack/rufitoataca2.png" id="27_gbgo8"]
-[ext_resource type="Texture2D" uid="uid://cknwkbq85rhe8" path="res://Assets/Sprites/Characters/Player/ruffito_attack/rufitoataca3.png" id="28_ctnkj"]
-[ext_resource type="Texture2D" uid="uid://bvn8ahey1ewve" path="res://Assets/Sprites/Characters/Player/ruffito_attack/rufitoataca4.png" id="29_pesnf"]
+[ext_resource type="Texture2D" uid="uid://e1xvyoatsvgg" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufitto_slide/rufito con polvo nuevo7.png" id="25_b1i0n"]
+[ext_resource type="Texture2D" uid="uid://dhsl7751npbee" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_die/rufito se muere ununuevo1.png" id="27_c3glg"]
+[ext_resource type="Texture2D" uid="uid://dak1d7tjbpn5k" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_die/rufito se muere ununuevo2.png" id="28_i8wk6"]
+[ext_resource type="Texture2D" uid="uid://clk8110lch8nq" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_die/rufito se muere ununuevo3.png" id="29_nat6k"]
+[ext_resource type="Texture2D" uid="uid://c8csx788e7lgo" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_die/rufito se muere ununuevo4.png" id="30_koid2"]
+[ext_resource type="Texture2D" uid="uid://b8wnek2t8bbaa" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_die/rufito se muere ununuevo5.png" id="31_n2ur7"]
+[ext_resource type="Texture2D" uid="uid://c826voagdld0x" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_die/rufito se muere ununuevo6.png" id="32_44rqd"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerIdleState.cs" id="32_fbg4p"]
-[ext_resource type="Texture2D" uid="uid://dux3enhbxc6xi" path="res://Assets/Sprites/Characters/Player/rufito_die/rufito se muere unu1.png" id="32_x6umt"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerMoveState.cs" id="33_2s5pm"]
+[ext_resource type="Texture2D" uid="uid://s8f1n15buav0" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_die/rufito se muere ununuevo7.png" id="33_7djsi"]
 [ext_resource type="AudioStream" uid="uid://dff4l21yp2mw7" path="res://Assets/Audio/Player/Die.wav" id="33_luhcx"]
-[ext_resource type="Texture2D" uid="uid://jekmp4d4y2" path="res://Assets/Sprites/Characters/Player/rufito_die/rufito se muere unu2.png" id="33_sj4ny"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerAttackState.cs" id="34_68wdr"]
-[ext_resource type="Texture2D" uid="uid://b3sjwstggkvi8" path="res://Assets/Sprites/Characters/Player/rufito_die/rufito se muere unu3.png" id="34_fa2xa"]
-[ext_resource type="Texture2D" uid="uid://dx0y65v53b8oq" path="res://Assets/Sprites/Characters/Player/rufito_die/rufito se muere unu4.png" id="35_f400a"]
-[ext_resource type="Texture2D" uid="uid://6828x1dvlrud" path="res://Assets/Sprites/Characters/Player/rufito_die/rufito se muere unu5.png" id="36_27nfg"]
-[ext_resource type="Texture2D" uid="uid://qwnr3w0k080c" path="res://Assets/Sprites/Characters/Player/rufito_die/rufito se muere unu6.png" id="37_x4rqj"]
-[ext_resource type="Texture2D" uid="uid://nr1r1akk0onf" path="res://Assets/Sprites/Characters/Player/rufito_die/rufito se muere unu7.png" id="38_giih1"]
+[ext_resource type="Texture2D" uid="uid://rpey670g150t" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_die/rufito se muere ununuevo8.png" id="34_rhjb1"]
+[ext_resource type="Texture2D" uid="uid://c5g3ja3nxofpy" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_idle/rufito idlenuevo1.png" id="36_ttuht"]
+[ext_resource type="Texture2D" uid="uid://dkcn7mo1axnvx" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_idle/rufito idlenuevo2.png" id="37_74nie"]
+[ext_resource type="Texture2D" uid="uid://d3mm782rvpjhf" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_idle/rufito idlenuevo3.png" id="38_e5wjo"]
 [ext_resource type="PackedScene" uid="uid://b73b2lo4q8pg5" path="res://Scenes/Characters/state_machine.tscn" id="38_oxu1k"]
+[ext_resource type="Texture2D" uid="uid://cehka4sdsx4g3" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_idle/rufito idlenuevo4.png" id="39_83qrv"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerDashState.cs" id="40_3jx88"]
+[ext_resource type="Texture2D" uid="uid://bir46rmsvs0vf" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_idle/rufito idlenuevo5.png" id="40_kb1ii"]
+[ext_resource type="Texture2D" uid="uid://bebv62easb6sx" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_corre/ruffito 32 version nueva1.png" id="41_wvvtp"]
+[ext_resource type="Texture2D" uid="uid://b02vwobowx3gw" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_corre/ruffito 32 version nueva2.png" id="42_0m5f7"]
+[ext_resource type="Texture2D" uid="uid://cg2843e81gkhq" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_corre/ruffito 32 version nueva3.png" id="43_2wbsg"]
 [ext_resource type="PackedScene" uid="uid://dxxy3t5pf8osm" path="res://Scenes/Abilities/bomb.tscn" id="44_bs2uk"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerDeathState.cs" id="44_kq8ji"]
+[ext_resource type="Texture2D" uid="uid://io7si1xk4m28" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_corre/ruffito 32 version nueva4.png" id="44_ujkm2"]
+[ext_resource type="Texture2D" uid="uid://w12r5casc2wj" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_corre/ruffito 32 version nueva5.png" id="45_lklu5"]
 [ext_resource type="PackedScene" uid="uid://20futf1ie8o0" path="res://Scenes/Abilities/lighting.tscn" id="46_ksalo"]
+[ext_resource type="Texture2D" uid="uid://n1ea5qj1lai" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_corre/ruffito 32 version nueva6.png" id="46_nqwuo"]
+[ext_resource type="Texture2D" uid="uid://bf2ps8by1or2c" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_corre/ruffito 32 version nueva7.png" id="47_6qavb"]
 [ext_resource type="Script" path="res://Scripts/Characters/AttackHitbox.cs" id="47_o54lt"]
 [ext_resource type="AudioStream" uid="uid://dvreudpolqxcp" path="res://Assets/Audio/Player/footstep01.wav" id="47_ofdt7"]
+[ext_resource type="Texture2D" uid="uid://cx7m6d03qbpao" path="res://Assets/Sprites/Characters/Player/ruffo nuevo/rufito_corre/ruffito 32 version nueva8.png" id="48_muy4k"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nfqmo"]
 viewport_path = NodePath("SubViewport")
@@ -65,31 +65,34 @@ bg_color = Color(0, 0, 0, 0.501961)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
-border_width_bottom = 1
+border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 3.0
+shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h252s"]
 bg_color = Color(0, 0.32549, 0.0470588, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+border_width_bottom = 3
+border_color = Color(0, 0.172549, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 3.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ttlk"]
 render_priority = 1
 shader = ExtResource("4_pe064")
 shader_parameter/active = false
 shader_parameter/flash_color = Color(0.647059, 0, 0, 1)
-shader_parameter/tex = ExtResource("23_h1uim")
+shader_parameter/tex = ExtResource("36_ttuht")
 
 [sub_resource type="Animation" id="Animation_xcf2r"]
 resource_name = "Attack1"
@@ -104,7 +107,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_van85"), ExtResource("22_dujdw"), ExtResource("23_h1uim"), ExtResource("24_pysbq"), ExtResource("25_hqjk5")]
+"values": [ExtResource("7_hr1i7"), ExtResource("8_vrmqq"), ExtResource("9_w36wl"), ExtResource("10_o7j4e"), ExtResource("11_8h7ju")]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -164,7 +167,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("26_gm7io"), ExtResource("27_gbgo8"), ExtResource("28_ctnkj"), ExtResource("29_pesnf")]
+"values": [ExtResource("14_hay7t"), ExtResource("15_3v1ky"), ExtResource("16_htplb"), ExtResource("17_p7uri")]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -224,7 +227,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_qob3n"), ExtResource("4_bhl26"), ExtResource("5_x5jpc"), ExtResource("6_rsub6"), ExtResource("7_hnc6d"), ExtResource("2_aqxwh")]
+"values": [ExtResource("20_217fq"), ExtResource("21_2gnob"), ExtResource("22_kuqpl"), ExtResource("23_p8tom"), ExtResource("24_4ircb"), ExtResource("25_b1i0n")]
 }
 tracks/1/type = "audio"
 tracks/1/imported = false
@@ -255,7 +258,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571, 0.571429, 0.714286, 0.857143, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("32_x6umt"), ExtResource("33_sj4ny"), ExtResource("34_fa2xa"), ExtResource("35_f400a"), ExtResource("36_27nfg"), ExtResource("37_x4rqj"), ExtResource("38_giih1"), ExtResource("3_8esty")]
+"values": [ExtResource("27_c3glg"), ExtResource("28_i8wk6"), ExtResource("29_nat6k"), ExtResource("30_koid2"), ExtResource("31_n2ur7"), ExtResource("32_44rqd"), ExtResource("33_7djsi"), ExtResource("34_rhjb1")]
 }
 tracks/1/type = "audio"
 tracks/1/imported = false
@@ -287,7 +290,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("9_d4bp3"), ExtResource("10_t3h7d"), ExtResource("2_yl5it"), ExtResource("11_mg81l"), ExtResource("12_7ornu")]
+"values": [ExtResource("36_ttuht"), ExtResource("37_74nie"), ExtResource("38_e5wjo"), ExtResource("39_83qrv"), ExtResource("40_kb1ii")]
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_18r7f"]
@@ -311,7 +314,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("9_m26ud"), ExtResource("10_6ojln"), ExtResource("11_5lp2l"), ExtResource("12_ytraa"), ExtResource("13_kuiwb"), ExtResource("14_jm6sp"), ExtResource("15_3i1kw"), ExtResource("16_2bqsw")]
+"values": [ExtResource("41_wvvtp"), ExtResource("42_0m5f7"), ExtResource("43_2wbsg"), ExtResource("44_ujkm2"), ExtResource("45_lklu5"), ExtResource("46_nqwuo"), ExtResource("47_6qavb"), ExtResource("48_muy4k")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -419,7 +422,7 @@ material_overlay = SubResource("ShaderMaterial_1ttlk")
 pixel_size = 0.002
 alpha_cut = 2
 texture_filter = 0
-texture = ExtResource("2_van85")
+texture = ExtResource("36_ttuht")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false

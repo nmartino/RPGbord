@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://cqayruchuaokl"]
+[gd_scene load_steps=71 format=3 uid="uid://cqayruchuaokl"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Enemy/Enemy.cs" id="1_spowg"]
 [ext_resource type="Script" path="res://Scripts/Resources/StatResource.cs" id="2_fm0ht"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cntacnxams4e3" path="res://Assets/Sprites/Characters/BuhoAfricano/Ataque/atq5.png" id="3_43i1h"]
 [ext_resource type="Texture2D" uid="uid://dqr04kpdsl8e8" path="res://Assets/Sprites/Characters/BuhoAfricano/Ataque/atq1.png" id="3_akb2e"]
 [ext_resource type="PackedScene" uid="uid://b73b2lo4q8pg5" path="res://Scenes/Characters/state_machine.tscn" id="3_dkohv"]
+[ext_resource type="FontFile" uid="uid://dtv0n3gmb7v37" path="res://Assets/TinyPixie2.ttf" id="3_emh18"]
 [ext_resource type="Texture2D" uid="uid://d2wemv3vb2ui3" path="res://Assets/Sprites/Characters/BuhoAfricano/Idle/buho gira2.png" id="3_jks4u"]
 [ext_resource type="Texture2D" uid="uid://dup76kk56o313" path="res://Assets/Sprites/Characters/BuhoAfricano/buho idle5.png" id="3_kqoxq"]
 [ext_resource type="Texture2D" uid="uid://bhr48b7ht7cp4" path="res://Assets/Sprites/Characters/BuhoAfricano/Move/buho vuela2.png" id="3_ucr12"]
@@ -67,29 +68,32 @@ StatValue = 10.0
 [sub_resource type="ViewportTexture" id="ViewportTexture_kn52i"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h44hc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpgbu"]
 bg_color = Color(0, 0, 0, 0.501961)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
-border_width_bottom = 1
+border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 3.0
+shadow_size = 3
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qiq24"]
-bg_color = Color(0.741176, 0, 0.0235294, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7w4d"]
+bg_color = Color(0.529412, 0, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+border_width_bottom = 3
+border_color = Color(0.243137, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 3.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_20h2a"]
 resource_local_to_scene = true
@@ -327,11 +331,33 @@ offset_right = 64.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_h44hc")
-theme_override_styles/fill = SubResource("StyleBoxFlat_qiq24")
+theme_override_styles/background = SubResource("StyleBoxFlat_kpgbu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_l7w4d")
 max_value = 200.0
 value = 200.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -11.5
+offset_right = 51.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_emh18")
+theme_override_font_sizes/font_size = 12
+text = "Buho Africano"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.222477, 0)
@@ -387,7 +413,6 @@ cooldownTimerNode = NodePath("Timer")
 one_shot = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 
 [node name="ChaseArea" type="Area3D" parent="."]
 collision_layer = 0

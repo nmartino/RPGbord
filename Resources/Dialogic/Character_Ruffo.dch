@@ -28,7 +28,7 @@
 "portraits": {
 "ruffo": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/Characters/Player/ruffito1.png\""
+"image": "\"res://Assets/Sprites/Characters/Player/ruffito2.png\""
 },
 "ignore_char_scale": true,
 "mirror": false,
