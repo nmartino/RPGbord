@@ -2,5 +2,6 @@ join Character_Africano 3 [animation="Bounce In Out" mirrored="true"]
 Character_Africano (buho1): Atencion a todos los Bots Golondrinas!!
 Character_Africano (buho1): Se detecto un intruso en el escondite!!
 Character_Africano (buho1): No Dejen que se acerque a la Silla!!
+leave Character_Africano
 [signal arg="DialogEndBuho"]
 [end_timeline]

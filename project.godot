@@ -25,10 +25,12 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Character_Africano": "res://Resources/Dialogic/Character_Africano.dch",
-"Character_Ruffo": "res://Resources/Dialogic/Character_Ruffo.dch"
+"Character_Ruffo": "res://Resources/Dialogic/Character_Ruffo.dch",
+"character_BlueMan": "res://Resources/Dialogic/character_BlueMan.dch"
 }
 directories/dtl_directory={
 "Africano_Inicio": "res://Resources/Africano_Inicio.dtl",
+"BlueMan_inicio": "res://Resources/BlueMan_inicio.dtl",
 "Ruffito_inicio": "res://Resources/Ruffito_inicio.dtl"
 }
 layout/style_list=[]

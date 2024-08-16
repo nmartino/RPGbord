@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://cgr4d6ywc7jla"]
+[gd_scene load_steps=106 format=3 uid="uid://cgr4d6ywc7jla"]
 
 [ext_resource type="Script" path="res://Scripts/Levels/Main.cs" id="1_xoiea"]
 [ext_resource type="PackedScene" uid="uid://c138i0pw7g0nx" path="res://Scenes/Characters/Player/player.tscn" id="2_xg04o"]
@@ -38,6 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://d11n0gb5mldot" path="res://Assets/Audio/music/backgroundMusic3.mp3" id="33_lweyq"]
 [ext_resource type="PackedScene" uid="uid://bb8v4y8kaax8s" path="res://Scenes/Reward/chair.tscn" id="34_8sf8j"]
 [ext_resource type="AudioStream" uid="uid://dqb5jyevj0cid" path="res://Assets/Audio/music/BackgroundMusic4.mp3" id="34_efane"]
+[ext_resource type="PackedScene" uid="uid://cpm8pxkp7722c" path="res://Scenes/Reward/BlueMan.tscn" id="39_cwj6q"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_8bd12"]
 rayleigh_color = Color(0.388235, 0.0352941, 0.0588235, 1)
@@ -330,12 +331,12 @@ point_count = 6
 [sub_resource type="Resource" id="Resource_kh7if"]
 script = ExtResource("7_1xo4g")
 StatType = 0
-StatValue = 200.0
+StatValue = 250.0
 
 [sub_resource type="Resource" id="Resource_g5k71"]
 script = ExtResource("7_1xo4g")
 StatType = 1
-StatValue = 10.0
+StatValue = 15.0
 
 [sub_resource type="Resource" id="Resource_5b2pk"]
 script = ExtResource("12_3bs64")
@@ -411,7 +412,7 @@ shadow_enabled = true
 [node name="UI" parent="." instance=ExtResource("6_centw")]
 
 [node name="Player" parent="." instance=ExtResource("2_xg04o")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.703734, 2.50109, 11.0002)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 35.4716, 2.50109, 7.45445)
 motion_mode = 0
 floor_max_angle = 1.55334
 floor_snap_length = 0.2
@@ -1449,7 +1450,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2674, 0.519371, -0.22296)
 reward = SubResource("Resource_5j8do")
 
 [node name="TreasureChest3" parent="TreasureChest5" instance=ExtResource("10_n01y7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.9197, 0.523048, 0.00184345)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.405, 0.523048, 1.27646)
 reward = SubResource("Resource_4aku3")
 
 [node name="TreasureChest4" parent="TreasureChest5" instance=ExtResource("10_n01y7")]
@@ -1561,5 +1562,9 @@ shape = SubResource("CylinderShape3D_wc63k")
 
 [node name="Silla" parent="." instance=ExtResource("34_8sf8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.108, 2.47974, -4.20296)
+
+[node name="BlueMan" parent="." node_paths=PackedStringArray("player") instance=ExtResource("39_cwj6q")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 71.3122, 2.7449, 5.57815)
+player = NodePath("../Player")
 
 [connection signal="finished" from="music" to="music" method="play"]

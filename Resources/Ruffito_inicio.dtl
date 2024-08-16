@@ -2,5 +2,6 @@ join Character_Ruffo 1
 Character_Ruffo (ruffo): Ay Mama!!
 Character_Ruffo (ruffo): Ya pude entrar en el escondite del Buho Africano!!
 Character_Ruffo (ruffo): Ahora tengo que recuperar la silla!!
+leave Character_Ruffo
 [signal arg="DialogEnd"]
 [end_timeline]

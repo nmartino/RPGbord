@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://f8ow44jtomkd"]
+
+[ext_resource type="Texture2D" uid="uid://bon5o36ipqnyp" path="res://Assets/Sprites/UI/easterEggs/blueman/items ruffo10.png" id="1_57nfj"]
+[ext_resource type="Script" path="res://Scripts/Dialogos/BlueManTalking_animation.gd" id="1_uasgn"]
+[ext_resource type="Texture2D" uid="uid://dq3x56gbsaiik" path="res://Assets/Sprites/UI/easterEggs/blueman/items ruffo9.png" id="2_oovud"]
+[ext_resource type="Texture2D" uid="uid://bfb02y764snqp" path="res://Assets/Sprites/UI/easterEggs/blueman/items ruffo11.png" id="3_w2wmt"]
+[ext_resource type="Texture2D" uid="uid://dbhs5yv6fwtem" path="res://Assets/Sprites/UI/easterEggs/blueman/items ruffo12.png" id="4_lekk7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n6gox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oovud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_57nfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w2wmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lekk7")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uasgn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -2)
+sprite_frames = SubResource("SpriteFrames_n6gox")
+animation = &"talk"
+frame_progress = 0.491322
