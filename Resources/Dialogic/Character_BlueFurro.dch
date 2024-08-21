@@ -1,0 +1,30 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "BlueFurro",
+"description": "un furro azul superfly",
+"display_name": "Character_BlueFurro",
+"mirror": false,
+"nicknames": ["BlueFurro"],
+"offset": Vector2(0, 0),
+"portraits": {
+"BlueFurro": {
+"export_overrides": {
+"image": "\"res://Assets/Sprites/Characters/BlueFurro/avatar.png\""
+},
+"ignore_char_scale": true,
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.25,
+"scene": ""
+}
+},
+"scale": 1.0
+}

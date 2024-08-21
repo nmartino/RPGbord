@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2nf1glsq7la0"]
+[gd_scene load_steps=9 format=3 uid="uid://d2nf1glsq7la0"]
 
 [ext_resource type="Material" uid="uid://daye8upelfevp" path="res://Assets/Models/CheeseMineAssets/Materials/dc_crate.material" id="1_dpvcv"]
+[ext_resource type="Texture2D" uid="uid://cwov5qchdmw05" path="res://Assets/Sprites/General/original-large.png" id="2_rtatf"]
+[ext_resource type="Texture2D" uid="uid://dfmvhsynjs8q1" path="res://Assets/Sprites/General/made-with-godot-dark.png" id="3_ocui2"]
+[ext_resource type="Texture2D" uid="uid://h3satdtqd7yt" path="res://Assets/Sprites/General/blender.png" id="4_lvwm3"]
+[ext_resource type="Texture2D" uid="uid://c3agsk0rh66p0" path="res://Assets/Sprites/General/haalogo.png" id="5_e0rq1"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_m3foh"]
 _surfaces = [{
@@ -47,3 +51,30 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508856, 0)
 shape = SubResource("BoxShape3D_tb1f3")
+
+[node name="GodotCostado" type="Decal" parent="."]
+transform = Transform3D(0.2, 1.72295e-09, 1.86265e-10, -1.60336e-09, 0.192126, -0.0555669, -6.57625e-10, 0.0555669, 0.192126, -0.00237892, 0.464846, 0.489972)
+size = Vector3(2.28577, 2.39026, 0.455566)
+texture_albedo = ExtResource("2_rtatf")
+upper_fade = 9.01718e-05
+lower_fade = 1e-05
+
+[node name="GodotArriba" type="Decal" parent="."]
+transform = Transform3D(0.2, 1.72295e-09, 1.86265e-10, -6.27175e-10, 0.0519223, 0.193143, 1.61552e-09, -0.193143, 0.0519223, -0.00237892, 1.02835, -0.0961649)
+size = Vector3(2.28577, 2.39026, 0.455566)
+texture_albedo = ExtResource("2_rtatf")
+upper_fade = 9.01718e-05
+lower_fade = 1e-05
+
+[node name="MadeByGodot" type="Decal" parent="."]
+transform = Transform3D(0.220393, 0.010707, -0.203254, -0.203174, 0.0294351, -0.218755, 0.0121352, 0.29836, 0.0288756, 0.217394, 0.712256, 0.555764)
+texture_albedo = ExtResource("3_ocui2")
+
+[node name="Blender" type="Decal" parent="."]
+transform = Transform3D(-0.0360931, 0.497291, 0.0374031, 0.000848592, 0.0375621, -0.498586, -0.498695, -0.0359276, -0.00355546, 0.496456, 0.752999, -0.0158237)
+size = Vector3(0.756577, 1.73596, 0.778809)
+texture_albedo = ExtResource("4_lvwm3")
+
+[node name="HAA" type="Decal" parent="."]
+transform = Transform3D(0.0428686, -0.195301, 0.00445587, 0, -0.0045619, -0.199948, 0.195352, 0.0428575, -0.000977811, -0.491045, 0.741025, 0.255984)
+texture_albedo = ExtResource("5_e0rq1")

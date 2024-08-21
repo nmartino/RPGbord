@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv3xf3fvd145p"
-path.s3tc="res://.godot/imported/furry haa huntercorre1.png-514c2dddec183595b023c19f6ca38a01.s3tc.ctex"
+uid="uid://h3satdtqd7yt"
+path.s3tc="res://.godot/imported/blender.png-25d37504ffc72576e1064f8cb7f1aa1d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/BlueFurro/furry haa huntercorre1.png"
-dest_files=["res://.godot/imported/furry haa huntercorre1.png-514c2dddec183595b023c19f6ca38a01.s3tc.ctex"]
+source_file="res://Assets/Sprites/General/blender.png"
+dest_files=["res://.godot/imported/blender.png-25d37504ffc72576e1064f8cb7f1aa1d.s3tc.ctex"]
 
 [params]
 

@@ -389,6 +389,7 @@ ShaderTimerNode = NodePath("ShaderTimer")
 [node name="Healthbar" type="Sprite3D" parent="."]
 process_priority = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012032, 1.0424, 0)
+texture_filter = 0
 render_priority = 1
 texture = SubResource("ViewportTexture_nfqmo")
 

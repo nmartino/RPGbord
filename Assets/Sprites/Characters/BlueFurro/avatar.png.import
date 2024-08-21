@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv3xf3fvd145p"
-path.s3tc="res://.godot/imported/furry haa huntercorre1.png-514c2dddec183595b023c19f6ca38a01.s3tc.ctex"
+uid="uid://c0ddcj0asyrnb"
+path="res://.godot/imported/avatar.png-4be23a572eaf7f78d7e05f2575e15e7e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/BlueFurro/furry haa huntercorre1.png"
-dest_files=["res://.godot/imported/furry haa huntercorre1.png-514c2dddec183595b023c19f6ca38a01.s3tc.ctex"]
+source_file="res://Assets/Sprites/Characters/BlueFurro/avatar.png"
+dest_files=["res://.godot/imported/avatar.png-4be23a572eaf7f78d7e05f2575e15e7e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

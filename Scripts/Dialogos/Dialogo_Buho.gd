@@ -11,6 +11,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if body == player:
 		if !BuhoEntered:
 			player.inputEnabled = false
+			player.direction = Vector2.ZERO
 			BuhoEntered = true
 			Dialogic.start("Africano_Inicio")
 			

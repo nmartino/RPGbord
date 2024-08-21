@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5g3ja3nxofpy"
-path.s3tc="res://.godot/imported/rufito idlenuevo1.png-ff4ed721e548d026f8abddfcea66293b.s3tc.ctex"
+path="res://.godot/imported/rufito idlenuevo1.png-ff4ed721e548d026f8abddfcea66293b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Sprites/Characters/Player/ruffo nuevo/Ruffito_idle/rufito idlenuevo1.png"
-dest_files=["res://.godot/imported/rufito idlenuevo1.png-ff4ed721e548d026f8abddfcea66293b.s3tc.ctex"]
+dest_files=["res://.godot/imported/rufito idlenuevo1.png-ff4ed721e548d026f8abddfcea66293b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2fy7fkvd0ns8"]
+
+[sub_resource type="Gradient" id="Gradient_qmsgq"]
+offsets = PackedFloat32Array(0.00390625, 1)
+colors = PackedColorArray(0.121569, 0, 0.482353, 1, 0.0941176, 0.329412, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dkf6o"]
+gradient = SubResource("Gradient_qmsgq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8ssx1"]
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_sphere_radius = 0.8
+direction = Vector3(0, 1, 0)
+spread = 25.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+color_ramp = SubResource("GradientTexture1D_dkf6o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbog4"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.588235)
+
+[sub_resource type="SphereMesh" id="SphereMesh_u308y"]
+material = SubResource("StandardMaterial3D_vbog4")
+radius = 0.1
+height = 0.2
+
+[node name="Particulas Azules" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0268333, 0.188452, 0.0777974)
+light_color = Color(0.129412, 0.364706, 1, 1)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.060185, -0.0414072)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_8ssx1")
+draw_pass_1 = SubResource("SphereMesh_u308y")

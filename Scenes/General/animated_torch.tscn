@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjjhrtncjq7eq"]
+
+[ext_resource type="Script" path="res://Scripts/General/animated_torch.gd" id="1_cb1dj"]
+[ext_resource type="PackedScene" uid="uid://chtctmc3qsmfn" path="res://Assets/Models/CheeseMineAssetsUpgrade/godot4dragdrop/CheeseMineAssets/Objects/sm_torch.tscn" id="1_ivjef"]
+[ext_resource type="Texture2D" uid="uid://dw07t3kp4sf4e" path="res://Assets/Sprites/UI/Keyboard Letters and Symbols.png" id="3_keqqb"]
+
+[sub_resource type="Animation" id="Animation_p1c3w"]
+resource_name = "girar"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("torch:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.785398)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4fic1"]
+_data = {
+"girar": SubResource("Animation_p1c3w")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqhic"]
+size = Vector3(0.797607, 1, 0.56543)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b7akd"]
+radius = 1.5
+
+[node name="AnimatedTorch" type="StaticBody3D" node_paths=PackedStringArray("animPlayer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.180881)
+script = ExtResource("1_cb1dj")
+animPlayer = NodePath("AnimationPlayer")
+
+[node name="torch" parent="." instance=ExtResource("1_ivjef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151005, 0, 0.137534)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4fic1")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0454459, 0.197502, 0.314135)
+shape = SubResource("BoxShape3D_iqhic")
+
+[node name="InteractiveIcon" type="Sprite3D" parent="."]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -0.0165654, 0.586477, 0.377816)
+visible = false
+pixel_size = 0.03
+billboard = 1
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("3_keqqb")
+region_enabled = true
+region_rect = Rect2(64.4738, 33.2764, 14.4888, 14.6141)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.198966)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_b7akd")
