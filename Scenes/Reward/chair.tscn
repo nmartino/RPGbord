@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bb8v4y8kaax8s"]
 
 [ext_resource type="Texture2D" uid="uid://p1fd00gunvg1" path="res://Assets/Sprites/UI/Chair/chair2.png" id="1_636b2"]
-[ext_resource type="Script" path="res://Scripts/Reward/chair.cs" id="1_fdp2f"]
+[ext_resource type="Script" path="res://Scripts/Reward/Silla.gd" id="1_ipbck"]
 [ext_resource type="Texture2D" uid="uid://dw07t3kp4sf4e" path="res://Assets/Sprites/UI/Keyboard Letters and Symbols.png" id="2_qxmfk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xqhli"]
@@ -41,10 +41,8 @@ material = SubResource("StandardMaterial3D_vbog4")
 radius = 0.1
 height = 0.2
 
-[node name="Chair" type="StaticBody3D" node_paths=PackedStringArray("areaNode", "spriteNode")]
-script = ExtResource("1_fdp2f")
-areaNode = NodePath("Area3D")
-spriteNode = NodePath("InteractiveIcon")
+[node name="Chair" type="StaticBody3D"]
+script = ExtResource("1_ipbck")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.0268333, 0, 0)

@@ -1,4 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://tbikxa5kwcbw"]
+[gd_scene load_steps=14 format=3 uid="uid://tbikxa5kwcbw"]
+
+[ext_resource type="Texture2D" uid="uid://d2m2wqa5bswnr" path="res://Assets/Models/CheeseMineAssetsUpgrade/godot4dragdrop/CheeseMineAssets/Textures/sm_tex_switchs.png" id="1_5sh7f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kyd4"]
+albedo_texture = ExtResource("1_5sh7f")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tjg3"]
 resource_name = "mat_switches"
@@ -36,6 +41,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pox70")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tts1v"]
+albedo_texture = ExtResource("1_5sh7f")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_tclbk"]
 _surfaces = [{
@@ -121,12 +129,17 @@ _data = {
 "right": SubResource("Animation_msynl")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_iphtg"]
+size = Vector3(0.644043, 0.778702, 0.365484)
+
 [node name="lever_frame" type="MeshInstance3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_3kyd4")
 mesh = SubResource("ArrayMesh_38m8h")
 skeleton = NodePath("")
 
 [node name="lever" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_tts1v")
 mesh = SubResource("ArrayMesh_is4y3")
 skeleton = NodePath("")
 
@@ -134,3 +147,10 @@ skeleton = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_gn88v")
 }
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00805664, 0.390068, -0.0129482)
+shape = SubResource("BoxShape3D_iphtg")

@@ -27,6 +27,8 @@ directories/dch_directory={
 "Character_Africano": "res://Resources/Dialogic/Character_Africano.dch",
 "Character_BlueFurro": "res://Resources/Dialogic/Character_BlueFurro.dch",
 "Character_Ruffo": "res://Resources/Dialogic/Character_Ruffo.dch",
+"IndieHagov": "res://Resources/Dialogic/IndieHagov.dch",
+"Silla": "res://Resources/Dialogic/Silla.dch",
 "character_BlueMan": "res://Resources/Dialogic/character_BlueMan.dch",
 "test_character": "res://Resources/Dialogic/test_character.dch"
 }
@@ -34,6 +36,7 @@ directories/dtl_directory={
 "Africano_Inicio": "res://Resources/Africano_Inicio.dtl",
 "BlueFurro_Inicio": "res://Resources/BlueFurro_Inicio.dtl",
 "BlueMan_inicio": "res://Resources/BlueMan_inicio.dtl",
+"Final_Inicio": "res://Resources/Final_Inicio.dtl",
 "Ruffito_inicio": "res://Resources/Ruffito_inicio.dtl"
 }
 layout/style_list=[]

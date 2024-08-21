@@ -1,0 +1,24 @@
+join Silla 1 [animation="Bounce In Out"]
+Silla (Silla): (La silla está en el centro del dungeon, iluminada por un solo foco de luz.)
+Silla (Silla): ¡Qué alivio estar en casa! Ese búho africano me robó sin vergüenza. Me llevó a una cueva oscura, llena de huesos y plumas. No era mi lugar.
+Silla (Silla): Por suerte, Ruffito me rescató. Él apareció justo a tiempo, y me trajo de vuelta con mi dueño. Ahora, estoy donde siempre debí estar.
+Silla (Silla): (La silla se inclina en señal de agradecimiento. El foco se apaga.)
+leave Silla [animation="Bounce In Out"]
+join IndieHagov 1 [animation="Bounce In Out"]
+IndieHagov (The SuperFly Creator): ¡Gracias por jugar mi juego, compañeros! Espero que lo hayan pasado tan bien como yo me reí programando cada glitch... o mejor dicho, feature inesperada!!. 
+IndieHagov (The SuperFly Creator): Sabemos que hay algunas cositas que ajustar, como ese enemigo que tiene más resistencia que un ministro en medio de un quilombo mediático
+IndieHagov (The SuperFly Creator): pero tranquilos, que estamos laburando con termo en mano para agregar todo lo que teniamos pensado!!
+IndieHagov (The SuperFly Creator): Gracias de nuevo por jugar!!
+leave IndieHagov [animation="Bounce In Out"]
+join Character_Ruffo 1 [animation="Bounce In Out"]
+Character_Ruffo (ruffo): Ay Mama!!.....
+[wait time="1.5"]
+join IndieHagov 3 [animation="Bounce In Out"]
+IndieHagov (The SuperFly Creator): Ya esta!! Ya Podes Pausar el Juego y salir Ruffo!!..
+IndieHagov (The SuperFly Creator):  Que no pasa mas nada despues de aca \:D.
+Character_Ruffo (ruffo): Oks....
+Character_Ruffo (ruffo): Chau!!
+leave IndieHagov [animation="Bounce In Out"]
+leave Character_Ruffo [animation="Bounce In Out"]
+[signal arg="FinalEnding"]
+[end_timeline]

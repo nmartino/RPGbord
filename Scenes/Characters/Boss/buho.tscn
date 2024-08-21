@@ -333,8 +333,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_kpgbu")
 theme_override_styles/fill = SubResource("StyleBoxFlat_l7w4d")
-max_value = 250.0
-value = 250.0
+max_value = 400.0
+value = 400.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="SubViewport"]
