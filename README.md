@@ -49,7 +49,7 @@ Screnshots:
 ![image](https://github.com/user-attachments/assets/8726cc9b-e382-46d8-9cc7-5a0709e1ca83)
 
 Try it online:
-[Try it online](https://e5996.itch.io/hay-algo-ahi-dungeon-hunter).
+[Hay Algo Ahi: Dungeon Hunter](https://e5996.itch.io/hay-algo-ahi-dungeon-hunter).
 
 
 
