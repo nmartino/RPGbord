@@ -48,7 +48,7 @@ func _on_body_entered(body: Node3D) -> void:
 		await tween.finished
 		# NOTE: Para que se deje de mover.
 		camera.reparent(camera_marker, true)
-		# player_clamped = true
+		player_clamped = true
 
 func _on_room_finished() -> void:
 	var tween = create_tween()

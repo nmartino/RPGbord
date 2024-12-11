@@ -11,11 +11,11 @@ var canPress: bool
 var alredyTalked: bool = false
 
 func _ready():
-	areaNode.body_entered.connect(func(player):
+	areaNode.body_entered.connect(func(_player):
 		if(!alredyTalked):
 			icon.visible = true
 			canPress = true)
-	areaNode.body_exited.connect(func(player):
+	areaNode.body_exited.connect(func(_player):
 		icon.visible = false
 		canPress = false)
 	animPlayer.animation_finished.connect(_on_animation_player_animation_finished)
@@ -29,6 +29,6 @@ func _input(event):
 				alredyTalked = true
 				
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	piedra1.PlayBrokenStone()
 	piedra2.PlayBrokenStone()

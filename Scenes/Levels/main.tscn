@@ -425,7 +425,7 @@ shadow_enabled = true
 [node name="UI" parent="." instance=ExtResource("6_centw")]
 
 [node name="Player" parent="." instance=ExtResource("2_xg04o")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.18537, 2.49212, 9.3907)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 1.04993, 2.49212, 10.3632)
 motion_mode = 0
 floor_max_angle = 1.55334
 floor_snap_length = 0.2
@@ -1471,7 +1471,7 @@ stats = Array[Object]([SubResource("Resource_kh7if"), SubResource("Resource_g5k7
 PathNode = NodePath("..")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 38.5637, 3.80255, 5.48001)
+transform = Transform3D(1, 0, 0, 0, 0.962013, 0.273002, 0, -0.273002, 0.962013, 142.106, 3.89634, 12.2945)
 fov = 70.0
 script = ExtResource("7_duhdm")
 target = NodePath("../Player")
@@ -1615,9 +1615,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.4816, 2.15076, 2.10765)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.6264, 0.32898, -6.31061)
 player = NodePath("../../Player")
 
-[node name="BlueMan" parent="easterEggs" node_paths=PackedStringArray("player") instance=ExtResource("39_cwj6q")]
+[node name="BlueMan" parent="easterEggs" node_paths=PackedStringArray("player", "chamberArea") instance=ExtResource("39_cwj6q")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12.1694, 0.59414, 3.4705)
 player = NodePath("../../Player")
+chamberArea = NodePath("../../AreaDePeleasContainer/AreaDePelea2")
 
 [node name="BlueFurro" parent="easterEggs" node_paths=PackedStringArray("player") instance=ExtResource("42_tccsh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.518417, 0.453118, -2.78841)

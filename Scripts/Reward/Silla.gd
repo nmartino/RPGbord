@@ -8,11 +8,11 @@ var canPress: bool
 var alredyTalked: bool
 
 func _ready():
-	areaNode.body_entered.connect(func(player):
+	areaNode.body_entered.connect(func(_player):
 		if(!alredyTalked):
 			icon.visible = true
 			canPress = true)
-	areaNode.body_exited.connect(func(player):
+	areaNode.body_exited.connect(func(_player):
 		icon.visible = false
 		canPress = false)
 	Dialogic.signal_event.connect(FinalEnding)

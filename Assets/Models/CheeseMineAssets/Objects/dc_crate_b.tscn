@@ -39,6 +39,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m3foh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tb1f3"]
+size = Vector3(1.19653, 1, 1.22025)
 
 [node name="crate_b" type="Node3D"]
 
@@ -49,11 +50,11 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508856, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0301514, 0.508856, 0.0252228)
 shape = SubResource("BoxShape3D_tb1f3")
 
 [node name="GodotCostado" type="Decal" parent="."]
-transform = Transform3D(0.2, 1.72295e-09, 1.86265e-10, -1.60336e-09, 0.192126, -0.0555669, -6.57625e-10, 0.0555669, 0.192126, -0.00237892, 0.464846, 0.489972)
+transform = Transform3D(0.2, 1.72295e-09, 1.86265e-10, -1.627e-09, 0.194083, -0.0482895, -5.96755e-10, 0.0482895, 0.194083, -0.00237892, 0.464846, 0.509771)
 size = Vector3(2.28577, 2.39026, 0.455566)
 texture_albedo = ExtResource("2_rtatf")
 upper_fade = 9.01718e-05
@@ -71,8 +72,8 @@ transform = Transform3D(0.220393, 0.010707, -0.203254, -0.203174, 0.0294351, -0.
 texture_albedo = ExtResource("3_ocui2")
 
 [node name="Blender" type="Decal" parent="."]
-transform = Transform3D(-0.0360931, 0.497291, 0.0374031, 0.000848592, 0.0375621, -0.498586, -0.498695, -0.0359276, -0.00355546, 0.496456, 0.752999, -0.0158237)
-size = Vector3(0.756577, 1.73596, 0.778809)
+transform = Transform3D(-0.0360931, 0.497291, 0.0374031, 0.000848592, 0.0375621, -0.498586, -0.498695, -0.0359276, -0.00355546, 0.498372, 0.744372, -0.0075723)
+size = Vector3(0.756577, 0.237259, 0.778809)
 texture_albedo = ExtResource("4_lvwm3")
 
 [node name="HAA" type="Decal" parent="."]
