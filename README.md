@@ -1,62 +1,60 @@
-![Screen2](https://github.com/Eneskp3441/Shaker/assets/100702845/8ca54b7d-6509-4f99-9ba6-d5b7e1000976)
-<p align="center">
-  <a href="https://godotengine.org/download/windows/">
-      <img alt="Static Badge" src="https://img.shields.io/badge/Godot-4.2%2B-blue">
-  </a>
-  <a href="LICENSE">
-    <img alt="GitHub License" src="https://img.shields.io/github/license/Eneskp3441/Shaker">
-  </a>
-</p>
+# Hay Algo Ahi: Dungeon Hunter - Godot con .NET
 
-# What does it do?
-Shaker is the shaking effect tool developed for godot.
-In general, it can be used for multiple purposes and you can edit the shaking effect you want in detail and use it for any Node you want.
+Este proyecto utiliza Godot versión 4.2.1 con .NET. Asegúrate de descargar la versión correcta desde el siguiente enlace: [Godot 4.2.1 con .NET](https://godotengine.org/download/archive/4.2-stable/).
 
-<p align="center">
-  <a href="https://youtu.be/SUgHkyyns1k">
-    <img src="https://github.com/Eneskp3441/Shaker/assets/100702845/fc955670-44a7-41f3-8ec7-4564f4b9615f" alt="Shaker">
-  </a>
-</p>
-<p align="center">
-  <a href="https://youtu.be/SUgHkyyns1k">Watch The Video</a>
-</p>
+## Requisitos
 
-# Installation Guide
+- Godot 4.2.1 con .NET
+- Visual Studio Code (VSCode)
+- Addon "Dialogic"
 
-## Asset Library Installation
+## Configuración del Proyecto
 
-1. Open the "AssetLib" tab in the Godot Editor.
-2. Search for ["Shaker"](https://godotengine.org/asset-library/asset/3137) in the search bar.
-3. Click the download button next to the Shaker plugin.
-4. In the installation window, select the files you want to install and click "Install".
-5. Once the installation is complete, go to "Project" -> "Project Settings" -> "Plugins".
-6. Find the Shaker plugin in the list and enable it by checking the box next to it.
+Sigue estos pasos para configurar el proyecto correctamente:
 
-## Installation from GitHub
+1. **Descargar Godot con .NET**: Asegúrate de tener instalada la versión 4.2.1 de Godot con .NET. Puedes descargarla desde [aquí](https://godotengine.org/download/archive/4.2-stable/).
 
-### Option 1: Stable Release (Recommended)
-1. Visit the [Shaker plugin GitHub repository](https://github.com/Eneskp3441/Shaker).
-2. Navigate to the [Releases](https://github.com/Eneskp3441/Shaker/releases) page.
-3. Download the latest stable release version.
-4. Extract the downloaded files into your Godot project's `addons` folder.
+2. **Activar el Addon "Dialogic"**:
+   - Abre tu proyecto en Godot.
+   - Ir a `Project -> Project Settings -> Plugins`.
+   - Activa el plugin "Dialogic" para utilizar sus funcionalidades en tu proyecto.
 
-### Option 2: Latest Development Version
-1. Go to the [Shaker plugin GitHub repository](https://github.com/Eneskp3441/Shaker).
-2. Click on the green "Code" button and select "Download ZIP".
-3. Extract the contents of the ZIP file into your Godot project's `addons` folder.
+3. **Instalar y Configurar Visual Studio Code**:
+   - Descargar e instalar [Visual Studio Code](https://code.visualstudio.com/).
+   - Abrir Godot e ir a `Editor Settings -> Dotnet -> Editor`.
+   - Seleccionar "Visual Studio Code" como tu editor de código.
 
-Note: The development version may contain new features but might also include unstable code. Use it at your own risk.
+## Uso del Proyecto
 
-After installation, remember to enable the plugin in your Godot project settings.
+Después de completar la configuración inicial, podes empezar a trabajar en tu proyecto usando las herramientas y el entorno configurado.
 
-## Usage
+## Contribución
 
-After installation, the Shaker plugin will be ready to use in your Godot 4.2+ project. Refer to the plugin's documentation for information on how to implement shaking effects in your game.
+Si queres contribuir al proyecto, por favor seguir estos pasos:
 
-## Support
+1. Hacer un fork del repositorio.
+2. Crear una rama con tu nueva característica (`git checkout -b feature/nueva-caracteristica`).
+3. Hacer commit de tus cambios (`git commit -am 'Añadir nueva característica'`).
+4. Pushear a la rama (`git push origin feature/nueva-caracteristica`).
+5. Abrir un Pull Request.
 
-If you encounter any issues or have questions about the Shaker plugin, please open an issue on the GitHub repository or contact the plugin developer.
+Screnshots:
 
-Enjoy using the Shaker plugin in your Godot 4.2+ projects!
-# Documentation (WIP)
-Check [the documentation](../../wiki)
+![image](https://github.com/user-attachments/assets/016f0c41-29f4-4934-b099-ba78745a8cdd)
+![image](https://github.com/user-attachments/assets/8aec45ef-7656-4255-a74e-48339094da48)
+![image](https://github.com/user-attachments/assets/dcc9c3ac-6be0-48bd-b02d-82256e169478)
+![image](https://github.com/user-attachments/assets/e9e27912-e796-4444-add0-93e70204d5d7)
+![image](https://github.com/user-attachments/assets/a0796c16-55e5-4d93-81ab-6608ca498dc9)
+![image](https://github.com/user-attachments/assets/157b36c9-9de6-4095-9db3-907b1a360bbb)
+![image](https://github.com/user-attachments/assets/8726cc9b-e382-46d8-9cc7-5a0709e1ca83)
+
+Try it online:
+[Try it online](https://e5996.itch.io/hay-algo-ahi-dungeon-hunter).
+
+
+
+
+
+
+
+
